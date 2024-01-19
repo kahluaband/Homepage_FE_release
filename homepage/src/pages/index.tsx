@@ -14,24 +14,72 @@ axios.defaults.withCredentials = true;
 
 export default function Home() {
   return (
-    //배경이 있으려면 높이를 무조건 설정해줘야되는데 nav bar가 높이에 포함이 안돼서 일단 높이를 screen-104px로 해둠
-    <div className="h-[1500px]">
+    <div className="h-[calc(100vh-104px)]">
       <Background>
         <Deco />
         <Headline />
         {/* animate-spin origin-bottom */}
-
-        <Image
+        <ul className="fixed right-[3.5rem] x:hidden">
+          <li className="w-[10vw] h-[100%] flex items-center justify-center mb-[5px]">
+            <Link href="http://pf.kakao.com/_UaIZG" target="_blank" passHref>
+              <Image
+                src="/assets/images/layout/kakaotalk.svg"
+                alt="카카오톡 채널"
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="w-[40px] h-[40px]"
+              />
+            </Link>
+          </li>
+          <li className="w-[10vw] h-[100%] flex items-center justify-center mb-[5px]">
+            <Link
+              href="https://instagram.com/kahlua_band_?igshid=MzRlODBiNWFlZA=="
+              target="_blank"
+              passHref
+            >
+              <Image
+                src="/assets/images/layout/instagram.svg"
+                alt="인스타그램"
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="w-[40px] h-[40px]"
+              />
+            </Link>
+          </li>
+          <li className="w-[10vw] h-[100%] flex items-center justify-center">
+            <Link
+              href="https://www.youtube.com/@kahluaband8409"
+              target="_blank"
+              passHref
+            >
+              <Image
+                src="/assets/images/layout/youtube.svg"
+                alt="유튜브"
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="w-[40px] h-[40px]"
+              />
+            </Link>
+          </li>
+        </ul>
+        {/* <Image
           src={cd}
           alt=".."
           width={0}
           height={0}
           sizes="100vw"
-          className="absolute bottom-0 right-0 z-20 object-cover object-bottom l:w-[900px] l:h-[450px] m:w-[780px] m:h-[400px] s:w-[720px] s:h-[380px] x:w-[700px] x:h-[360px]"
-        />
-        <div className = "w-[100vw] h-[60px] sm:h-[90px] bg-[#000] items-center content-center flex justify-center text-center bottom-0 fixed z-30">
-        </div>
-        <Link href="/application" className="flex blur-none filter-none fixed text-center bottom-[0] z-30  items-center justify-center content-center font-[600] sm:font-[700] text-[#FFF] text-[20px] sm:text-[24px] whitespace-nowrap h-[60px] sm:h-[90px] w-[100vw]">KAHLUA 23기 지원하러 가기</Link>
+          className="absolute bottom-0 right-0 z-20 object-cover object-bottom l:w-[900px] l:h-[450px] m:w-[780px] m:h-[400px] s:w-[720px] s:h-[380px] x:w-[700px] x:h-[360px] w-[1000px] h-[450px]"
+        /> */}
+        <div className="w-[100vw] h-[60px] sm:h-[90px] bg-[#000] items-center content-center flex justify-center text-center bottom-0 fixed z-30"></div>
+        <Link
+          href="/application"
+          className="flex blur-none filter-none fixed text-center bottom-[0] z-30  items-center justify-center content-center font-[600] sm:font-[700] text-[#FFF] text-[20px] sm:text-[24px] whitespace-nowrap h-[60px] sm:h-[90px] w-[100vw]"
+        >
+          KAHLUA 23기 지원하러 가기
+        </Link>
       </Background>
     </div>
   );
