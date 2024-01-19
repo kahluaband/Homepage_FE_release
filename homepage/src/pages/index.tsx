@@ -14,65 +14,74 @@ axios.defaults.withCredentials = true;
 
 export default function Home() {
   return (
-    <div className="h-[calc(100vh-104px)]">
+    <div className="h-[calc(100vh-104px)] font-[pretendard]">
       <Background>
         <Deco />
         <Headline />
         {/* animate-spin origin-bottom */}
-        <ul className="fixed right-[3.5rem] x:hidden">
-          <li className="w-[10vw] h-[100%] flex items-center justify-center mb-[5px]">
+        <ul className="lg:hidden flex s:flex-row p:flex-col s:justify-end s:items-start s:space-x-3 s:mr-[2rem] p:mr-[3rem] p:content-end p:items-end">
+          <li className="s:w-fit p:w-[38vw] h-[100%] py-2  s:py-3 s:pr-3 s:pl-3  flex s:items-center s:justify-center s:pl-0 p:justify-start p:items-start p:pl-[1rem] bg-[#281CFF] p:rounded-[20px] mb-[16px] s:rounded-full">
             <Link href="http://pf.kakao.com/_UaIZG" target="_blank" passHref>
-              <Image
-                src="/assets/images/layout/kakaotalk.svg"
-                alt="카카오톡 채널"
-                width={0}
-                height={0}
-                sizes="100vw"
-                className="w-[40px] h-[40px]"
-              />
+              <div className="flex items-center">
+                <Image
+                  src="/assets/images/Main/kakaoicon.svg"
+                  alt="카카오톡 채널"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="s:w-[32px] s:h-[32px] p:w-[28px] p:h-[28px]"
+                />
+                <span className="s:hidden text-white ml-3">카카오톡</span>
+              </div>
             </Link>
           </li>
-          <li className="w-[10vw] h-[100%] flex items-center justify-center mb-[5px]">
+          <li className="s:w-fit p:w-[38vw] h-[100%] py-2  s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center s:pl-0 p:justify-start p:items-start p:pl-[1rem] s:ml-0 bg-[#281CFF] p:rounded-[20px] mb-[16px] s:rounded-full">
             <Link
               href="https://instagram.com/kahlua_band_?igshid=MzRlODBiNWFlZA=="
               target="_blank"
               passHref
             >
-              <Image
-                src="/assets/images/layout/instagram.svg"
-                alt="인스타그램"
-                width={0}
-                height={0}
-                sizes="100vw"
-                className="w-[40px] h-[40px]"
-              />
+              <div className="flex items-center">
+                <Image
+                  src="/assets/images/Main/isgicon.svg"
+                  alt="인스타그램"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="s:w-[32px] s:h-[32px] p:w-[28px] p:h-[28px]"
+                />
+                <span className="s:hidden text-white ml-3">인스타그램</span>
+              </div>
             </Link>
           </li>
-          <li className="w-[10vw] h-[100%] flex items-center justify-center">
+          <li className="s:w-fit p:w-[38vw] h-[100%] py-2 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center s:pl-0 p:justify-start p:items-start p:pl-[1rem] bg-[#281CFF] p:rounded-[20px] s:rounded-full">
             <Link
               href="https://www.youtube.com/@kahluaband8409"
               target="_blank"
               passHref
             >
-              <Image
-                src="/assets/images/layout/youtube.svg"
-                alt="유튜브"
-                width={0}
-                height={0}
-                sizes="100vw"
-                className="w-[40px] h-[40px]"
-              />
+              <div className="flex items-center">
+                <Image
+                  src="/assets/images/Main/yticon.svg"
+                  alt="유튜브"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="s:w-[32px] s:h-[32px] p:w-[28px] p:h-[28px]"
+                />
+                <span className="s:hidden text-white ml-3">유튜브</span>
+              </div>
             </Link>
           </li>
         </ul>
-        {/* <Image
+        <Image
           src={cd}
           alt=".."
           width={0}
           height={0}
           sizes="100vw"
           className="absolute bottom-0 right-0 z-20 object-cover object-bottom l:w-[900px] l:h-[450px] m:w-[780px] m:h-[400px] s:w-[720px] s:h-[380px] x:w-[700px] x:h-[360px] w-[1000px] h-[450px]"
-        /> */}
+        />
         <div className="w-[100vw] h-[60px] sm:h-[90px] bg-[#000] items-center content-center flex justify-center text-center bottom-0 fixed z-30"></div>
         <Link
           href="/application"
