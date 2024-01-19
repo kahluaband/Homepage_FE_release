@@ -19,8 +19,8 @@ export default function Home() {
         <Deco />
         <Headline />
         {/* animate-spin origin-bottom */}
-        <ul className="lg:hidden flex s:flex-row p:flex-col s:justify-end s:items-start s:space-x-3 s:mr-[2rem] p:mr-[3rem] p:content-end p:items-end">
-          <li className="s:w-fit p:w-[38vw] h-[100%] py-2  s:py-3 s:pr-3 s:pl-3  flex s:items-center s:justify-center s:pl-0 p:justify-start p:items-start p:pl-[1rem] bg-[#281CFF] p:rounded-[20px] mb-[16px] s:rounded-full">
+        <ul className="lg:hidden mt-[4rem] tall:mt-0 flex flex-col s:flex-row s:justify-end s:items-start s:space-x-3 s:mr-[2rem] mr-[3rem] content-end items-end">
+          <li className="s:w-fit w-[38vw] h-[100%] py-1.5  s:py-3 s:pr-3 s:pl-3  flex s:items-center s:justify-center s:pl-0 justify-start items-start pl-[1rem] bg-[#281CFF] min-w-[160px] rounded-[20px] mb-[16px] s:rounded-full">
             <Link href="http://pf.kakao.com/_UaIZG" target="_blank" passHref>
               <div className="flex items-center">
                 <Image
@@ -29,13 +29,13 @@ export default function Home() {
                   width={0}
                   height={0}
                   sizes="100vw"
-                  className="s:w-[32px] s:h-[32px] p:w-[28px] p:h-[28px]"
+                  className="s:w-[32px] s:h-[32px] w-[28px] h-[28px]"
                 />
-                <span className="s:hidden text-white ml-3">카카오톡</span>
+                <span className="s:hidden text-white ml-3">KakaoTalk</span>
               </div>
             </Link>
           </li>
-          <li className="s:w-fit p:w-[38vw] h-[100%] py-2  s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center s:pl-0 p:justify-start p:items-start p:pl-[1rem] s:ml-0 bg-[#281CFF] p:rounded-[20px] mb-[16px] s:rounded-full">
+          <li className="s:w-fit w-[38vw] h-[100%] py-1.5 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center s:pl-0 justify-start items-start pl-[1rem] s:ml-0 bg-[#281CFF] min-w-[160px] rounded-[20px] mb-[16px] s:rounded-full">
             <Link
               href="https://instagram.com/kahlua_band_?igshid=MzRlODBiNWFlZA=="
               target="_blank"
@@ -48,13 +48,13 @@ export default function Home() {
                   width={0}
                   height={0}
                   sizes="100vw"
-                  className="s:w-[32px] s:h-[32px] p:w-[28px] p:h-[28px]"
+                  className="s:w-[32px] s:h-[32px] w-[28px] h-[28px]"
                 />
-                <span className="s:hidden text-white ml-3">인스타그램</span>
+                <span className="s:hidden text-white ml-3">Instagram</span>
               </div>
             </Link>
           </li>
-          <li className="s:w-fit p:w-[38vw] h-[100%] py-2 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center s:pl-0 p:justify-start p:items-start p:pl-[1rem] bg-[#281CFF] p:rounded-[20px] s:rounded-full">
+          <li className="s:w-fit w-[38vw] h-[100%] py-1.5 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center s:pl-0 justify-start items-start pl-[1rem] bg-[#281CFF] min-w-[160px] rounded-[20px] s:rounded-full">
             <Link
               href="https://www.youtube.com/@kahluaband8409"
               target="_blank"
@@ -62,14 +62,14 @@ export default function Home() {
             >
               <div className="flex items-center">
                 <Image
-                  src="/assets/images/Main/yticon.svg"
+                  src="/assets/images/Main/youtubeicon.svg"
                   alt="유튜브"
                   width={0}
                   height={0}
                   sizes="100vw"
-                  className="s:w-[32px] s:h-[32px] p:w-[28px] p:h-[28px]"
+                  className="s:w-[32px] s:h-[32px] w-[28px] h-[28px]"
                 />
-                <span className="s:hidden text-white ml-3">유튜브</span>
+                <span className="s:hidden text-white ml-3">YouTube</span>
               </div>
             </Link>
           </li>
@@ -80,7 +80,7 @@ export default function Home() {
           width={0}
           height={0}
           sizes="100vw"
-          className="absolute bottom-0 right-0 z-20 object-cover object-bottom l:w-[900px] l:h-[450px] m:w-[780px] m:h-[400px] s:w-[720px] s:h-[380px] x:w-[700px] x:h-[360px] w-[1000px] h-[450px]"
+          className="hidden tall:flex absolute bottom-0 right-0 z-20 object-cover object-bottom m:w-[780px] m:h-[400px] s:w-[720px] s:h-[380px] p:w-[700px] p:h-[360px]"
         />
         <div className="w-[100vw] h-[60px] sm:h-[90px] bg-[#000] items-center content-center flex justify-center text-center bottom-0 fixed z-30"></div>
         <Link
@@ -110,7 +110,9 @@ function Headline() {
       </p>
       <p className="font-Salvar text-5xl font-bold mt-2 s:text-7xl">KAHLUA</p>
       <p className=" font-pretendard text-[#6A6A6A] mt-4 l:text-xl m:text-lg s:text-base">
-        We are Hongik University Computer Engineering
+        We are
+        <br />
+        Hongik University Computer Engineering
         <br />
         Band Club KAHLUA!
       </p>
@@ -143,13 +145,13 @@ function Deco() {
         src={rect4}
         alt=".."
         width={165}
-        className="absolute left-0 top-[390px] w-[calc(12.5%)]"
+        className="absolute left-0 top-[390px] x:w-[calc(12.5%)] w-[calc(28%)] q:top-[360px] z-20 tiny:hidden"
       />
       <Image
         src={rect1}
         alt=".."
         width={165}
-        className="absolute left-[calc(12.5%)] bottom-0 w-[calc(12.5%)]"
+        className="absolute left-[calc(12.5%)] x:bottom-0 x:w-[calc(12.5%)] w-[calc(30%)] p:bottom-[60px] tiny:hidden"
       />
     </div>
   );
