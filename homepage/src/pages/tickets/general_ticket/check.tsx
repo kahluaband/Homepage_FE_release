@@ -51,9 +51,7 @@ const General_check = () => {
           pathname: "/tickets/cancel_complete/",
           query: { rid },
         });
-      } catch (error) {
-        //console.error('Error canceling merchant_order:', error);
-      }
+      } catch (error) {}
     } else {
       setValidPhone_num(false);
     }
