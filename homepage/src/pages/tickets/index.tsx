@@ -197,7 +197,7 @@ export default function Tickets() {
   );
 
   return (
-    <div className="h-[950px] p:h-[1100px] x:h-[1100px] sm:h-[1700px] md:h-[1600px] lg:h-[1200px] flex z-0 sm:top-[30px]">
+    <div className="h-[1050px] sm:h-[1200px] md:h-[1550px] lg:h-[1100px] flex z-0 sm:top-[30px]">
       <Background>
         <div className="font-pretendard  flex flex-col items-center sm:mb-[84px] mx-auto sm:pt-[20px]">
           <div className=" flex flex-row w-[100%] xl:w-[1024px] justify-center items-start content-center ">
