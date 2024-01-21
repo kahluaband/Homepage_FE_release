@@ -31,7 +31,7 @@ const Error_modal = () => {
         return () => {
         document.removeEventListener("keydown", handleKeyPress);
         };
-    }, [isClose]);
+    }, [isClose, handleKeyPress]);
 
     return !isClose ? (
         <div onClick={handleOverlayClick} className= "fixed z-50 top-0 left-0 right-0 bottom-0 bg-[#0000008a] flex justify-center items-center">

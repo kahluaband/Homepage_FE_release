@@ -27,7 +27,7 @@ const Input_modal = () => {
         return () => {
         document.removeEventListener("keydown", handleKeyPress);
         };
-    }, []);
+    }, [handleKeyPress]);
     return !isClose ? (
         <div onClick={handleOverlayClick} className= "fixed z-50 top-0 left-0 right-0 bottom-0 bg-[#0000008a] flex justify-center items-center">
             <div className="font-pretendard w-[200px] h-[170px] sm:w-[580px] sm:h-[260px] bg-[#FFF] flex-shrink-0 fixed rounded-[3px] z-20">
