@@ -13,7 +13,7 @@ const OPTIONS_Session1 = [
   { value: "드럼", name: "드럼" },
   { value: "기타", name: "기타" },
   { value: "베이스", name: "베이스" },
-  { value: "신디", name: "신디" },
+  { value: "신디(피아노)", name: "신디(피아노)" },
 ];
 
 const OPTIONS_Session2 = [
@@ -21,7 +21,7 @@ const OPTIONS_Session2 = [
   { value: "드럼", name: "드럼" },
   { value: "기타", name: "기타" },
   { value: "베이스", name: "베이스" },
-  { value: "신디", name: "신디" },
+  { value: "신디(피아노)", name: "신디(피아노)" },
 ];
 
 const OPTIONS_Major = [
