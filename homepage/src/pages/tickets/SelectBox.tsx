@@ -31,7 +31,7 @@ export default function SelectBox() {
     };
 
     return (
-        <div className="relative inline-block text-center transition-all duration-450" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div className="font-pretendard relative inline-block text-center transition-all duration-450" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <button
                 type="button"
                 className="appearance-none outline-none text-[10px] sm:text-[14px] font-[700] leading-[17px] cursor-pointer w-[45vw] h-[29px] md:w-[270px] md:h-[48px] rounded-[10px] border-solid bg-[white] text-[#000000] border-[2px] border-[#B9B9B9]"

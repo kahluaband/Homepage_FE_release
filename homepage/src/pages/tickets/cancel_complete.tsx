@@ -9,7 +9,7 @@ export default function Cancel_complete(){
     return (
         <div className = "h-[900px]">
             <Background>
-            <div className="font-['pretendard'] mx-[12.5vw] flex items-center flex-col mb-[84px]">
+            <div className="font-pretendard mx-[12.5vw] flex items-center flex-col mb-[84px]">
                 <div className="flex flex-col items-center mx-[12.5vw] text-center content-center mt-[12px] sm:mt-[40px] leading-normal">
                         <Image src="/assets/images/tickets/divider_medium.svg" alt="ticket" width={52} height={12}  className="w-[50px] h-[11px] sm:w-[75px] sm:h-[17px]"/>
                         <p className="mt-[8px] sm:mt-[16px] font-[700] text-[20px] sm:text-[32px] leading-[42px] whitespace-nowrap">예매 취소가 완료되었습니다.</p>

@@ -37,7 +37,7 @@ const handleDateClick = (date: Date) => {
 };
 
 return (
-    <div className="w-[50vw] h-[190px] md:w-[270px] md:h-[200px] bg-[white] flex-shrink-0 rounded-[10px] border-solid border-[#6C6C6C] border text-center text-[10px] sm:text-[12px] font-[600] pt-[8px] px-[20px]">
+    <div className="font-pretendard w-[50vw] h-[190px] md:w-[270px] md:h-[200px] bg-[white] flex-shrink-0 rounded-[10px] border-solid border-[#6C6C6C] border text-center text-[10px] sm:text-[12px] font-[600] pt-[8px] px-[20px]">
         {format(selectedDate, "yyyy년 M월")}
         <div className="w-[100%] h-[100%] mx-auto mt-[4px]">
             <div className="flex font-[400] text-[8px] sm:text-[12px] items-center justify-center ">
