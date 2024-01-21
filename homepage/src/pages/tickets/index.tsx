@@ -199,7 +199,7 @@ export default function Tickets() {
   return (
     <div className="h-[950px] p:h-[1100px] x:h-[1100px] sm:h-[1450px] md:h-[1400px] lg:h-[1100px] flex z-0 sm:top-[30px]">
       <Background>
-        <div className="font-['pretendard']  flex flex-col items-center sm:mb-[84px] mx-auto sm:pt-[20px]">
+        <div className="font-pretendard  flex flex-col items-center sm:mb-[84px] mx-auto sm:pt-[20px]">
           <div className=" flex flex-row w-[100%] lg:w-[1024px] justify-center items-start content-center ">
             <Image
               src={data[0].image}

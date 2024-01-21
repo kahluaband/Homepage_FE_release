@@ -241,7 +241,7 @@ export default function General_ticket() {
   return (
     <div className={`${dynamicHeightClass}`}>
       <Background>
-        <div className=" font-['pretendard'] px-[12.5vw] flex items-center flex-col mb-[84px]">
+        <div className=" font-pretendard px-[12.5vw] flex items-center flex-col mb-[84px]">
           <div className="flex flex-col items-center mx-[12.5vw] text-center sm:mt-[40px]">
             <Image
               src="/assets/images/tickets/divider_medium.svg"

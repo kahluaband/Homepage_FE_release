@@ -70,7 +70,7 @@ const General_check = () => {
   return (
     <div className="h-[600px] sm:h-[700px]  min-h-screen">
       <Background>
-        <div className="font-['pretendard'] mx-[12.5vw] flex items-center flex-col mb-[84px] ">
+        <div className="font-pretendard mx-[12.5vw] flex items-center flex-col mb-[84px] ">
           <div className="flex flex-col items-center mx-[12.5vw] text-center content-center mt-[10px] sm:mt-[40px] leading-normal">
             <Image
               src="/assets/images/tickets/divider_medium.svg"

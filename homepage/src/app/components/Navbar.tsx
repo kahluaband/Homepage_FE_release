@@ -69,7 +69,7 @@ export default function Navbar() {
     return (
         <nav>
         {showMenu && <div onClick={handleOverlayClick} className="fixed inset-0 h-[full] bg-black bg-opacity-50 z-40" />}
-        <div className="w-[full] h-[104px] flex item-center bg-[white] z-50 font-['pretendard'] top-[16px] sm:top-[30px]">
+        <div className="w-[full] h-[104px] flex item-center bg-[white] z-50 font-pretendard top-[16px] sm:top-[30px]">
                 <NavBg>
                     <div className="lg:flex pt-[16px] sm:pt-[30px]">
                         <div className="flex justify-between">
