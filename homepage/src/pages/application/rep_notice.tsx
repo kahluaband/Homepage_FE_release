@@ -2,7 +2,6 @@ import Image from "next/image";
 import band from "/public/assets/images/recruit/band.svg";
 import band1 from "/public/assets/images/recruit/band1.png";
 import recruit_rocket from "/public/assets/images/recruit/divider_medium.svg";
-import Link from "next/link";
 
 export default function RepNotice() {
   return (
@@ -27,12 +26,12 @@ export default function RepNotice() {
             <br />
             면접날짜 : 2024.03.18(월)
           </p>
-          <Link
+          <a
             className="flex justify-center items-center h-[64px] w-[260px] x:w-1/2 rounded-[300px] bg-ocean mt-14 text-xl x:text-2xl font-semibold text-[#FFFFFF]"
             href="/application/apply"
           >
             KAHLUA 23기 지원하기
-          </Link>
+          </a>
         </div>
       </div>
     </>
