@@ -82,10 +82,10 @@ export default function Home() {
           sizes="100vw"
           className="hidden tall:flex absolute bottom-[-120px] right-0 z-30 object-cover object-bottom lg:w-[2500px] lg:h-[1500px] md:w-[2000px] md:h-[900px] x:w-[900px] x:h-[500px] "
         />
-        <div className="w-[100vw] h-[60px] sm:h-[90px] bg-[#000] items-center content-center flex justify-center text-center bottom-0 fixed z-30"></div>
+        <div className="w-[100vw] h-[80px] sm:h-[90px] bg-[#000] items-center content-center flex justify-center text-center bottom-0 fixed z-30"></div>
         <Link
           href="/application"
-          className="flex blur-none filter-none fixed text-center bottom-[0] z-30  items-center justify-center content-center font-[600] sm:font-[700] text-[#FFF] text-[20px] sm:text-[24px] whitespace-nowrap h-[60px] sm:h-[90px] w-[100vw]"
+          className="flex blur-none filter-none fixed text-center bottom-[0] z-30  items-center justify-center content-center font-[600] sm:font-[700] text-[#FFF] text-[22px] sm:text-[24px] whitespace-nowrap h-[80px] sm:h-[90px] w-[100vw]"
         >
           KAHLUA 23기 지원하러 가기
         </Link>
