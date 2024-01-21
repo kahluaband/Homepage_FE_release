@@ -173,7 +173,7 @@ export default function Form() {
         onClick={handleOverlayClick}
         className="fixed z-50 top-0 left-0 right-0 bottom-0 bg-[#0000008a] flex justify-center items-center"
       >
-        <div className="font-['pretendard'] w-[200px] h-[235px] sm:w-[580px] sm:h-[330px] bg-[#FFF] flex-shrink-0 fixed rounded-[10px] z-20">
+        <div className="font-pretendard w-[200px] h-[235px] sm:w-[580px] sm:h-[330px] bg-[#FFF] flex-shrink-0 fixed rounded-[10px] z-20">
           <button
             onClick={handleIsClose}
             className="ml-[180px] mt-[2px] h-[22px] sm:h-[30px] sm:ml-[552px] flex-col items-center flex justify-center"
