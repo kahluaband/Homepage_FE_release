@@ -34,7 +34,7 @@ module.exports = {
         x: "568px",
         q: "460px",
         p: "360px",
-        tall: { raw: "(min-height: 780px)" },
+        tall: { raw: "(min-height: 600px)" },
         tiny: { raw: "(max-width: 360px)" },
 
         year1: { raw: "(max-width: 716px)" },
