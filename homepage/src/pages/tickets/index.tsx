@@ -182,31 +182,31 @@ export default function Tickets() {
   const Tickets = () => (
     <div>
       <div className="flex w-[100%] lg:w-[260px] text-center flex-row justify-between lg:justify-between md:gap-[25vw] lg:gap-0">
-        <div className="font-[600] leading-[19px] w-[80px] h-[19px] text-left">
+        <div className="font-[600] leading-[19px] w-[80px] h-[19px] text-left whitespace-nowrap">
           온라인 예매
         </div>
-        <div className="text-right font-[500] w-[70px]">예매불가</div>
+        <div className="text-right font-[500] w-[70px] whitespace-nowrap">예매불가</div>
       </div>
       <div className="mt-[13px] flex w-[100%] lg:w-[260px] text-center flex-row justify-between lg:justify-between md:gap-[25vw] lg:gap-0">
-        <div className="font-[600] leading-[19px] w-[80px] h-[19px] text-left">
+        <div className="font-[600] leading-[19px] w-[80px] h-[19px] text-left whitespace-nowrap">
           현장 예매
         </div>
-        <div className="text-right font-[500]  w-[70px]">예매불가</div>
+        <div className="text-right font-[500] w-[70px] whitespace-nowrap">예매불가</div>
       </div>
     </div>
   );
 
   return (
-    <div className="h-[950px] p:h-[1100px] x:h-[1100px] sm:h-[1450px] md:h-[1400px] lg:h-[1100px] flex z-0 sm:top-[30px]">
+    <div className="h-[950px] p:h-[1100px] x:h-[1100px] sm:h-[1700px] md:h-[1600px] lg:h-[1200px] flex z-0 sm:top-[30px]">
       <Background>
         <div className="font-pretendard  flex flex-col items-center sm:mb-[84px] mx-auto sm:pt-[20px]">
-          <div className=" flex flex-row w-[100%] lg:w-[1024px] justify-center items-start content-center ">
+          <div className=" flex flex-row w-[100%] xl:w-[1024px] justify-center items-start content-center ">
             <Image
               src={data[0].image}
               alt="포스터"
               width={342}
               height={460}
-              className="pr-[1vw] w-[40vw] h-[calc(40vw*4/3)] q:w-[35vw] q:h-[calc(35vw*4/3)] x:w-[30vw] x:h-[calc(30vw*4/3)] md:w-[240px] md:h-[310px] lg:w-[270px] lg:h-[340px]  xl:w-[342px] xl:h-[460px] md:max-h-[460px] "
+              className="pr-[1vw] w-[40vw] h-[calc(40vw*4/3)] q:w-[35vw] q:h-[calc(35vw*4/3)] x:w-[26vw] x:h-[calc(24vw*4/3)] md:w-[200px] md:h-[310px] xl:w-[342px] xl:h-[460px] md:max-h-[460px] "
               priority
             />
             <div className="w-[50vw] h-[200px] sm:h-[300px] lg:w-[600px] md:h-[300px] lg:h-[400px] xl:w-[720px] xl:h-[460px] ml-[11px] lg:ml-[23px] mt-0 top-0 flex-shrink-0">
@@ -242,7 +242,7 @@ export default function Tickets() {
                 </div>
               </div>
               <div className="flex flex-row left-0 whitespace-nowrap">
-                <div className="font-['pretendard'] w-[32vw] sm:w-[150px] md:w-[280px] h-[20px] lg:mt-[8px] lg:w-[350px] lg:h-[42px] flex flex-shrink-0 text-black font-[700] text-[14px] sm:text-[16px] md:text-[28px] leading-[40px] whitespace-nowrap">
+                <div className="font-['pretendard'] w-[32vw] sm:w-[150px] md:w-[280px] h-[20px] md:mt-[8px] lg:w-[350px] lg:h-[42px] flex flex-shrink-0 text-black font-[700] text-[14px] sm:text-[16px] md:text-[28px] leading-[40px] whitespace-nowrap">
                   {data[0].title}
                 </div>
                 <div className="mt-[19px] pr-[2px] ml-[8vw] w-[18vw] flex flex-row">
@@ -274,7 +274,7 @@ export default function Tickets() {
                 </div>
               </div>
               <div className="mt-[32px] lg:mt-[18px] w-[50vw] lg:w-[600px] xl:w-[720px] h-[1px] flex bg-[#000]" />
-              <div className="mt-[12px] xl:mt-[36px] w-[50vw] lg:w-[720px] h-[1px] flex flex-row">
+              <div className="mt-[12px] md:mt-[36px] w-[50vw] lg:w-[500px] h-[1px] flex flex-row">
                 <div className="flex flex-col w-[50vw] ">
                   <div className="text-[10px] md:text-[14px] flex w-[50vw] md:w-[270px] items-center mt-[4px]">
                     <div className="font-[700] leading-[17px] w-[18px] md:w-[25px] h-[17px] text-center whitespace-nowrap">
@@ -284,7 +284,7 @@ export default function Tickets() {
                       {data[0].where}
                     </div>
                   </div>
-                  <div className="text-[10px] md:text-[14px] mt-[4px] md:mt-[24px] lg:mt-[48px] flex w-[50vw] md:w-[270px] items-center">
+                  <div className="text-[10px] md:text-[14px] mt-[4px] md:mt-[48px] flex w-[50vw] md:w-[270px] items-center">
                     <div className=" font-[700] leading-[17px] w-[18px] md:w-[25px] h-[17px] text-center whitespace-nowrap">
                       일시
                     </div>
@@ -292,8 +292,8 @@ export default function Tickets() {
                       {data[0].when}
                     </div>
                   </div>
-                  <div className="mt-[14px] lg:mt-[42px] w-[50vw] lg:w-[400px] xl:w-[434px] border-b flex bg-[#D9D9D9]" />
-                  <div className="mt-[14px] lg:mt-[42px] flex flex-row w-[50vw] md:w-[434px]">
+                  <div className="mt-[14px] md:mt-[42px] w-[50vw] lg:w-[400px] xl:w-[434px] border-b flex bg-[#D9D9D9]" />
+                  <div className="mt-[14px] md:mt-[42px] flex flex-row w-[50vw] md:w-[434px]">
                     <div className="flex flex-row h-[77px]">
                       <div className="text-[10px] md:text-[14px] w-[18px] md:w-[25px] h-[66px] font-[700] flex leading-[17px] mt-[28px] text-center whitespace-nowrap">
                         가격
@@ -301,26 +301,26 @@ export default function Tickets() {
                       <div className="flex flex-col ml-[7vw] lg:ml-[64px] h-[66px]">
                         <div className="text-[10px] md:text-[14px] flex flex-col lg:flex-row">
                           <div className="w-[40vw] md:w-[335px] h-[21px] flex flex-row items-center">
-                            <div className="w-[62px] md:w-[77px] h-[21px] ">
+                            <div className="w-[62px] md:w-[77px] h-[21px] whitespace-nowrap">
                               홍익대 신입생
                             </div>
-                            <div className="ml-[10vw] lg:ml-[36px] w-[25px] text-[#281CFF] font-[700]">
+                            <div className="ml-[10vw] lg:ml-[36px] w-[25px] text-[#281CFF] font-[700] whitespace-nowrap">
                               {data[0].ticket.freshman}
                             </div>
-                            <div className="hidden lg:flex ml-[66px] w-[41px] text-[#939393]">
+                            <div className="hidden lg:flex ml-[66px] w-[41px] text-[#939393] whitespace-nowrap">
                               1인 1매
                             </div>
                           </div>
-                          <div className="flex text-[8px] lg:hidden w-[41px] text-[#939393]">
+                          <div className="flex text-[8px] lg:hidden w-[41px] text-[#939393] whitespace-nowrap">
                             1인 1매
                           </div>
                         </div>
                         <div className="text-[10px] md:text-[14px] flex flex-col lg:flex-row">
-                          <div className="text-[10px] md:text-[14px] w-[40vw] md:w-[335px] mt-[8px] lg:mt-[35px] h-[21px] flex flex-row items-center">
-                            <div className="w-[62px] lg:w-[77px] h-[21px] ">
+                          <div className="text-[10px] md:text-[14px] w-[40vw] md:w-[335px] mt-[8px] md:mt-[35px] h-[21px] flex flex-row items-center">
+                            <div className="w-[62px] lg:w-[77px] h-[21px] whitespace-nowrap">
                               일반티켓
                             </div>
-                            <div className="ml-[10vw] lg:ml-[36px] w-[49px] font-[700]">
+                            <div className="ml-[10vw] lg:ml-[36px] w-[49px] font-[700] whitespace-nowrap">
                               {data[0].ticket.regular}
                             </div>
                             <div className="hidden lg:flex ml-[42px] w-[122px] text-[#939393] whitespace-nowrap">
@@ -337,13 +337,13 @@ export default function Tickets() {
                   <div className="hidden lg:flex mt-[36px] w-[434px] h-[33px] text-center text-[12px] font-[400px] leading-[18px]">
                     <Link
                       href="tickets/freshman_ticket/delete/"
-                      className="w-[164px] h-[33px] ml-[0.4vw] flex items-center justify-center border border-[#6A6A6A] rounded-[10px] bg-[#FFFFFF] hover:bg-[#281CFF] hover:text-[white] hover:outline-none transition-all duration-450"
+                      className="whitespace-nowrap w-[164px] h-[33px] ml-[0.4vw] flex items-center justify-center border border-[#6A6A6A] rounded-[10px] bg-[#FFFFFF] hover:bg-[#281CFF] hover:text-[white] hover:outline-none transition-all duration-450"
                     >
                       신입생 예매내역 조회하기
                     </Link>
                     <Link
                       href="tickets/general_ticket/delete/"
-                      className="w-[164px] h-[33px] ml-[0.4vw] flex items-center justify-center border border-[#6A6A6A] rounded-[10px] bg-[#FFFFFF] hover:bg-[#281CFF] hover:text-[white] hover:outline-none transition-all duration-450"
+                      className="whitespace-nowrap w-[164px] h-[33px] ml-[0.4vw] flex items-center justify-center border border-[#6A6A6A] rounded-[10px] bg-[#FFFFFF] hover:bg-[#281CFF] hover:text-[white] hover:outline-none transition-all duration-450"
                     >
                       일반 예매내역 조회하기
                     </Link>
@@ -351,12 +351,12 @@ export default function Tickets() {
                 </div>
                 <div
                   id="map1"
-                  className="hidden lg:flex xl:ml-[50px] mr-[12.5vw] lg:w-[180px] lg:h-[180px] xl:w-[242px] xl:h-[242px] rounded-[10px] border-[1px] border-[#B9B9B9] flex-shrink-0 z-0"
+                  className="hidden lg:flex xl:ml-[50px] lg:right-[1vw] lg:w-[180px] lg:h-[180px] xl:w-[242px] xl:h-[242px] rounded-[10px] border-[1px] border-[#B9B9B9] flex-shrink-0 z-0"
                 ></div>
               </div>
             </div>
           </div>
-          <div className="flex lg:hidden mt-[50px] sm:mt-[30px]">
+          <div className="flex lg:hidden mt-[50px] md:mt-[60px]">
             {checkTickets()}
           </div>
 
@@ -367,7 +367,7 @@ export default function Tickets() {
                   <div className="font-[400] flex flex-col text-[12px] w-[37px] h-[19px] ">
                     Step 1
                   </div>
-                  <div className="font-[600] flex flex-col w-[67px] h-[19px] text-[12px] leading-[19px] tracking-[0.24px] ml-[20px]">
+                  <div className="font-[600] flex flex-col w-[67px] h-[19px] text-[12px] leading-[19px] tracking-[0.24px] ml-[20px] whitespace-nowrap">
                     날짜 선택하기
                   </div>
                 </div>
@@ -375,12 +375,12 @@ export default function Tickets() {
                   <div className="font-[400] flex flex-col text-[12px] w-[37px] h-[19px] ">
                     Step 2
                   </div>
-                  <div className="font-[600] flex flex-col w-[67px] h-[19px] text-[12px] leading-[19px] tracking-[0.24px] ml-[20px]">
+                  <div className="font-[600] flex flex-col w-[67px] h-[19px] text-[12px] leading-[19px] tracking-[0.24px] ml-[20px] whitespace-nowrap">
                     시간 선택하기
                   </div>
                 </div>
                 <div className="w-[30vw] xl:w-[360px]  flex flex-row pl-[50px]">
-                  <div className="font-[600] flex flex-col w-[67px] h-[19px] text-[12px] leading-[19px] tracking-[0.24px] ">
+                  <div className="font-[600] flex flex-col w-[67px] h-[19px] text-[12px] leading-[19px] tracking-[0.24px] whitespace-nowrap">
                     예매가능 좌석
                   </div>
                 </div>
