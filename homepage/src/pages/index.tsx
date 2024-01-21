@@ -20,11 +20,11 @@ export default function Home() {
         <Headline />
         {/* animate-spin origin-bottom */}
         <ul className="lg:hidden mt-[4rem] tall:mt-0 flex flex-col s:flex-row s:justify-end s:items-start s:space-x-3 s:mr-[2rem] mr-[3rem] content-end items-end">
-          <li className="s:w-fit w-[38vw] h-[100%] py-1.5  s:py-3 s:pr-3 s:pl-3  flex s:items-center s:justify-center s:pl-0 justify-start items-start pl-[1rem] bg-[#281CFF] min-w-[160px] rounded-[20px] mb-[16px] s:rounded-full">
+          <li className="s:w-fit w-[38vw] h-[100%] py-1.5  s:py-3 s:pr-3 s:pl-3  flex s:items-center s:justify-center justify-start items-start pl-[1rem] bg-[#281CFF] min-w-[160px] rounded-[20px] mb-[16px] s:rounded-full">
             <Link href="http://pf.kakao.com/_UaIZG" target="_blank" passHref>
               <div className="flex items-center">
                 <Image
-                  src="/assets/images/Main/kakaoicon.svg"
+                  src="/assets/images/Main/kakaoIcon.svg"
                   alt="카카오톡 채널"
                   width={0}
                   height={0}
@@ -35,7 +35,7 @@ export default function Home() {
               </div>
             </Link>
           </li>
-          <li className="s:w-fit w-[38vw] h-[100%] py-1.5 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center s:pl-0 justify-start items-start pl-[1rem] s:ml-0 bg-[#281CFF] min-w-[160px] rounded-[20px] mb-[16px] s:rounded-full">
+          <li className="s:w-fit w-[38vw] h-[100%] py-1.5 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center justify-start items-start pl-[1rem] s:ml-0 bg-[#281CFF] min-w-[160px] rounded-[20px] mb-[16px] s:rounded-full">
             <Link
               href="https://instagram.com/kahlua_band_?igshid=MzRlODBiNWFlZA=="
               target="_blank"
@@ -54,7 +54,7 @@ export default function Home() {
               </div>
             </Link>
           </li>
-          <li className="s:w-fit w-[38vw] h-[100%] py-1.5 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center s:pl-0 justify-start items-start pl-[1rem] bg-[#281CFF] min-w-[160px] rounded-[20px] s:rounded-full">
+          <li className="s:w-fit w-[38vw] h-[100%] py-1.5 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center justify-start items-start pl-[1rem] bg-[#281CFF] min-w-[160px] rounded-[20px] s:rounded-full">
             <Link
               href="https://www.youtube.com/@kahluaband8409"
               target="_blank"
