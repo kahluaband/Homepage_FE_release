@@ -63,8 +63,8 @@ export default function Performance() {
     <div
       className={`${
         selectedYear === "ALL"
-          ? "h-[6000px] y:h-[2800px] l:h-[2200px] tiny:h-[5400px]"
-          : " h-[1300px] max-[640px]:h-[6000px] max-[968px]:h-[3600px]"
+          ? "h-[5800px] y:h-[2800px] l:h-[2200px] tiny:h-[5400px]"
+          : "h-[1300px] year2:h-[2500px] year5:h-[2000px]"
       }  flex items-center justify-center `}
     >
       <Background>
