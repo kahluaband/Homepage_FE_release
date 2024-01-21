@@ -52,9 +52,7 @@ const Freshman_check = () => {
           pathname: "/tickets/cancel_complete/",
           query: { rid },
         });
-      } catch (error) {
-        //console.error('Error canceling reservation:', error);
-      }
+      } catch (error) {}
     } else {
       setValidSid(false);
     }

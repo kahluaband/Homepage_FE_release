@@ -63,7 +63,6 @@ export default function General_ticket() {
           setIsError(true);
         }
       } catch (error) {
-        //console.error('Error submitting data:', error);
         setIsError(true);
       }
     }
@@ -93,7 +92,6 @@ export default function General_ticket() {
         setIsError(true);
       }
     } catch (error) {
-      //console.error('Error submitting checkout data:', error);
       setIsError(true);
     }
   };

@@ -36,7 +36,6 @@ export default function All() {
             width={0}
             height={0}
             layout="fill"
-            className="opacity-70 rounded-[10px]"
           />
           <Image src={playIcon} alt="playIcon" className={styles.playicon} />
         </div>
@@ -72,7 +71,6 @@ export default function All() {
             width={0}
             height={0}
             layout="fill"
-            className="opacity-70 rounded-[10px]"
           />
           <Image src={playIcon} alt="playIcon" className={styles.playicon} />
         </div>
@@ -107,7 +105,6 @@ export default function All() {
             width={0}
             height={0}
             layout="fill"
-            className="opacity-70 rounded-[10px]"
           />
           <Image src={playIcon} alt="playIcon" className={styles.playicon} />
         </div>
@@ -142,7 +139,6 @@ export default function All() {
             width={0}
             height={0}
             layout="fill"
-            className="opacity-70 rounded-[10px]"
           />
           <Image src={playIcon} alt="playIcon" className={styles.playicon} />
         </div>
@@ -177,7 +173,6 @@ export default function All() {
             width={0}
             height={0}
             layout="fill"
-            className="opacity-70 rounded-[10px]"
           />
           <Image src={playIcon} alt="playIcon" className={styles.playicon} />
         </div>
@@ -211,7 +206,6 @@ export default function All() {
             width={0}
             height={0}
             layout="fill"
-            className="opacity-70 rounded-[10px]"
           />
           <Image src={playIcon} alt="playIcon" className={styles.playicon} />
         </div>
@@ -248,7 +242,6 @@ export default function All() {
             width={0}
             height={0}
             layout="fill"
-            className="opacity-70 rounded-[10px]"
           />
           <Image src={playIcon} alt="playIcon" className={styles.playicon} />
         </div>
@@ -282,7 +275,6 @@ export default function All() {
             width={0}
             height={0}
             layout="fill"
-            className="opacity-70 rounded-[10px]"
           />
           <Image src={playIcon} alt="playIcon" className={styles.playicon} />
         </div>
@@ -316,7 +308,6 @@ export default function All() {
             width={0}
             height={0}
             layout="fill"
-            className="opacity-70 rounded-[10px]"
           />
           <Image src={playIcon} alt="playIcon" className={styles.playicon} />
         </div>
@@ -351,7 +342,6 @@ export default function All() {
             width={0}
             height={0}
             layout="fill"
-            className="opacity-70 rounded-[10px]"
           />
           <Image src={playIcon} alt="playIcon" className={styles.playicon} />
         </div>
@@ -388,7 +378,6 @@ export default function All() {
             width={0}
             height={0}
             layout="fill"
-            className="opacity-70 rounded-[10px]"
           />
           <Image src={playIcon} alt="playIcon" className={styles.playicon} />
         </div>
@@ -421,7 +410,6 @@ export default function All() {
             width={0}
             height={0}
             layout="fill"
-            className="opacity-70 rounded-[10px]"
           />
           <Image src={playIcon} alt="playIcon" className={styles.playicon} />
         </div>
@@ -455,7 +443,6 @@ export default function All() {
             width={0}
             height={0}
             layout="fill"
-            className="opacity-70 rounded-[10px]"
           />
           <Image src={playIcon} alt="playIcon" className={styles.playicon} />
         </div>
