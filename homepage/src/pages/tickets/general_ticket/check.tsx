@@ -29,7 +29,8 @@ const General_check = () => {
     };
 
     fetchmerchant_orderData();
-  }, [router.query.merchant_order_id]);
+    // need to check dependencies
+  }, [merchant_order_id, router.query.merchant_order_id]);
 
   const handleCancelmerchant_order = async () => {
     if (input_phone_num === phone_num) {
@@ -51,9 +52,7 @@ const General_check = () => {
           pathname: "/tickets/cancel_complete/",
           query: { rid },
         });
-      } catch (error) {
-        //console.error('Error canceling merchant_order:', error);
-      }
+      } catch (error) {}
     } else {
       setValidPhone_num(false);
     }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import btDown from "public/assets/images/performance/bt_down.svg";
-import btUp from "public/assets/images/performance/bt_up.svg";
+import btDown from "/public/assets/images/performance/bt_down.svg";
+import btUp from "/public/assets/images/performance/bt_up.svg";
 import All from "./All";
 import Background from "@/app/components/Background";
 import divider from "/public/assets/images/performance/divider_medium.svg";
@@ -61,9 +61,11 @@ export default function Performance() {
 
   return (
     <div
-      className={`${styles.wrapper} ${
-        selectedYear === "ALL" ? "h-[2500px]" : " h-[1300px]"
-      }  flex items-center justify-center`}
+      className={`${
+        selectedYear === "ALL"
+          ? "h-[6000px] y:h-[2800px] l:h-[2200px] tiny:h-[5400px]"
+          : " h-[1300px] max-[640px]:h-[6000px] max-[968px]:h-[3600px]"
+      }  flex items-center justify-center `}
     >
       <Background>
         <div className="font-['pretendard']">
@@ -78,15 +80,17 @@ export default function Performance() {
             </p>
 
             <div
-              className={`${styles.btnContainer} ${
+              className={`${
                 isOpen ? "h-[120px]" : "h-[60px]"
-              } flex relative flex-wrap w-[620px] rounded-[10px] mb-[96px] bg-[#EEEEEE] z-0`}
+              } flex relative flex-wrap w-[620px] rounded-[10px] mb-[96px] bg-[#EEEEEE] z-0
+              year1:w-[540px] year2:w-[500px] year3:w-[460px] year4:w-[440px] year5:w-[420px] year6:w-[388px] year7:w-[360px] year8:w-[348px]`}
             >
               {yearArr1.map((year, index) => {
                 return (
                   <button
                     className={
-                      `${styles.yearBtn} flex justify-center items-center min-w-[140px] h-[60px] font-bold text-lg text-black cursor-pointer z-10 rounded-[10px]` +
+                      `flex justify-center items-center min-w-[140px] h-[60px] font-bold text-lg text-black cursor-pointer z-10 rounded-[10px]
+                      year1:min-w-[120px] year2:min-w-[110px] year3:min-w-[100px] year4:min-w-[95px] year5:min-w-[90px] year6:text-[16px] year6:min-w-[82px] year7:min-w-[76px] year8:min-w-[72px]` +
                       (colorPickerVisible1[index] && " bg-[#281CFF] text-white")
                     }
                     key={index}
@@ -114,16 +118,17 @@ export default function Performance() {
                   id="arrow"
                   width={26}
                   height={12}
-                  className={styles.arrowIcon}
+                  className="year4:w-[24px] year4:h-[11px] year7:w-[20px] year7:h-[10px]"
                 />
               </button>
               {yearArr2.map((year, index) => {
                 return (
                   <button
                     className={
-                      `${styles.yearBtn} ${
+                      `${
                         isOpen ? "flex" : "hidden"
-                      } justify-center items-center min-w-[140px] h-[60px] font-bold text-lg text-black cursor-pointer z-10 rounded-[10px]` +
+                      } justify-center items-center min-w-[140px] h-[60px] font-bold text-lg text-black cursor-pointer z-10 rounded-[10px]
+                      year1:min-w-[120px] year2:min-w-[110px] year3:min-w-[100px] year4:min-w-[95px] year5:min-w-[90px] year6:text-[16px] year6:min-w-[82px] year7:min-w-[76px] year8:min-w-[72px]` +
                       (colorPickerVisible2[index] && " bg-[#281CFF] text-white")
                     }
                     key={index}
@@ -161,7 +166,6 @@ export default function Performance() {
                           width={0}
                           height={0}
                           layout="fill"
-                          className="opacity-70 rounded-[10px]"
                         />
                         <Image
                           src={playIcon}
@@ -203,7 +207,6 @@ export default function Performance() {
                           width={0}
                           height={0}
                           layout="fill"
-                          className="opacity-70 rounded-[10px]"
                         />
                         <Image
                           src={playIcon}
@@ -250,7 +253,6 @@ export default function Performance() {
                           width={0}
                           height={0}
                           layout="fill"
-                          className="opacity-70 rounded-[10px]"
                         />
                         <Image
                           src={playIcon}
@@ -291,7 +293,6 @@ export default function Performance() {
                           width={0}
                           height={0}
                           layout="fill"
-                          className="opacity-70 rounded-[10px]"
                         />
                         <Image
                           src={playIcon}
@@ -338,7 +339,6 @@ export default function Performance() {
                           width={0}
                           height={0}
                           layout="fill"
-                          className="opacity-70 rounded-[10px]"
                         />
                         <Image
                           src={playIcon}
@@ -380,7 +380,6 @@ export default function Performance() {
                           width={0}
                           height={0}
                           layout="fill"
-                          className="opacity-70 rounded-[10px]"
                         />
                         <Image
                           src={playIcon}
@@ -421,7 +420,6 @@ export default function Performance() {
                           width={0}
                           height={0}
                           layout="fill"
-                          className="opacity-70 rounded-[10px]"
                         />
                         <Image
                           src={playIcon}
@@ -469,7 +467,6 @@ export default function Performance() {
                           width={0}
                           height={0}
                           layout="fill"
-                          className="opacity-70 rounded-[10px]"
                         />
                         <Image
                           src={playIcon}
@@ -515,7 +512,6 @@ export default function Performance() {
                           width={0}
                           height={0}
                           layout="fill"
-                          className="opacity-70 rounded-[10px]"
                         />
                         <Image
                           src={playIcon}
@@ -556,7 +552,6 @@ export default function Performance() {
                           width={0}
                           height={0}
                           layout="fill"
-                          className="opacity-70 rounded-[10px]"
                         />
                         <Image
                           src={playIcon}
@@ -599,7 +594,6 @@ export default function Performance() {
                           width={0}
                           height={0}
                           layout="fill"
-                          className="opacity-70 rounded-[10px]"
                         />
                         <Image
                           src={playIcon}
@@ -638,7 +632,6 @@ export default function Performance() {
                           width={0}
                           height={0}
                           layout="fill"
-                          className="opacity-70 rounded-[10px]"
                         />
                         <Image
                           src={playIcon}
@@ -683,7 +676,6 @@ export default function Performance() {
                         width={0}
                         height={0}
                         layout="fill"
-                        className="opacity-70 rounded-[10px]"
                       />
                       <Image
                         src={playIcon}

@@ -225,7 +225,9 @@ export default function Tickets() {
                       alt="모바일 인스타 그램"
                       width={1000}
                       height={1000}
-                      className="ml-[8vw] flex lg:hidden cursor-pointer w-[12px] h-[12px]"
+                      className="hidden"
+                      // 게시글 업로드 후 수정 필요
+                      // className="ml-[8vw] flex lg:hidden cursor-pointer w-[12px] h-[12px]"
                     />
                   </Link>
                   <div onClick={copyUrl}>
@@ -254,7 +256,9 @@ export default function Tickets() {
                       alt="인스타그램"
                       width={1000}
                       height={1000}
-                      className="hidden lg:flex cursor-pointer w-[100px] h-[30px]"
+                      className="hidden"
+                      // 게시글 업로드 후 수정 필요
+                      // className="hidden lg:flex cursor-pointer w-[100px] h-[30px]"
                     />
                   </Link>
                   <div onClick={copyUrl}>
@@ -263,7 +267,8 @@ export default function Tickets() {
                       alt="share"
                       width={1000}
                       height={1000}
-                      className="hidden lg:flex cursor-pointer w-[100px] h-[30px] ml-[14px] "
+                      className="hidden lg:flex cursor-pointer w-[100px] h-[30px] l:ml-[160px] s:ml-[60px]"
+                      // className="hidden lg:flex cursor-pointer w-[100px] h-[30px] ml-[14px] "
                     />
                   </div>
                 </div>

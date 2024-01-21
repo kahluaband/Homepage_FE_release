@@ -14,24 +14,81 @@ axios.defaults.withCredentials = true;
 
 export default function Home() {
   return (
-    //배경이 있으려면 높이를 무조건 설정해줘야되는데 nav bar가 높이에 포함이 안돼서 일단 높이를 screen-104px로 해둠
-    <div className="h-[1500px]">
+    <div className="h-[calc(100vh-104px)] font-[pretendard]">
       <Background>
         <Deco />
         <Headline />
         {/* animate-spin origin-bottom */}
-
+        <ul className="lg:hidden mt-[4rem] tall:mt-0 flex flex-col s:flex-row s:justify-end s:items-start s:space-x-3 s:mr-[2rem] mr-[3rem] content-end items-end">
+          <li className="s:w-fit w-[38vw] h-[100%] py-1.5  s:py-3 s:pr-3 s:pl-3  flex s:items-center s:justify-center s:pl-0 justify-start items-start pl-[1rem] bg-[#281CFF] min-w-[160px] rounded-[20px] mb-[16px] s:rounded-full">
+            <Link href="http://pf.kakao.com/_UaIZG" target="_blank" passHref>
+              <div className="flex items-center">
+                <Image
+                  src="/assets/images/Main/kakaoicon.svg"
+                  alt="카카오톡 채널"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="s:w-[32px] s:h-[32px] w-[28px] h-[28px]"
+                />
+                <span className="s:hidden text-white ml-3">KakaoTalk</span>
+              </div>
+            </Link>
+          </li>
+          <li className="s:w-fit w-[38vw] h-[100%] py-1.5 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center s:pl-0 justify-start items-start pl-[1rem] s:ml-0 bg-[#281CFF] min-w-[160px] rounded-[20px] mb-[16px] s:rounded-full">
+            <Link
+              href="https://instagram.com/kahlua_band_?igshid=MzRlODBiNWFlZA=="
+              target="_blank"
+              passHref
+            >
+              <div className="flex items-center">
+                <Image
+                  src="/assets/images/Main/isgicon.svg"
+                  alt="인스타그램"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="s:w-[32px] s:h-[32px] w-[28px] h-[28px]"
+                />
+                <span className="s:hidden text-white ml-3">Instagram</span>
+              </div>
+            </Link>
+          </li>
+          <li className="s:w-fit w-[38vw] h-[100%] py-1.5 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center s:pl-0 justify-start items-start pl-[1rem] bg-[#281CFF] min-w-[160px] rounded-[20px] s:rounded-full">
+            <Link
+              href="https://www.youtube.com/@kahluaband8409"
+              target="_blank"
+              passHref
+            >
+              <div className="flex items-center">
+                <Image
+                  src="/assets/images/Main/youtubeicon.svg"
+                  alt="유튜브"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="s:w-[32px] s:h-[32px] w-[28px] h-[28px]"
+                />
+                <span className="s:hidden text-white ml-3">YouTube</span>
+              </div>
+            </Link>
+          </li>
+        </ul>
         <Image
           src={cd}
           alt=".."
           width={0}
           height={0}
           sizes="100vw"
-          className="absolute bottom-0 right-0 z-20 object-cover object-bottom l:w-[900px] l:h-[450px] m:w-[780px] m:h-[400px] s:w-[720px] s:h-[380px] x:w-[700px] x:h-[360px]"
+          className="hidden tall:flex absolute bottom-0 right-0 z-20 object-cover object-bottom m:w-[780px] m:h-[400px] s:w-[720px] s:h-[380px] p:w-[700px] p:h-[360px]"
         />
-        <div className = "w-[100vw] h-[60px] sm:h-[90px] bg-[#000] items-center content-center flex justify-center text-center bottom-0 fixed z-30">
-        </div>
-        <Link href="/application" className="flex blur-none filter-none fixed text-center bottom-[0] z-30  items-center justify-center content-center font-[600] sm:font-[700] text-[#FFF] text-[20px] sm:text-[24px] whitespace-nowrap h-[60px] sm:h-[90px] w-[100vw]">KAHLUA 23기 지원하러 가기</Link>
+        <div className="w-[100vw] h-[60px] sm:h-[90px] bg-[#000] items-center content-center flex justify-center text-center bottom-0 fixed z-30"></div>
+        <Link
+          href="/application"
+          className="flex blur-none filter-none fixed text-center bottom-[0] z-30  items-center justify-center content-center font-[600] sm:font-[700] text-[#FFF] text-[20px] sm:text-[24px] whitespace-nowrap h-[60px] sm:h-[90px] w-[100vw]"
+        >
+          KAHLUA 23기 지원하러 가기
+        </Link>
       </Background>
     </div>
   );
@@ -53,7 +110,9 @@ function Headline() {
       </p>
       <p className="font-Salvar text-5xl font-bold mt-2 s:text-7xl">KAHLUA</p>
       <p className=" font-pretendard text-[#6A6A6A] mt-4 l:text-xl m:text-lg s:text-base">
-        We are Hongik University Computer Engineering
+        We are
+        <br />
+        Hongik University Computer Engineering
         <br />
         Band Club KAHLUA!
       </p>
@@ -86,13 +145,13 @@ function Deco() {
         src={rect4}
         alt=".."
         width={165}
-        className="absolute left-0 top-[390px] w-[calc(12.5%)]"
+        className="absolute left-0 top-[390px] x:w-[calc(12.5%)] w-[calc(28%)] q:top-[360px] z-20 tiny:hidden"
       />
       <Image
         src={rect1}
         alt=".."
         width={165}
-        className="absolute left-[calc(12.5%)] bottom-0 w-[calc(12.5%)]"
+        className="absolute left-[calc(12.5%)] x:bottom-0 x:w-[calc(12.5%)] w-[calc(30%)] p:bottom-[60px] tiny:hidden"
       />
     </div>
   );
