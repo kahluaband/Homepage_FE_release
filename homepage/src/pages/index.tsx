@@ -80,7 +80,7 @@ export default function Home() {
           width={2000}
           height={2000}
           sizes="100vw"
-          className="hidden tall:flex absolute bottom-[-50px] q:bottom-[-90px] md:bottom-[400px] right-0 z-30 object-cover object-bottom lg:w-[2500px] lg:h-[1500px] md:w-[2000px] md:h-[900px] x:w-[900px] x:h-[500px] "
+          className="hidden tall:flex absolute bottom-[-70px] q:bottom-[-90px] md:bottom-[400px] right-0 z-30 object-cover object-bottom lg:w-[2500px] lg:h-[1500px] md:w-[2000px] md:h-[900px] x:w-[900px] x:h-[500px] "
         />
         <div className="w-[100vw] h-[60px] sm:h-[90px] bg-[#000] items-center content-center flex justify-center text-center bottom-0 fixed z-30"></div>
         <Link
