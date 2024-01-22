@@ -14,12 +14,15 @@ axios.defaults.withCredentials = true;
 
 export default function Home() {
   return (
-    <div className="min-h-[540px] sm:min-h-[800px] h-[calc(100vh-184px)] sm:h-[calc(100vh-194px)] font-[pretendard]">
+    // min-h-[540px] sm:min-h-[800px]
+    <div className="font-pretendard h-[calc(100vh-184px)] sm:h-[calc(100vh-194px)]">
       <Background>
         <Deco />
         <Headline />
         {/* animate-spin origin-bottom */}
-        <ul className="lg:hidden pt-[20px] mt-[4rem] tall:mt-0 flex flex-col s:flex-row s:justify-end s:items-start s:space-x-3 s:mr-[2rem] mr-[3rem] content-end items-end z-20">
+
+        {/* sns 버튼 */}
+        <ul className="lg:hidden mt-[3rem] tall:mt-0 flex flex-col s:flex-row s:justify-end s:items-start s:space-x-3 s:mr-[2rem] mr-[3rem] content-end items-end z-20">
           <li className="s:w-fit w-[38vw] h-[100%] py-1.5  s:py-3 s:pr-3 s:pl-3  flex s:items-center s:justify-center justify-start items-start pl-[1rem] bg-[#281CFF] min-w-[160px] rounded-[20px] mb-[16px] s:rounded-full">
             <Link href="http://pf.kakao.com/_UaIZG" target="_blank" passHref>
               <div className="flex items-center">
@@ -74,14 +77,18 @@ export default function Home() {
             </Link>
           </li>
         </ul>
+
+        {/* CD 이미지 */}
         <Image
           src={cd}
           alt=".."
-          width={2000}
-          height={2000}
+          width={0}
+          height={0}
           sizes="100vw"
-          className="hidden phone:flex fixed bottom-[60px] right-0 z-30 object-cover object-bottom h-auto lg:w-[2500px] md:w-[2000px] x:w-[900px]"
+          className="hidden phone:flex fixed bottom-[60px] right-0 z-30 object-cover object-bottom h-auto w-[600px]"
         />
+
+        {/* 하단 지원 배너 */}
         <div className="w-[100vw] h-[80px] sm:h-[90px] bg-[#000] items-center content-center flex justify-center text-center bottom-0 fixed z-30"></div>
         <Link
           href="/application"
@@ -94,9 +101,10 @@ export default function Home() {
   );
 }
 
+// 글씨 부분
 function Headline() {
   return (
-    <div className="mt-10 bg-transparent ml-[calc(8%)] l:ml-[calc(22%)] s:ml-[calc(19%)] x:ml-[calc(16%)] q:ml-[calc(14%)]">
+    <div className="mt-10 bg-transparent ml-[calc(10%)] md:ml-[calc(12.5%)]">
       <Image
         src={divider}
         alt="kahlua"
@@ -120,9 +128,10 @@ function Headline() {
   );
 }
 
+// 도형
 function Deco() {
   return (
-    <div className=" bg-transparent ">
+    <div className="bg-transparent ">
       <Image
         src={rect3}
         alt=".."
