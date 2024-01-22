@@ -18,11 +18,11 @@ export default function Caution(){
 
 function Apply_vocal(){
     return(
-        <div className="s:w-[calc(50%-16px)] h-auto rounded-[10px] bg-[#F1F5FF] py-8 px-10 mt-8 p:w-full p:px-6">
-            <p className="s:text-2xl text-xl font-bold text-center">
+        <div className="md:w-[calc(50%-16px)] w-full h-auto rounded-[10px] bg-[#F1F5FF] py-8 px-6 mt-8">
+            <p className="md:text-2xl text-xl font-bold text-center">
                 보컬 부문
             </p>
-            <p className="s:text-sm text-xs mt-8 text-center">
+            <p className="md:text-sm text-xs mt-8 text-center">
                 보컬 지원자의 경우는 대면 오디션과 별개로 지원 영상을 따로 받고 있습니다.<br/>
                 선곡은 자유이며, 2-3곡 정도를 영상으로 찍어 보내주시길 바랍니다.<br/>
                 가사를 보고 불러도 되니 편하게 지원해 주세요.<br/>
@@ -34,11 +34,11 @@ function Apply_vocal(){
 
 function Apply_others(){
     return(
-        <div className="s:w-[calc(50%-16px)] h-auto rounded-[10px] bg-[#F1F5FF] py-8 px-10 mt-8 p:w-full p:px-6">
-            <p className="s:text-2xl text-xl font-bold text-center">
+        <div className="md:w-[calc(50%-16px)] w-full h-auto rounded-[10px] bg-[#F1F5FF] py-8 px-6 mt-8">
+            <p className="md:text-2xl text-xl font-bold text-center">
                 드럼/기타/베이스/신디 부문
             </p>
-            <p className="s:text-sm text-xs mt-8 text-center">
+            <p className="md:text-sm text-xs mt-8 text-center">
                 보컬 지원자를 제외한 다른 세션의 경우<br/>
                 별도의 지원 영상이 필요하지 않습니다.<br/>
                 3월 11일 진행되는 오디션에만 참여해 주시면 됩니다.

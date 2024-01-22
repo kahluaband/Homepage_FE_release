@@ -14,12 +14,12 @@ axios.defaults.withCredentials = true;
 
 export default function Home() {
   return (
-    <div className="h-[calc(100vh-104px)] font-[pretendard]">
+    <div className="min-h-[800px] h-[100vh] x:h-[800px] font-[pretendard]">
       <Background>
         <Deco />
         <Headline />
         {/* animate-spin origin-bottom */}
-        <ul className="lg:hidden mt-[4rem] tall:mt-0 flex flex-col s:flex-row s:justify-end s:items-start s:space-x-3 s:mr-[2rem] mr-[3rem] content-end items-end">
+        <ul className="lg:hidden pt-[20px] mt-[4rem] tall:mt-0 flex flex-col s:flex-row s:justify-end s:items-start s:space-x-3 s:mr-[2rem] mr-[3rem] content-end items-end z-20">
           <li className="s:w-fit w-[38vw] h-[100%] py-1.5  s:py-3 s:pr-3 s:pl-3  flex s:items-center s:justify-center justify-start items-start pl-[1rem] bg-[#281CFF] min-w-[160px] rounded-[20px] mb-[16px] s:rounded-full">
             <Link href="http://pf.kakao.com/_UaIZG" target="_blank" passHref>
               <div className="flex items-center">
@@ -77,15 +77,15 @@ export default function Home() {
         <Image
           src={cd}
           alt=".."
-          width={0}
-          height={0}
+          width={2000}
+          height={2000}
           sizes="100vw"
-          className="hidden tall:flex absolute bottom-0 right-0 z-20 object-cover object-bottom m:w-[780px] m:h-[400px] s:w-[720px] s:h-[380px] p:w-[700px] p:h-[360px]"
+          className="hidden tall:flex absolute bottom-[-120px] right-0 z-30 object-cover object-bottom lg:w-[2500px] lg:h-[1500px] md:w-[2000px] md:h-[900px] x:w-[900px] x:h-[500px] "
         />
-        <div className="w-[100vw] h-[60px] sm:h-[90px] bg-[#000] items-center content-center flex justify-center text-center bottom-0 fixed z-30"></div>
+        <div className="w-[100vw] h-[80px] sm:h-[90px] bg-[#000] items-center content-center flex justify-center text-center bottom-0 fixed z-30"></div>
         <Link
           href="/application"
-          className="flex blur-none filter-none fixed text-center bottom-[0] z-30  items-center justify-center content-center font-[600] sm:font-[700] text-[#FFF] text-[20px] sm:text-[24px] whitespace-nowrap h-[60px] sm:h-[90px] w-[100vw]"
+          className="flex blur-none filter-none fixed text-center bottom-[0] z-30  items-center justify-center content-center font-[600] sm:font-[700] text-[#FFF] text-[22px] sm:text-[24px] whitespace-nowrap h-[80px] sm:h-[90px] w-[100vw]"
         >
           KAHLUA 23기 지원하러 가기
         </Link>
@@ -127,7 +127,7 @@ function Deco() {
         src={rect3}
         alt=".."
         width={165}
-        className="absolute right-0 top-0 w-[calc(12.5%)] mt-10"
+        className="absolute right-0 top-0 w-[12.5vw] h-[12.5vw]  mt-10"
       />
       <Image
         src={circle}
@@ -139,19 +139,19 @@ function Deco() {
         src={circle}
         alt=".."
         width={160}
-        className="hidden absolute left-[calc(5%)] w-[calc(12%)] top-64 x:block"
+        className="hidden absolute left-[calc(5%)] s:left-[calc(35%)] w-[calc(12%)] top-64 s:top-[400px] x:block"
       />
       <Image
         src={rect4}
         alt=".."
         width={165}
-        className="absolute left-0 top-[390px] x:w-[calc(12.5%)] w-[calc(28%)] q:top-[360px] z-20 tiny:hidden"
+        className="absolute left-0 bottom-[100px] w-[25vw] h-[25vw] x:w-[12.5vw] x:h-[12.5vw] x:bottom-[250px] m:bottom-[100px] z-20 tiny:hidden"
       />
       <Image
         src={rect1}
         alt=".."
         width={165}
-        className="absolute left-[calc(12.5%)] x:bottom-0 x:w-[calc(12.5%)] w-[calc(30%)] p:bottom-[60px] tiny:hidden"
+        className="absolute left-[25vw]  x:left-[12.5vw] w-[25vw] h-[25vw] bottom-[calc(200px-25%)] x:w-[12.5vw] x:bottom-[calc(250px-15vw)] m:bottom-[calc(100px-15%)] tiny:hidden"
       />
     </div>
   );
