@@ -8,7 +8,7 @@ export default function Recruit() {
         <div className="h-[4800px] x:h-[4500px] s:h-[4000px] font-pretendard flex flex-col justify-center items-center content-center">
             <Background>
                 <div className="w-full flex flex-col justify-center items-center">
-                    <div className="w-3/4">
+                    <div className="md:w-3/4 w-5/6">
                         <ApplicationNotice/>
                         <Caution/>
                         <Form/>
