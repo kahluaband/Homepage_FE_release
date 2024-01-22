@@ -102,12 +102,12 @@ if (true) {
             <ol className="list-decimal ml-[24px] font-[500] text-[10px] sm:text-[14px] lg:text-[16px] mt-[8px] sm:mt-[22px] leading-[26px]">
                 <li>
                 <div className="flex md:flex-row flex-col">
-                    제출하신 신청서는 수정/취소가 불가합니다.{" "}
+                    제출하신 신청서는 수정/취소가 불가합니다.
                 </div>
                 </li>
                 <li>
                 <div className="flex md:flex-row flex-col">
-                    면접 일정에 대한 안내 문자가 3/16(토) 일괄발송될 예정입니다. 혹시 문자를 받지 못하신 경우 카카오톡 채널로 문의해주시기 바랍니다.{" "}
+                    지원 접수 이후 1일 내에 안내 문자가 발송될 예정입니다. 문자를 받지 못하신 분은 카카오톡 채널 @kahlua 또는 인스타그램 @kahlua_band_ 으로 문의부탁드립니다.
                 </div>
                 </li>
             </ol>
