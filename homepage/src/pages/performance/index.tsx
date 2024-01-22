@@ -63,7 +63,7 @@ export default function Performance() {
     <div
       className={`${
         selectedYear === "ALL"
-          ? "h-[5800px] y:h-[2800px] l:h-[2200px] tiny:h-[5400px]"
+          ? "h-[5800px] sm:h-[2800px] l:h-[2200px] tiny:h-[5400px]"
           : "h-[1300px] year2:h-[2500px] year5:h-[2000px]"
       }  flex items-center justify-center `}
     >
@@ -147,7 +147,7 @@ export default function Performance() {
             </div>
 
             <>
-              <div className={styles.gridContainer}>
+              <div className="grid gap-[64px] place-items-center px-[3rem] grid-cols-1 sm:grid-cols-2 m:grid-cols-3">
                 {selectedYear === "ALL" && <All />}
                 {selectedYear === "2023" && (
                   <>
