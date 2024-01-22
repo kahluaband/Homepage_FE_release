@@ -35,7 +35,7 @@ useEffect(() => {
 
 if (true) {
     return (
-    <div className="h-[700px] sm:h-[900px]">
+    <div className=" sm:h-[calc(100vh-344px)] h-[calc(100vh-204px)] sm:min-h-[700px] min-h-[480px]">
         <Background>
         <div className="font-['pretendard'] mx-[12.5vw] flex items-center flex-col mb-[84px]">
             <div className="flex flex-col items-center mx-[12.5vw] text-center mt-[12px] sm:mt-[40px]">
@@ -107,8 +107,7 @@ if (true) {
                 </li>
                 <li>
                 <div className="flex md:flex-row flex-col">
-                    홍익대학교 깔루아 23기의 활동 기간은 1년 6개월로, 25년 9월
-                    공연까지는 필수로 참여해야 합니다.{" "}
+                    면접 일정에 대한 안내 문자가 3/16(토) 일괄발송될 예정입니다. 혹시 문자를 받지 못하신 경우 카카오톡 채널로 문의해주시기 바랍니다.{" "}
                 </div>
                 </li>
             </ol>
