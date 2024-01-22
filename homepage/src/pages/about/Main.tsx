@@ -26,7 +26,9 @@ export default function Main() {
           <br />
           홍익대학교 컴퓨터공학과 밴드학회입니다.
         </p>
-        <p className={styles.aboutText}>ABOUT US</p>
+        <p className="font-GothamItalic text-white w-full h-fit absolute bottom-0 left-1/2 text-center translate-x-[-50%] translate-y-[30%] text-[54px] sm:text-[100px] md:text-[120px] xl:text-[180px]">
+          ABOUT US
+        </p>
       </div>
     </div>
   );
