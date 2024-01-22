@@ -84,7 +84,7 @@
   }
 }
 
-.aboutText {
+/* .aboutText {
   font-family: "Gotham bold italic";
   font-size: 160px;
   color: white;
@@ -114,7 +114,7 @@
   @media (max-width: 360px) {
     font-size: 50px;
   }
-}
+} */
 .divider {
   width: 75px;
   height: 17px;
