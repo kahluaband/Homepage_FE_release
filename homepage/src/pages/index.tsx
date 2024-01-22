@@ -85,7 +85,7 @@ export default function Home() {
           width={0}
           height={0}
           sizes="100vw"
-          className="hidden phone:flex fixed bottom-[60px] right-0 z-30 object-cover object-bottom h-auto w-[600px]"
+          className="hidden phone:flex fixed bottom-[60px] right-0 z-30 object-cover object-bottom h-auto w-[640px] lg:w-[800px] xl:w-[1000px]"
         />
 
         {/* 하단 지원 배너 */}
@@ -131,36 +131,47 @@ function Headline() {
 // 도형
 function Deco() {
   return (
-    <div className="bg-transparent ">
+    <div className="bg-transparent">
       <Image
         src={rect3}
         alt=".."
-        width={165}
+        width={0}
+        height={0}
+        sizes="100vw"
         className="absolute right-0 top-0 w-[12.5vw] h-[12.5vw]  mt-10"
       />
       <Image
         src={circle}
         alt=".."
-        width={160}
+        width={0}
+        height={0}
+        sizes="100vw"
         className="hidden absolute w-[calc(12%)] top-40 l:right-[calc(24%)] s:right-[calc(20%)] x:right-[calc(14%)] x:block"
       />
       <Image
         src={circle}
         alt=".."
-        width={160}
+        width={0}
+        height={0}
+        sizes="100vw"
         className="hidden absolute left-[calc(5%)] s:left-[calc(35%)] w-[calc(12%)] top-64 s:top-[400px] x:block"
       />
       <Image
         src={rect4}
         alt=".."
-        width={165}
-        className="absolute left-0 bottom-[100px] w-[25vw] h-[25vw] x:w-[12.5vw] x:h-[12.5vw] x:bottom-[250px] m:bottom-[100px] z-20 tiny:hidden"
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="absolute left-0 w-[25vw] h-[25vw] x:w-[12.5vw] x:h-[12.5vw] x:bottom-[250px] m:bottom-[100px] z-20 tiny:hidden"
       />
       <Image
         src={rect1}
         alt=".."
-        width={165}
-        className="absolute left-[25vw]  x:left-[12.5vw] w-[25vw] h-[25vw] bottom-[calc(200px-25%)] x:w-[12.5vw] x:bottom-[calc(250px-15vw)] m:bottom-[calc(100px-15%)] tiny:hidden"
+        width={0}
+        height={0}
+        sizes="100vw"
+        // bottom-[calc(200px-25%)] x:bottom-[calc(250px-15vw)] m:bottom-[calc(100px-15%)]
+        className="absolute left-[25vw] x:left-[12.5vw] w-[25vw] h-[25vw] x:w-[12.5vw] bottom-[20px] sm:bottom-[40px] tiny:hidden"
       />
     </div>
   );
