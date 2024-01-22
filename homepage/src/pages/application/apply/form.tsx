@@ -13,7 +13,7 @@ const OPTIONS_Session1 = [
   { value: "드럼", name: "드럼" },
   { value: "기타", name: "기타" },
   { value: "베이스", name: "베이스" },
-  { value: "신디", name: "신디" },
+  { value: "신디(피아노)", name: "신디(피아노)" },
 ];
 
 const OPTIONS_Session2 = [
@@ -21,7 +21,7 @@ const OPTIONS_Session2 = [
   { value: "드럼", name: "드럼" },
   { value: "기타", name: "기타" },
   { value: "베이스", name: "베이스" },
-  { value: "신디", name: "신디" },
+  { value: "신디(피아노)", name: "신디(피아노)" },
 ];
 
 const OPTIONS_Major = [
@@ -41,7 +41,7 @@ export default function Form() {
   const [second_preference, setSecond] = useState("보컬");
   const [play_instrument, setInstrument] = useState("");
   const [motive, setMotive] = useState("");
-  const [exprience_and_reason, setExprience] = useState("");
+  const [experience_and_reason, setExperience] = useState("");
   const [finish_time, setFinishTime] = useState("");
   const [meeting, setMeeting] = useState(true);
   const [readiness, setReadiness] = useState("");
@@ -64,7 +64,7 @@ export default function Form() {
       address.trim() !== "" &&
       first_preference.trim() !== "" &&
       second_preference.trim() !== "" &&
-      exprience_and_reason.trim() !== "" &&
+      experience_and_reason.trim() !== "" &&
       play_instrument.trim() !== "" &&
       motive.trim() !== "" &&
       finish_time.trim() !== "" &&
@@ -84,7 +84,7 @@ export default function Form() {
     major,
     first_preference,
     second_preference,
-    exprience_and_reason,
+    experience_and_reason,
     play_instrument,
     motive,
     finish_time,
@@ -112,7 +112,7 @@ export default function Form() {
         major,
         first_preference,
         second_preference,
-        exprience_and_reason,
+        experience_and_reason,
         play_instrument,
         motive,
         finish_time,
@@ -173,10 +173,10 @@ export default function Form() {
         onClick={handleOverlayClick}
         className="fixed z-50 top-0 left-0 right-0 bottom-0 bg-[#0000008a] flex justify-center items-center"
       >
-        <div className="font-['pretendard'] w-[200px] h-[235px] sm:w-[580px] sm:h-[330px] bg-[#FFF] flex-shrink-0 fixed rounded-[10px] z-20">
+        <div className="font-pretendard w-auto h-auto bg-[#FFF] flex-shrink-0 fixed rounded-[10px] z-20 sm:pb-[60px] pb-[26px] px-[12px]">
           <button
             onClick={handleIsClose}
-            className="ml-[180px] mt-[2px] h-[22px] sm:h-[30px] sm:ml-[552px] flex-col items-center flex justify-center"
+            className="ml-auto mt-[8px] h-[22px] sm:h-[30px] sm:ml-[552px] flex-col items-center flex justify-center"
           >
             <Image
               src="/assets/images/layout/close.svg"
@@ -186,7 +186,7 @@ export default function Form() {
               className="w-[16px] h-[16px] sm:w-[22px] sm:h-[22px]"
             />
           </button>
-          <div className="flex flex-col items-center text-center content-center mt-[12px] sm:mt-[40px] leading-normal">
+          <div className="flex flex-col items-center text-center content-center mt-[4px] sm:mt-[40px] leading-normal">
             <Image
               src="/assets/images/tickets/divider_medium.svg"
               alt="ticket"
@@ -205,13 +205,13 @@ export default function Form() {
             </p>
             <button
               onClick={handleConfirmSubmission}
-              className="mt-[8px] sm:mt-[28px] flex items-center w-[70px] h-[20px] sm:w-[100px] sm:h-[24px] justify-center rounded-[4px] bg-[#281CFF] text-[white] text-[8px] sm:text-[12px] font-[700] leading-[17px] text-center  hover:bg-[white] hover:text-[#281CFF] hover:border-[#281CFF] transition-all duration-450 border-[1px] sm:border-[2px] border-[#281CFF]"
+              className="mt-[12px] sm:mt-[28px] flex items-center w-[70px] h-[20px] sm:w-[100px] sm:h-[28px] justify-center rounded-[4px] bg-[#281CFF] text-[white] text-[8px] sm:text-[12px] font-[700] leading-[17px] text-center  hover:bg-[white] hover:text-[#281CFF] hover:border-[#281CFF] transition-all duration-450 border-[1px] sm:border-[2px] border-[#281CFF]"
             >
               제출하기
             </button>
             <button
               onClick={handleIsClose}
-              className="mt-[8px] sm:mt-[28px] flex items-center w-[70px] h-[20px] sm:w-[100px] sm:h-[24px] justify-center rounded-[4px] bg-[#281CFF] text-[white] text-[8px] sm:text-[12px] font-[700] leading-[17px] text-center  hover:bg-[white] hover:text-[#281CFF] hover:border-[#281CFF] transition-all duration-450 border-[1px] sm:border-[2px] border-[#281CFF]"
+              className="mt-[8px] sm:mt-[16px] flex items-center w-[70px] h-[20px] sm:w-[100px] sm:h-[28px] justify-center rounded-[4px] bg-[#281CFF] text-[white] text-[8px] sm:text-[12px] font-[700] leading-[17px] text-center  hover:bg-[white] hover:text-[#281CFF] hover:border-[#281CFF] transition-all duration-450 border-[1px] sm:border-[2px] border-[#281CFF]"
             >
               다시 확인하기
             </button>
@@ -322,7 +322,7 @@ export default function Form() {
 
       <div className="flex flex-col justify-center pb-10">
         <div className="inline-flex flex-wrap flex-row items-start justify-between">
-          <div className="s:w-[calc(50%-16px)] p:w-full h-auto pt-8">
+          <div className="s:w-[calc(50%-16px)] w-full h-auto pt-8">
             <p className="s:text-xl font-bold text-lg">이름</p>
             <div className="input-with-placeholder relative h-[64px] flex-shrink-0 border border-[#464646] border-solid rounded-[10px] mt-4">
               <input
@@ -335,7 +335,7 @@ export default function Form() {
               />
             </div>
           </div>
-          <div className="s:w-[calc(50%-16px)] p:w-full h-auto pt-8">
+          <div className="s:w-[calc(50%-16px)] w-full h-auto pt-8">
             <p className="s:text-xl font-bold text-lg">생년월일</p>
             <div className="input-with-placeholder relative h-[64px] flex-shrink-0 border border-[#464646] border-solid rounded-[10px] mt-4">
               <input
@@ -362,7 +362,7 @@ export default function Form() {
           </div>
         </div>
         <div className="inline-flex flex-wrap flex-row items-start justify-between">
-          <div className="s:w-[calc(50%-16px)] p:w-full h-auto pt-8">
+          <div className="md:w-[calc(50%-16px)] w-full h-auto pt-8">
             <p className="s:text-xl font-bold text-lg">성별</p>
             <div className="h-[64px] flex-shrink-0 rounded-[10px] mt-4">
               <SelectBox
@@ -372,7 +372,7 @@ export default function Form() {
               />
             </div>
           </div>
-          <div className="s:w-[calc(50%-16px)] p:w-full h-auto pt-8">
+          <div className="md:w-[calc(50%-16px)] w-full h-auto pt-8">
             <p className="s:text-xl font-bold text-lg">학과</p>
             <div className="h-[64px] flex-shrink-0 rounded-[10px] mt-4">
               <SelectBox
@@ -401,7 +401,7 @@ export default function Form() {
 
       <div className="flex flex-col justify-center pb-10">
         <div className="inline-flex flex-wrap flex-row items-start justify-between">
-          <div className="s:w-[calc(50%-16px)] p:w-full h-auto pt-8">
+          <div className="s:w-[calc(50%-16px)] w-full h-auto pt-8">
             <span className="s:text-xl font-bold text-lg">1지망 선택</span>
             <span className="text-xs text-[#8E8E8E] ml-2">
               세션 중 1가지 선택
@@ -414,7 +414,7 @@ export default function Form() {
               />
             </div>
           </div>
-          <div className="s:w-[calc(50%-16px)] p:w-full h-auto pt-8">
+          <div className="s:w-[calc(50%-16px)] w-full h-auto pt-8">
             <span className="s:text-xl font-bold text-lg">2지망 선택</span>
             <span className="text-xs text-[#8E8E8E] ml-2">
               1지망에 선택한 세션을 제외하고 선택
@@ -432,10 +432,10 @@ export default function Form() {
               지원 세션의 경력과 지원 이유
             </p>
             <textarea
-              value={exprience_and_reason}
+              value={experience_and_reason}
               className="text-sm s:text-base w-full h-[256px] flex-shrink-0 border border-[#464646] border-solid rounded-[10px] mt-4 p-4"
               placeholder=""
-              onChange={(e) => setExprience(e.target.value)}
+              onChange={(e) => setExperience(e.target.value)}
             />
           </div>
         </div>
