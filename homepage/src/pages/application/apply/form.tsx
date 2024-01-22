@@ -173,10 +173,10 @@ export default function Form() {
         onClick={handleOverlayClick}
         className="fixed z-50 top-0 left-0 right-0 bottom-0 bg-[#0000008a] flex justify-center items-center"
       >
-        <div className="font-pretendard w-[200px] h-[235px] sm:w-[580px] sm:h-[330px] bg-[#FFF] flex-shrink-0 fixed rounded-[10px] z-20">
+        <div className="font-pretendard w-auto h-auto bg-[#FFF] flex-shrink-0 fixed rounded-[10px] z-20 sm:pb-[60px] pb-[26px] px-[12px]">
           <button
             onClick={handleIsClose}
-            className="ml-[180px] mt-[2px] h-[22px] sm:h-[30px] sm:ml-[552px] flex-col items-center flex justify-center"
+            className="ml-auto mt-[8px] h-[22px] sm:h-[30px] sm:ml-[552px] flex-col items-center flex justify-center"
           >
             <Image
               src="/assets/images/layout/close.svg"
@@ -186,7 +186,7 @@ export default function Form() {
               className="w-[16px] h-[16px] sm:w-[22px] sm:h-[22px]"
             />
           </button>
-          <div className="flex flex-col items-center text-center content-center mt-[12px] sm:mt-[40px] leading-normal">
+          <div className="flex flex-col items-center text-center content-center mt-[4px] sm:mt-[40px] leading-normal">
             <Image
               src="/assets/images/tickets/divider_medium.svg"
               alt="ticket"
@@ -205,13 +205,13 @@ export default function Form() {
             </p>
             <button
               onClick={handleConfirmSubmission}
-              className="mt-[8px] sm:mt-[28px] flex items-center w-[70px] h-[20px] sm:w-[100px] sm:h-[24px] justify-center rounded-[4px] bg-[#281CFF] text-[white] text-[8px] sm:text-[12px] font-[700] leading-[17px] text-center  hover:bg-[white] hover:text-[#281CFF] hover:border-[#281CFF] transition-all duration-450 border-[1px] sm:border-[2px] border-[#281CFF]"
+              className="mt-[12px] sm:mt-[28px] flex items-center w-[70px] h-[20px] sm:w-[100px] sm:h-[28px] justify-center rounded-[4px] bg-[#281CFF] text-[white] text-[8px] sm:text-[12px] font-[700] leading-[17px] text-center  hover:bg-[white] hover:text-[#281CFF] hover:border-[#281CFF] transition-all duration-450 border-[1px] sm:border-[2px] border-[#281CFF]"
             >
               제출하기
             </button>
             <button
               onClick={handleIsClose}
-              className="mt-[8px] sm:mt-[28px] flex items-center w-[70px] h-[20px] sm:w-[100px] sm:h-[24px] justify-center rounded-[4px] bg-[#281CFF] text-[white] text-[8px] sm:text-[12px] font-[700] leading-[17px] text-center  hover:bg-[white] hover:text-[#281CFF] hover:border-[#281CFF] transition-all duration-450 border-[1px] sm:border-[2px] border-[#281CFF]"
+              className="mt-[8px] sm:mt-[16px] flex items-center w-[70px] h-[20px] sm:w-[100px] sm:h-[28px] justify-center rounded-[4px] bg-[#281CFF] text-[white] text-[8px] sm:text-[12px] font-[700] leading-[17px] text-center  hover:bg-[white] hover:text-[#281CFF] hover:border-[#281CFF] transition-all duration-450 border-[1px] sm:border-[2px] border-[#281CFF]"
             >
               다시 확인하기
             </button>
