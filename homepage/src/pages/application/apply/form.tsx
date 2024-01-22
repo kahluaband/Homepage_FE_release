@@ -41,7 +41,7 @@ export default function Form() {
   const [second_preference, setSecond] = useState("보컬");
   const [play_instrument, setInstrument] = useState("");
   const [motive, setMotive] = useState("");
-  const [exprience_and_reason, setExprience] = useState("");
+  const [experience_and_reason, setExperience] = useState("");
   const [finish_time, setFinishTime] = useState("");
   const [meeting, setMeeting] = useState(true);
   const [readiness, setReadiness] = useState("");
@@ -64,7 +64,7 @@ export default function Form() {
       address.trim() !== "" &&
       first_preference.trim() !== "" &&
       second_preference.trim() !== "" &&
-      exprience_and_reason.trim() !== "" &&
+      experience_and_reason.trim() !== "" &&
       play_instrument.trim() !== "" &&
       motive.trim() !== "" &&
       finish_time.trim() !== "" &&
@@ -84,7 +84,7 @@ export default function Form() {
     major,
     first_preference,
     second_preference,
-    exprience_and_reason,
+    experience_and_reason,
     play_instrument,
     motive,
     finish_time,
@@ -112,7 +112,7 @@ export default function Form() {
         major,
         first_preference,
         second_preference,
-        exprience_and_reason,
+        experience_and_reason,
         play_instrument,
         motive,
         finish_time,
@@ -432,10 +432,10 @@ export default function Form() {
               지원 세션의 경력과 지원 이유
             </p>
             <textarea
-              value={exprience_and_reason}
+              value={experience_and_reason}
               className="text-sm s:text-base w-full h-[256px] flex-shrink-0 border border-[#464646] border-solid rounded-[10px] mt-4 p-4"
               placeholder=""
-              onChange={(e) => setExprience(e.target.value)}
+              onChange={(e) => setExperience(e.target.value)}
             />
           </div>
         </div>
