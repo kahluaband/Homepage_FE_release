@@ -71,7 +71,7 @@
 
 .aboutText {
   font-family: "Gotham bold italic";
-  font-size: 180px;
+  font-size: 160px;
   color: white;
   width: 100%;
   height: fit-content;
@@ -90,11 +90,14 @@
   @media (max-width: 768px) {
     font-size: 100px;
   }
-  @media (max-width: 610px) {
+  @media (max-width: 630px) {
     font-size: 80px;
   }
   @media (max-width: 470px) {
     font-size: 60px;
+  }
+  @media (max-width: 360px) {
+    font-size: 50px;
   }
 }
 
