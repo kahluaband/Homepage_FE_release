@@ -22,8 +22,8 @@ export default function Home() {
         {/* animate-spin origin-bottom */}
 
         {/* sns 버튼 */}
-        <ul className="lg:hidden mt-[3rem] tall:mt-0 flex flex-col s:flex-row s:justify-end s:items-start s:space-x-3 s:mr-[2rem] mr-[3rem] content-end items-end z-20">
-          <li className="s:w-fit w-[38vw] h-[100%] py-1.5  s:py-3 s:pr-3 s:pl-3  flex s:items-center s:justify-center justify-start items-start pl-[1rem] bg-[#281CFF] min-w-[160px] rounded-[20px] mb-[16px] s:rounded-full">
+        <ul className="lg:hidden mt-[3rem] tall:mt-0 flex flex-col s:flex-row s:justify-end s:items-start s:space-x-3 mr-[2rem] content-end items-end z-20 tiny:items-center tiny:mr-0 tiny:mt-[4rem]">
+          <li className="s:w-fit w-[40vw] h-[100%] py-1.5  s:py-3 s:pr-3 s:pl-3  flex s:items-center s:justify-center justify-start items-start pl-[1rem] bg-[#281CFF] min-w-[160px] tiny:w-[220px] rounded-[20px] mb-[16px] s:rounded-full">
             <Link href="http://pf.kakao.com/_UaIZG" target="_blank" passHref>
               <div className="flex items-center">
                 <Image
@@ -38,7 +38,7 @@ export default function Home() {
               </div>
             </Link>
           </li>
-          <li className="s:w-fit w-[38vw] h-[100%] py-1.5 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center justify-start items-start pl-[1rem] s:ml-0 bg-[#281CFF] min-w-[160px] rounded-[20px] mb-[16px] s:rounded-full">
+          <li className="s:w-fit w-[40vw] h-[100%] py-1.5 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center justify-start items-start pl-[1rem] s:ml-0 bg-[#281CFF] min-w-[160px] tiny:w-[220px] rounded-[20px] mb-[16px] s:rounded-full">
             <Link
               href="https://instagram.com/kahlua_band_?igshid=MzRlODBiNWFlZA=="
               target="_blank"
@@ -57,7 +57,7 @@ export default function Home() {
               </div>
             </Link>
           </li>
-          <li className="s:w-fit w-[38vw] h-[100%] py-1.5 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center justify-start items-start pl-[1rem] bg-[#281CFF] min-w-[160px] rounded-[20px] s:rounded-full">
+          <li className="s:w-fit w-[40vw] h-[100%] py-1.5 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center justify-start items-start pl-[1rem] bg-[#281CFF] min-w-[160px] rounded-[20px] tiny:w-[220px] s:rounded-full">
             <Link
               href="https://www.youtube.com/@kahluaband8409"
               target="_blank"
@@ -85,7 +85,7 @@ export default function Home() {
           width={0}
           height={0}
           sizes="100vw"
-          className="hidden phone:flex fixed bottom-[60px] right-0 z-30 object-cover object-bottom h-auto w-[640px] lg:w-[800px] xl:w-[1000px]"
+          className="hidden phone:flex fixed bottom-[60px] right-0 z-30 object-cover object-bottom h-auto w-[600px] lg:w-[720px] xl:w-[800px]"
         />
 
         {/* 하단 지원 배너 */}
@@ -146,7 +146,7 @@ function Deco() {
         width={0}
         height={0}
         sizes="100vw"
-        className="hidden absolute w-[calc(12%)] top-40 l:right-[calc(24%)] s:right-[calc(20%)] x:right-[calc(14%)] x:block"
+        className="hidden absolute w-[calc(12%)] top-32 l:right-[calc(24%)] s:right-[calc(20%)] x:right-[calc(14%)] x:block"
       />
       <Image
         src={circle}
@@ -154,7 +154,7 @@ function Deco() {
         width={0}
         height={0}
         sizes="100vw"
-        className="hidden absolute left-[calc(5%)] s:left-[calc(35%)] w-[calc(12%)] top-64 s:top-[400px] x:block"
+        className="hidden absolute left-[calc(5%)] s:left-[calc(35%)] w-[calc(14%)] top-80 s:top-[400px] x:block"
       />
       <Image
         src={rect4}
@@ -162,7 +162,7 @@ function Deco() {
         width={0}
         height={0}
         sizes="100vw"
-        className="absolute left-0 w-[25vw] h-[25vw] x:w-[12.5vw] x:h-[12.5vw] x:bottom-[250px] m:bottom-[100px] z-20 tiny:hidden"
+        className="absolute left-0  w-[22vw] h-[22vw] x:w-[10vw] x:h-[10vw] bottom-[160px] z-20 tiny:hidden"
       />
       <Image
         src={rect1}
@@ -170,8 +170,7 @@ function Deco() {
         width={0}
         height={0}
         sizes="100vw"
-        // bottom-[calc(200px-25%)] x:bottom-[calc(250px-15vw)] m:bottom-[calc(100px-15%)]
-        className="absolute left-[25vw] x:left-[12.5vw] w-[25vw] h-[25vw] x:w-[12.5vw] bottom-[20px] sm:bottom-[40px] tiny:hidden"
+        className="absolute left-[22vw] x:left-[10vw] w-[22vw] h-[22vw] x:w-[10vw] bottom-0 tiny:hidden"
       />
     </div>
   );
