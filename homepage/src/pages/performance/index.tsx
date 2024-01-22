@@ -68,7 +68,7 @@ export default function Performance() {
       }  flex items-center justify-center `}
     >
       <Background>
-        <div className="font-['pretendard']">
+        <div className="font-pretendard">
           <div className="flex flex-col justify-center items-center mt-[4rem] mb-[16rem]">
             <Image
               src={divider}

@@ -85,9 +85,6 @@
     font-size: 140px;
   }
   @media (max-width: 980px) {
-    font-size: 120px;
-  }
-  @media (max-width: 768px) {
     font-size: 100px;
   }
   @media (max-width: 630px) {
