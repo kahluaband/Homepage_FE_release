@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+//  @type {import('tailwindcss').Config}
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -30,7 +30,6 @@ module.exports = {
         l: "1280px",
         m: "1080px",
         s: "768px",
-        y: "640px",
         x: "568px",
         q: "460px",
         p: "360px",
