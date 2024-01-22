@@ -322,7 +322,7 @@ export default function Form() {
 
       <div className="flex flex-col justify-center pb-10">
         <div className="inline-flex flex-wrap flex-row items-start justify-between">
-          <div className="s:w-[calc(50%-16px)] p:w-full h-auto pt-8">
+          <div className="s:w-[calc(50%-16px)] w-full h-auto pt-8">
             <p className="s:text-xl font-bold text-lg">이름</p>
             <div className="input-with-placeholder relative h-[64px] flex-shrink-0 border border-[#464646] border-solid rounded-[10px] mt-4">
               <input
@@ -335,7 +335,7 @@ export default function Form() {
               />
             </div>
           </div>
-          <div className="s:w-[calc(50%-16px)] p:w-full h-auto pt-8">
+          <div className="s:w-[calc(50%-16px)] w-full h-auto pt-8">
             <p className="s:text-xl font-bold text-lg">생년월일</p>
             <div className="input-with-placeholder relative h-[64px] flex-shrink-0 border border-[#464646] border-solid rounded-[10px] mt-4">
               <input
@@ -362,7 +362,7 @@ export default function Form() {
           </div>
         </div>
         <div className="inline-flex flex-wrap flex-row items-start justify-between">
-          <div className="s:w-[calc(50%-16px)] p:w-full h-auto pt-8">
+          <div className="md:w-[calc(50%-16px)] w-full h-auto pt-8">
             <p className="s:text-xl font-bold text-lg">성별</p>
             <div className="h-[64px] flex-shrink-0 rounded-[10px] mt-4">
               <SelectBox
@@ -372,7 +372,7 @@ export default function Form() {
               />
             </div>
           </div>
-          <div className="s:w-[calc(50%-16px)] p:w-full h-auto pt-8">
+          <div className="md:w-[calc(50%-16px)] w-full h-auto pt-8">
             <p className="s:text-xl font-bold text-lg">학과</p>
             <div className="h-[64px] flex-shrink-0 rounded-[10px] mt-4">
               <SelectBox
@@ -401,7 +401,7 @@ export default function Form() {
 
       <div className="flex flex-col justify-center pb-10">
         <div className="inline-flex flex-wrap flex-row items-start justify-between">
-          <div className="s:w-[calc(50%-16px)] p:w-full h-auto pt-8">
+          <div className="s:w-[calc(50%-16px)] w-full h-auto pt-8">
             <span className="s:text-xl font-bold text-lg">1지망 선택</span>
             <span className="text-xs text-[#8E8E8E] ml-2">
               세션 중 1가지 선택
@@ -414,7 +414,7 @@ export default function Form() {
               />
             </div>
           </div>
-          <div className="s:w-[calc(50%-16px)] p:w-full h-auto pt-8">
+          <div className="s:w-[calc(50%-16px)] w-full h-auto pt-8">
             <span className="s:text-xl font-bold text-lg">2지망 선택</span>
             <span className="text-xs text-[#8E8E8E] ml-2">
               1지망에 선택한 세션을 제외하고 선택
