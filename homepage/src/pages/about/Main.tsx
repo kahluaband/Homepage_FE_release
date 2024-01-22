@@ -6,7 +6,7 @@ import mainImg from "/public/assets/images/about/concert3.jpg";
 export default function Main() {
   // 소개하기 메인 이미지 및 소개글
   return (
-    <div className={styles.mainContainer}>
+    <div className={styles.mainWrapper}>
       <Image
         src={mainImg}
         alt="about-main-image"
@@ -26,13 +26,7 @@ export default function Main() {
           <br />
           홍익대학교 컴퓨터공학과 밴드학회입니다.
         </p>
-        <p
-          //   className="font-GothamItalic w-full h-fit text-white absolute bottom-0 left-1/2 text-center translate-x-[-50%] translate-y-[30%]
-          // tiny:text-[40px] year5:text-[60px] text-[80px] s:text-[120px] sx:text-[100px]"
-          className={styles.aboutText}
-        >
-          ABOUT US
-        </p>
+        <p className={styles.aboutText}>ABOUT US</p>
       </div>
     </div>
   );
