@@ -23,7 +23,7 @@ export default function Footer() {
     <div className="w-full h-[120px] sm:h-[240px] relative bg-[#EEEEEE] bottom-0 font-['pretendard'] min-w-[100%]">
       <div className="flex flex-col w-full ">
       <ul className="flex mt-[15px] sm:mt-[50px] mr-[4px] items-center justify-center gap-2">
-      <SocialIcon href="http://pf.kakao.com/_UaIZG" src="/assets/images/layout/kakaotalk.svg" alt="kakaotalk" width={28} height={28} className="w-[20px] h-[20px] sm:w-[28px] sm:h-[28px]"/>
+      <SocialIcon href="http://pf.kakao.com/_UaIZG/chat" src="/assets/images/layout/kakaotalk.svg" alt="kakaotalk" width={28} height={28} className="w-[20px] h-[20px] sm:w-[28px] sm:h-[28px]"/>
       <SocialIcon href="https://instagram.com/kahlua_band_?igshid=MzRlODBiNWFlZA==" src="/assets/images/layout/instagram.svg" alt="instagram" width={28} height={28} className="w-[20px] h-[20px] sm:w-[28px] sm:h-[28px]" />
       <SocialIcon href="https://www.youtube.com/@kahluaband8409" src="/assets/images/layout/youtube.svg" alt="youtube" width={28} height={28} className="mx-[0.8px] w-[20px] h-[20px] sm:w-[28px] sm:h-[28px]" />
       <SocialIcon href="https://github.com/kahluaband" src="/assets/images/layout/foot_github.svg" alt="github" width={18} height={18} className="mx-auto my-[3.9px] sm:my-[4.9px] w-[12px] h-[12px] sm:w-[18px] sm:h-[18px]" />

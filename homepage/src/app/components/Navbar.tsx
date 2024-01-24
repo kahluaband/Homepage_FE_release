@@ -119,7 +119,7 @@ export default function Navbar() {
                 showMenu
                   ? "fixed top-0 right-0 h-full bg-white flex flex-col items-center z-40 w-[254px]"
                   : "hidden w-full"
-              } lg:flex items-center`}
+              } lg:flex items-center justify-between`}
             >
               <ul
                 className={`${
@@ -162,11 +162,11 @@ export default function Navbar() {
                 ))}
               </ul>
               {!showMenu && (
-                <ul className="hidden lg:flex flex-row lg:w-[12.5vw] items-center justify-center lg:ml-[1.5vw]">
+                <ul className="hidden lg:flex flex-row lg:w-[12.5vw] items-center justify-center right-0 pr-0 mr-[12.5vw]">
                   <div className="w-[12.5vw] flex items-center mx-auto justify-center">
                     <li className="w-[4vw] h-[100%] flex items-center justify-center">
                       <Link
-                        href="http://pf.kakao.com/_UaIZG"
+                        href="http://pf.kakao.com/_UaIZG/chat"
                         target="_blank"
                         passHref
                       >
