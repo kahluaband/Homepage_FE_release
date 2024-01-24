@@ -163,7 +163,7 @@ export default function Navbar() {
               </ul>
               {!showMenu && (
                 <ul className="hidden lg:flex flex-row lg:w-[12.5vw] items-center justify-center lg:ml-[1.5vw]">
-                  <div className="w-[12.5vw] flex items-center mx-auto">
+                  <div className="w-[12.5vw] flex items-center mx-auto justify-center">
                     <li className="w-[4vw] h-[100%] flex items-center justify-center">
                       <Link
                         href="http://pf.kakao.com/_UaIZG"
