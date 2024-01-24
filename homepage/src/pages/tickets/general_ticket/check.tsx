@@ -18,7 +18,7 @@ const General_check = () => {
       try {
         if (router.query.merchant_order_id) {
           const response = await axios.get(
-            `https://kahluaband.com/tickets/general_complete/?merchant_order_id=${merchant_order_id}`
+            `https://api.kahluaband.com/tickets/general_complete/?merchant_order_id=${merchant_order_id}`
           );
           if (response.data) {
             setBuyer(response.data.data.buyer);
@@ -40,7 +40,7 @@ const General_check = () => {
       const rid = merchant_order_id;
       try {
         await axios.delete(
-          `https://kahluaband.com/tickets/general_ticket/delete/`,
+          `https://api.kahluaband.com/tickets/general_ticket/delete/`,
           {
             data: formData,
             headers: {
