@@ -22,8 +22,8 @@ export default function Home() {
         {/* animate-spin origin-bottom */}
 
         {/* sns 버튼 */}
-        <ul className="lg:hidden mt-[3rem] tall:mt-0 flex flex-col s:flex-row s:justify-end s:items-start s:space-x-3 mr-[2rem] content-end items-end z-20 tiny:items-center tiny:mr-0 tiny:mt-[4rem]">
-          <li className="s:w-fit w-[40vw] h-[100%] py-1.5  s:py-3 s:pr-3 s:pl-3  flex s:items-center s:justify-center justify-start items-start pl-[1rem] bg-[#281CFF] min-w-[160px] tiny:w-[220px] rounded-[20px] mb-[16px] s:rounded-full">
+        <ul className="lg:hidden mt-[3rem] tall:mt-0 flex flex-col s:flex-row s:justify-end s:items-start s:space-x-3 mr-[2rem] content-end items-end tiny:items-center tiny:mr-0 tiny:mt-[4rem]">
+          <li className="s:w-fit w-[40vw] h-[100%] py-1.5  s:py-3 s:pr-3 s:pl-3  flex s:items-center s:justify-center justify-start items-start pl-[1rem] z-20 bg-[#281CFF] min-w-[160px] tiny:w-[220px] rounded-[20px] mb-[16px] s:rounded-full">
             <Link href="http://pf.kakao.com/_UaIZG" target="_blank" passHref>
               <div className="flex items-center">
                 <Image
@@ -38,7 +38,7 @@ export default function Home() {
               </div>
             </Link>
           </li>
-          <li className="s:w-fit w-[40vw] h-[100%] py-1.5 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center justify-start items-start pl-[1rem] s:ml-0 bg-[#281CFF] min-w-[160px] tiny:w-[220px] rounded-[20px] mb-[16px] s:rounded-full">
+          <li className="s:w-fit w-[40vw] h-[100%] py-1.5 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center justify-start items-start pl-[1rem] s:ml-0 z-20 bg-[#281CFF] min-w-[160px] tiny:w-[220px] rounded-[20px] mb-[16px] s:rounded-full">
             <Link
               href="https://instagram.com/kahlua_band_?igshid=MzRlODBiNWFlZA=="
               target="_blank"
@@ -57,7 +57,7 @@ export default function Home() {
               </div>
             </Link>
           </li>
-          <li className="s:w-fit w-[40vw] h-[100%] py-1.5 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center justify-start items-start pl-[1rem] bg-[#281CFF] min-w-[160px] rounded-[20px] tiny:w-[220px] s:rounded-full">
+          <li className="s:w-fit w-[40vw] h-[100%] py-1.5 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center justify-start items-start pl-[1rem] z-20 bg-[#281CFF] min-w-[160px] rounded-[20px] tiny:w-[220px] s:rounded-full">
             <Link
               href="https://www.youtube.com/@kahluaband8409"
               target="_blank"
@@ -85,7 +85,7 @@ export default function Home() {
           width={0}
           height={0}
           sizes="100vw"
-          className="hidden phone:flex fixed bottom-[60px] right-0 z-30 object-cover object-bottom h-auto w-[600px] lg:w-[720px] xl:w-[800px]"
+          className="hidden phone:flex fixed bottom-[60px] right-0 z-0 object-cover object-bottom h-auto w-[600px] lg:w-[720px] xl:w-[800px]"
         />
 
         {/* 하단 지원 배너 */}
