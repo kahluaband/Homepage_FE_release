@@ -300,11 +300,11 @@ export default function Tickets() {
                       </div>
                       <div className="flex flex-col ml-[7vw] lg:ml-[64px] h-[66px]">
                         <div className="text-[10px] md:text-[14px] flex flex-col lg:flex-row">
-                          <div className="w-[40vw] md:w-[335px] h-[21px] flex flex-row items-center">
+                          <div className="w-[36vw] sm:w-[40vw] md:w-[335px] h-[21px] flex flex-row items-center">
                             <div className="w-[62px] md:w-[77px] h-[21px] whitespace-nowrap">
                               홍익대 신입생
                             </div>
-                            <div className="ml-[10vw] lg:ml-[36px] w-[25px] text-[#281CFF] font-[700] whitespace-nowrap">
+                            <div className="ml-[8vw] sm:ml-[10vw] lg:ml-[36px] w-[25px] text-[#281CFF] font-[700] whitespace-nowrap">
                               {data[0].ticket.freshman}
                             </div>
                             <div className="hidden lg:flex ml-[66px] w-[41px] text-[#939393] whitespace-nowrap">
@@ -316,11 +316,11 @@ export default function Tickets() {
                           </div>
                         </div>
                         <div className="text-[10px] md:text-[14px] flex flex-col lg:flex-row">
-                          <div className="text-[10px] md:text-[14px] w-[40vw] md:w-[335px] mt-[8px] md:mt-[35px] h-[21px] flex flex-row items-center">
+                          <div className="text-[10px] md:text-[14px] w-[36vw] sm:w-[40vw] md:w-[335px] mt-[8px] md:mt-[35px] h-[21px] flex flex-row items-center">
                             <div className="w-[62px] lg:w-[77px] h-[21px] whitespace-nowrap">
                               일반티켓
                             </div>
-                            <div className="ml-[10vw] lg:ml-[36px] w-[49px] font-[700] whitespace-nowrap">
+                            <div className="ml-[8vw] sm:ml-[10vw] lg:ml-[36px] w-[49px] font-[700] whitespace-nowrap">
                               {data[0].ticket.regular}
                             </div>
                             <div className="hidden lg:flex ml-[42px] w-[122px] text-[#939393] whitespace-nowrap">
