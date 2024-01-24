@@ -85,14 +85,14 @@ export default function Home() {
           width={0}
           height={0}
           sizes="100vw"
-          className="hidden phone:flex fixed bottom-[60px] right-0 z-0 object-cover object-bottom h-auto w-[600px] lg:w-[720px] xl:w-[800px]"
+          className="hidden phone:flex fixed bottom-[60px] right-0 z-10 object-cover object-bottom h-auto w-[600px] lg:w-[720px] xl:w-[800px]"
         />
 
         {/* 하단 지원 배너 */}
-        <div className="w-[100vw] h-[80px] sm:h-[90px] bg-[#000] items-center content-center flex justify-center text-center bottom-0 fixed z-30"></div>
+        <div className="w-[100vw] h-[80px] sm:h-[90px] bg-[#000] items-center content-center flex justify-center text-center bottom-0 fixed z-20"></div>
         <Link
           href="/application"
-          className="flex blur-none filter-none fixed text-center bottom-[0px] z-30  items-center justify-center content-center font-[600] sm:font-[700] text-[#FFF] text-[22px] sm:text-[24px] whitespace-nowrap h-[80px] sm:h-[90px] w-[100vw]"
+          className="flex blur-none filter-none fixed text-center bottom-[0px] items-center justify-center content-center font-[600] sm:font-[700] text-[#FFF] text-[22px] sm:text-[24px] whitespace-nowrap h-[80px] sm:h-[90px] w-[100vw] z-30"
         >
           KAHLUA 23기 지원하러 가기
         </Link>
@@ -138,7 +138,7 @@ function Deco() {
         width={0}
         height={0}
         sizes="100vw"
-        className="absolute right-0 top-0 w-[12.5vw] h-[12.5vw]  mt-10"
+        className="absolute right-0 top-0 w-[12.5vw] h-[12.5vw] mt-10 z-0"
       />
       <Image
         src={circle}
@@ -146,7 +146,7 @@ function Deco() {
         width={0}
         height={0}
         sizes="100vw"
-        className="hidden absolute w-[calc(12%)] top-32 l:right-[calc(24%)] s:right-[calc(20%)] x:right-[calc(14%)] x:block"
+        className="hidden absolute w-[calc(12%)] top-32 l:right-[calc(24%)] s:right-[calc(20%)] x:right-[calc(14%)] x:block z-0"
       />
       <Image
         src={circle}
@@ -154,7 +154,7 @@ function Deco() {
         width={0}
         height={0}
         sizes="100vw"
-        className="hidden absolute left-[calc(5%)] s:left-[calc(35%)] w-[calc(14%)] top-80 s:top-[400px] x:block"
+        className="hidden absolute left-[calc(5%)] s:left-[calc(35%)] w-[calc(14%)] top-80 s:top-[400px] x:block z-0"
       />
       <Image
         src={rect4}
@@ -162,7 +162,7 @@ function Deco() {
         width={0}
         height={0}
         sizes="100vw"
-        className="absolute left-0  w-[22vw] h-[22vw] x:w-[10vw] x:h-[10vw] bottom-[160px] z-20 tiny:hidden"
+        className="absolute left-0  w-[22vw] h-[22vw] x:w-[10vw] x:h-[10vw] bottom-[160px] z-20 tiny:hidden z-0"
       />
       <Image
         src={rect1}
@@ -170,7 +170,7 @@ function Deco() {
         width={0}
         height={0}
         sizes="100vw"
-        className="absolute left-[22vw] x:left-[10vw] w-[22vw] h-[22vw] x:w-[10vw] bottom-0 tiny:hidden"
+        className="absolute left-[22vw] x:left-[10vw] w-[22vw] h-[22vw] x:w-[10vw] bottom-0 tiny:hidden z-0"
       />
     </div>
   );
