@@ -18,7 +18,7 @@ const Freshman_check = () => {
       try {
         if (router.query?.reservation_id) {
           const response = await axios.get(
-            `https://kahluaband.com/tickets/freshman_complete/?reservation_id=${router.query.reservation_id}`
+            `https://api.kahluaband.com/tickets/freshman_complete/?reservation_id=${router.query.reservation_id}`
           );
 
           if (response.data) {
@@ -40,7 +40,7 @@ const Freshman_check = () => {
       const rid = reservation_id;
       try {
         const response = await axios.delete(
-          `https://kahluaband.com/tickets/freshman_ticket/delete/`,
+          `https://api.kahluaband.com/tickets/freshman_ticket/delete/`,
           {
             data: formData,
             headers: {

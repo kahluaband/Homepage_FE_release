@@ -16,7 +16,7 @@ useEffect(() => {
     if (merchant_order_id) {
         try {
         const response = await axios.get(
-            `https://kahluaband.com/tickets/general_ticket/?merchant_order_id=${merchant_order_id}`
+            `https://api.kahluaband.com/tickets/general_ticket/?merchant_order_id=${merchant_order_id}`
         );
         if (response.status === 200) {
             setBuyer(response.data.data.buyer);
