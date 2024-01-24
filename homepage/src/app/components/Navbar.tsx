@@ -151,7 +151,7 @@ export default function Navbar() {
                             : "hover:text-[#575757]"
                         }  ${
                           showMenu
-                            ? "text-[20px] w-[100%] h-[100%] text-center"
+                            ? "text-[20px] w-[100%] h-[100%] font-[700] text-center"
                             : "text-[16px] w-[80px]  h-[32px] font-[600] leading-[19px] flex-shrink-0 flex items-center justify-center"
                         }`}
                       >
