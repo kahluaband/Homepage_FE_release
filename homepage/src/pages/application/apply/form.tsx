@@ -90,6 +90,10 @@ export default function Form() {
     finish_time,
     meeting,
     readiness,
+    privacy,
+    monday,
+    duration,
+    cost,
   ]);
 
   const handleShowConfirmationModal = () => {

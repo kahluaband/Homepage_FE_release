@@ -20,10 +20,10 @@ const SocialIcon: React.FC<SocialIconProps> = ({ href, src, alt, width, height, 
 
 export default function Footer() {
   return (
-    <div className="w-full h-[100px] sm:h-[240px] relative bg-[#EEEEEE] bottom-0 font-['pretendard'] min-w-[100%]">
+    <div className="w-full h-[120px] sm:h-[240px] relative bg-[#EEEEEE] bottom-0 font-['pretendard'] min-w-[100%]">
       <div className="flex flex-col w-full ">
-      <ul className="flex mt-[10px] sm:mt-[60px] mr-[4px] items-center justify-center gap-2">
-      <SocialIcon href="http://pf.kakao.com/_UaIZG" src="/assets/images/layout/kakaotalk.svg" alt="kakaotalk" width={28} height={28} className="w-[20px] h-[20px] sm:w-[28px] sm:h-[28px]"/>
+      <ul className="flex mt-[15px] sm:mt-[50px] mr-[4px] items-center justify-center gap-2">
+      <SocialIcon href="http://pf.kakao.com/_UaIZG/chat" src="/assets/images/layout/kakaotalk.svg" alt="kakaotalk" width={28} height={28} className="w-[20px] h-[20px] sm:w-[28px] sm:h-[28px]"/>
       <SocialIcon href="https://instagram.com/kahlua_band_?igshid=MzRlODBiNWFlZA==" src="/assets/images/layout/instagram.svg" alt="instagram" width={28} height={28} className="w-[20px] h-[20px] sm:w-[28px] sm:h-[28px]" />
       <SocialIcon href="https://www.youtube.com/@kahluaband8409" src="/assets/images/layout/youtube.svg" alt="youtube" width={28} height={28} className="mx-[0.8px] w-[20px] h-[20px] sm:w-[28px] sm:h-[28px]" />
       <SocialIcon href="https://github.com/kahluaband" src="/assets/images/layout/foot_github.svg" alt="github" width={18} height={18} className="mx-auto my-[3.9px] sm:my-[4.9px] w-[12px] h-[12px] sm:w-[18px] sm:h-[18px]" />
@@ -58,8 +58,19 @@ export default function Footer() {
         </svg>
       </div>
       <div className="sm:mt-[20px]">
-        <div className="mt-[10px] sm:mt-[16px] flex item-center justify-center">
-          <div className="text-[8px] sm:text-[12px] text-[#6A6A6A] font-[600] tracking-[0.015rem] leading-5">© 2023 KAHLUA. All rights reserved.</div>
+        <div className="mt-[14px] sm:mt-[16px] flex item-center justify-center text-center h-[8px]">
+            <Link href="https://kahluaband.notion.site/1554ccf2afa9453f9dbce7550734b33a" target="_blank" passHref>
+              <div className="text-[8px] sm:text-[12px] text-[#6A6A6A] font-[600] tracking-[0.015rem] leading-[8px] underline whitespace-nowrap">개인정보처리방침 </div>
+            </Link>
+            <p>&nbsp;&nbsp;</p>
+            <Link href="https://kahluaband.notion.site/f877ed4fe6de4aa4a8c0b201530b69df" target="_blank" passHref>
+              <div className="text-[8px] sm:text-[12px] text-[#6A6A6A] font-[600] tracking-[0.015rem] leading-[8px] underline whitespace-nowrap"> 이용약관</div>
+            </Link>
+        </div>
+      </div>
+      <div className="sm:mt-[4px]">
+        <div className="mt-[8px] sm:mt-[12px] flex item-center justify-center">
+          <div className="text-[8px] sm:text-[12px] text-[#6A6A6A] font-[600] tracking-[0.015rem] leading-4 whitespace-nowrap">© KAHLUA. All rights reserved.</div>
         </div>
       </div>
     </div>

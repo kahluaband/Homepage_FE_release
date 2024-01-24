@@ -185,13 +185,13 @@ export default function Tickets() {
         <div className="font-[600] leading-[19px] w-[80px] h-[19px] text-left whitespace-nowrap">
           온라인 예매
         </div>
-        <div className="text-right font-[500] w-[70px] whitespace-nowrap">예매불가</div>
+        <div className="text-right font-[500] w-[70px] whitespace-nowrap text-[red] ">예매불가</div>
       </div>
       <div className="mt-[13px] flex w-[100%] lg:w-[260px] text-center flex-row justify-between lg:justify-between md:gap-[25vw] lg:gap-0">
         <div className="font-[600] leading-[19px] w-[80px] h-[19px] text-left whitespace-nowrap">
           현장 예매
         </div>
-        <div className="text-right font-[500] w-[70px] whitespace-nowrap">예매불가</div>
+        <div className="text-right font-[500] w-[70px] whitespace-nowrap text-[red]">예매불가</div>
       </div>
     </div>
   );
@@ -211,7 +211,7 @@ export default function Tickets() {
             />
             <div className="w-[50vw] h-[200px] sm:h-[300px] lg:w-[600px] md:h-[300px] lg:h-[400px] xl:w-[720px] xl:h-[460px] ml-[11px] lg:ml-[23px] mt-0 top-0 flex-shrink-0">
               <div className="flex flex-row justify-between">
-                <div className="w-[90px] h-[18px] md:w-[110px] md:h-[22px] md:text-[11px] lg:w-[128px] lg:h-[24px] flex flex-shrink-0 justify-center rounded-[40px] bg-[#281CFF] text-[8px] lg:text-[12px] font-[600] tracking-[0.2px] leading-[20px] text-[#FFF] pt-[2px] text-center whitespace-nowrap items-center">
+                <div className="w-[95px] h-[18px] md:w-[110px] md:h-[22px] md:text-[11px] lg:w-[128px] lg:h-[24px] flex flex-shrink-0 justify-center rounded-[40px] bg-[#B9B9B9] text-[10px] lg:text-[12px] font-[600] tracking-[0.2px] leading-[20px] text-[#FFF] text-center whitespace-nowrap items-center">
                   2월 1일 예매 OPEN
                 </div>
                 <div className="flex mt-[3px]">
@@ -242,7 +242,7 @@ export default function Tickets() {
                 </div>
               </div>
               <div className="flex flex-row left-0 whitespace-nowrap">
-                <div className="font-['pretendard'] w-[32vw] sm:w-[150px] md:w-[280px] h-[20px] md:mt-[8px] lg:w-[350px] lg:h-[42px] flex flex-shrink-0 text-black font-[700] text-[14px] sm:text-[16px] md:text-[28px] leading-[40px] whitespace-nowrap">
+                <div className="font-['pretendard'] w-[32vw] sm:w-[150px] md:w-[280px] h-[20px] md:mt-[8px] lg:w-[350px] lg:h-[42px] flex flex-shrink-0 text-black font-[700] text-[16px] md:text-[28px] leading-[40px] whitespace-nowrap">
                   {data[0].title}
                 </div>
                 <div className="mt-[19px] pr-[2px] ml-[8vw] w-[18vw] flex flex-row">
@@ -267,13 +267,13 @@ export default function Tickets() {
                       alt="share"
                       width={1000}
                       height={1000}
-                      className="hidden lg:flex cursor-pointer w-[100px] h-[30px] l:ml-[160px] s:ml-[60px]"
+                      className="hidden lg:flex cursor-pointer w-[100px] h-[30px] lg:ml-[54px] xl:ml-[128px]"
                       // className="hidden lg:flex cursor-pointer w-[100px] h-[30px] ml-[14px] "
                     />
                   </div>
                 </div>
               </div>
-              <div className="mt-[32px] lg:mt-[18px] w-[50vw] lg:w-[600px] xl:w-[720px] h-[1px] flex bg-[#000]" />
+              <div className="mt-[22px] md:mt-[32px] lg:mt-[18px] w-[50vw] lg:w-[600px] xl:w-[720px] h-[1px] flex bg-[#000]" />
               <div className="mt-[12px] md:mt-[36px] w-[50vw] lg:w-[500px] h-[1px] flex flex-row">
                 <div className="flex flex-col w-[50vw] ">
                   <div className="text-[10px] md:text-[14px] flex w-[50vw] md:w-[270px] items-center mt-[4px]">
@@ -300,11 +300,11 @@ export default function Tickets() {
                       </div>
                       <div className="flex flex-col ml-[7vw] lg:ml-[64px] h-[66px]">
                         <div className="text-[10px] md:text-[14px] flex flex-col lg:flex-row">
-                          <div className="w-[40vw] md:w-[335px] h-[21px] flex flex-row items-center">
+                          <div className="w-[36vw] sm:w-[40vw] md:w-[335px] h-[21px] flex flex-row items-center">
                             <div className="w-[62px] md:w-[77px] h-[21px] whitespace-nowrap">
                               홍익대 신입생
                             </div>
-                            <div className="ml-[10vw] lg:ml-[36px] w-[25px] text-[#281CFF] font-[700] whitespace-nowrap">
+                            <div className="ml-[8vw] sm:ml-[10vw] lg:ml-[36px] w-[25px] text-[#281CFF] font-[700] whitespace-nowrap">
                               {data[0].ticket.freshman}
                             </div>
                             <div className="hidden lg:flex ml-[66px] w-[41px] text-[#939393] whitespace-nowrap">
@@ -316,11 +316,11 @@ export default function Tickets() {
                           </div>
                         </div>
                         <div className="text-[10px] md:text-[14px] flex flex-col lg:flex-row">
-                          <div className="text-[10px] md:text-[14px] w-[40vw] md:w-[335px] mt-[8px] md:mt-[35px] h-[21px] flex flex-row items-center">
+                          <div className="text-[10px] md:text-[14px] w-[36vw] sm:w-[40vw] md:w-[335px] mt-[8px] md:mt-[35px] h-[21px] flex flex-row items-center">
                             <div className="w-[62px] lg:w-[77px] h-[21px] whitespace-nowrap">
                               일반티켓
                             </div>
-                            <div className="ml-[10vw] lg:ml-[36px] w-[49px] font-[700] whitespace-nowrap">
+                            <div className="ml-[8vw] sm:ml-[10vw] lg:ml-[36px] w-[49px] font-[700] whitespace-nowrap">
                               {data[0].ticket.regular}
                             </div>
                             <div className="hidden lg:flex ml-[42px] w-[122px] text-[#939393] whitespace-nowrap">

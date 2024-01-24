@@ -22,9 +22,9 @@ export default function Home() {
         {/* animate-spin origin-bottom */}
 
         {/* sns 버튼 */}
-        <ul className="lg:hidden mt-[3rem] tall:mt-0 flex flex-col s:flex-row s:justify-end s:items-start s:space-x-3 mr-[2rem] content-end items-end tiny:items-center tiny:mr-0 tiny:mt-[4rem]">
-          <li className="s:w-fit w-[40vw] h-[100%] py-1.5  s:py-3 s:pr-3 s:pl-3  flex s:items-center s:justify-center justify-start items-start pl-[1rem] z-20 bg-[#281CFF] min-w-[160px] tiny:w-[220px] rounded-[20px] mb-[16px] s:rounded-full">
-            <Link href="http://pf.kakao.com/_UaIZG" target="_blank" passHref>
+        <ul className="lg:hidden mt-[3rem] tall:mt-0 flex flex-col s:flex-row s:justify-end s:items-start s:space-x-3 mr-[2rem] content-end items-end z-20 tiny:items-center tiny:mr-0 tiny:mt-[4rem]">
+          <li className="s:w-fit w-[40vw] h-[100%] py-1.5  s:py-3 s:pr-3 s:pl-3  flex s:items-center s:justify-center justify-start items-start pl-[1rem] bg-[#281CFF] min-w-[160px] tiny:w-[220px] rounded-[20px] mb-[16px] s:rounded-full">
+            <Link href="http://pf.kakao.com/_UaIZG/chat" target="_blank" passHref>
               <div className="flex items-center">
                 <Image
                   src="/assets/images/Main/kakaoIcon.svg"
@@ -38,7 +38,7 @@ export default function Home() {
               </div>
             </Link>
           </li>
-          <li className="s:w-fit w-[40vw] h-[100%] py-1.5 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center justify-start items-start pl-[1rem] s:ml-0 z-20 bg-[#281CFF] min-w-[160px] tiny:w-[220px] rounded-[20px] mb-[16px] s:rounded-full">
+          <li className="s:w-fit w-[40vw] h-[100%] py-1.5 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center justify-start items-start pl-[1rem] s:ml-0 bg-[#281CFF] min-w-[160px] tiny:w-[220px] rounded-[20px] mb-[16px] s:rounded-full">
             <Link
               href="https://instagram.com/kahlua_band_?igshid=MzRlODBiNWFlZA=="
               target="_blank"
@@ -57,7 +57,7 @@ export default function Home() {
               </div>
             </Link>
           </li>
-          <li className="s:w-fit w-[40vw] h-[100%] py-1.5 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center justify-start items-start pl-[1rem] z-20 bg-[#281CFF] min-w-[160px] rounded-[20px] tiny:w-[220px] s:rounded-full">
+          <li className="s:w-fit w-[40vw] h-[100%] py-1.5 s:py-3 s:pr-3 s:pl-3 flex s:items-center s:justify-center justify-start items-start pl-[1rem] bg-[#281CFF] min-w-[160px] rounded-[20px] tiny:w-[220px] s:rounded-full">
             <Link
               href="https://www.youtube.com/@kahluaband8409"
               target="_blank"
@@ -85,14 +85,14 @@ export default function Home() {
           width={0}
           height={0}
           sizes="100vw"
-          className="hidden phone:flex fixed bottom-[60px] right-0 z-10 object-cover object-bottom h-auto w-[600px] lg:w-[720px] xl:w-[800px]"
+          className="hidden phone:flex fixed bottom-[60px] right-0 z-30 object-cover object-bottom h-auto w-[600px] lg:w-[720px] xl:w-[800px]"
         />
 
         {/* 하단 지원 배너 */}
-        <div className="w-[100vw] h-[80px] sm:h-[90px] bg-[#000] items-center content-center flex justify-center text-center bottom-0 fixed z-20"></div>
+        <div className="w-[100vw] h-[80px] sm:h-[90px] bg-[#000] items-center content-center flex justify-center text-center bottom-0 fixed z-30"></div>
         <Link
           href="/application"
-          className="flex blur-none filter-none fixed text-center bottom-[0px] items-center justify-center content-center font-[600] sm:font-[700] text-[#FFF] text-[22px] sm:text-[24px] whitespace-nowrap h-[80px] sm:h-[90px] w-[100vw] z-30"
+          className="flex blur-none filter-none fixed text-center bottom-[0px] z-30  items-center justify-center content-center font-[600] sm:font-[700] text-[#FFF] text-[22px] sm:text-[24px] whitespace-nowrap h-[80px] sm:h-[90px] w-[100vw]"
         >
           KAHLUA 23기 지원하러 가기
         </Link>
@@ -138,7 +138,7 @@ function Deco() {
         width={0}
         height={0}
         sizes="100vw"
-        className="absolute right-0 top-0 w-[12.5vw] h-[12.5vw] mt-10 z-0"
+        className="absolute right-0 top-0 w-[12.5vw] h-[12.5vw]  mt-10"
       />
       <Image
         src={circle}
@@ -146,7 +146,7 @@ function Deco() {
         width={0}
         height={0}
         sizes="100vw"
-        className="hidden absolute w-[calc(12%)] top-32 l:right-[calc(24%)] s:right-[calc(20%)] x:right-[calc(14%)] x:block z-0"
+        className="hidden absolute w-[calc(12%)] top-32 l:right-[calc(24%)] s:right-[calc(20%)] x:right-[calc(14%)] x:block"
       />
       <Image
         src={circle}
@@ -154,7 +154,7 @@ function Deco() {
         width={0}
         height={0}
         sizes="100vw"
-        className="hidden absolute left-[calc(5%)] s:left-[calc(35%)] w-[calc(14%)] top-80 s:top-[400px] x:block z-0"
+        className="hidden absolute left-[calc(5%)] s:left-[calc(35%)] w-[calc(14%)] top-80 s:top-[400px] x:block"
       />
       <Image
         src={rect4}
@@ -162,7 +162,7 @@ function Deco() {
         width={0}
         height={0}
         sizes="100vw"
-        className="absolute left-0  w-[22vw] h-[22vw] x:w-[10vw] x:h-[10vw] bottom-[160px] z-20 tiny:hidden z-0"
+        className="absolute left-0  w-[22vw] h-[22vw] x:w-[12.5vw] x:h-[12.5vw] bottom-[160px] z-20 tiny:hidden"
       />
       <Image
         src={rect1}
@@ -170,7 +170,7 @@ function Deco() {
         width={0}
         height={0}
         sizes="100vw"
-        className="absolute left-[22vw] x:left-[10vw] w-[22vw] h-[22vw] x:w-[10vw] bottom-0 tiny:hidden z-0"
+        className="absolute left-[22vw] x:left-[12.5vw] w-[22vw] h-[22vw] x:w-[12.5vw] bottom-0 tiny:hidden"
       />
     </div>
   );
