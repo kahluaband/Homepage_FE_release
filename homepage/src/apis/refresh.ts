@@ -5,7 +5,7 @@ export const getNewRefreshToken = async () => {
   const refreshToken = localStorage.getItem("refresh");
 
   const res = await axios.post(
-    "https://api.kahluaband.com/users/token/refresh/",
+    "https://kahluaband.com/users/token/refresh/",
     {
       refreshToken,
     },

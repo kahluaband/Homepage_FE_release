@@ -37,7 +37,7 @@ export default function Freshman_ticket() {
       try {
         const formData = { buyer, phone_num, major, student_id, meeting };
         const response = await axios.post(
-          `https://api.kahluaband.com/tickets/freshman_ticket/`,
+          `https://kahluaband.com/tickets/freshman_ticket/`,
           formData
         );
         if (response.status === 200) {

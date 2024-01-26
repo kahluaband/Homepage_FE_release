@@ -4,7 +4,7 @@ import { getNewRefreshToken } from "./refresh";
 export const getAuthAxios = (token: string | null) => {
   // authAxios로 보내는 모든 요청의 헤더에 access token이 포함됨
   const authAxios = axios.create({
-    baseURL: "https://api.kahluaband.com/",
+    baseURL: "https://kahluaband.com/",
     headers: {
       Authorization: token,
     },
