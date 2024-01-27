@@ -4,7 +4,7 @@ const baseURL = "https://kahluaband.com/";
 
 export default function (app) {
   app.use(
-    createProxyMiddleware("/apply", {
+    createProxyMiddleware("/application/**", {
       target: baseURL,
       changeOrigin: true,
     })
