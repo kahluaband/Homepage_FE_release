@@ -121,7 +121,7 @@ export default function Tickets() {
           </Link>
         </div>
       ) : (
-        <button className="w-[45vw] h-[29px] md:w-[270px] md:h-[48px] flex-shrink-0 rounded-[10px] bg-[#B9B9B9] cursor-not-allowed">
+        <button className="w-[48vw] h-[29px] md:w-[270px] md:h-[48px] flex-shrink-0 rounded-[10px] bg-[#B9B9B9] cursor-not-allowed">
           지금은 예매 가능 기간이 아닙니다.
         </button>
       )}
@@ -211,7 +211,7 @@ export default function Tickets() {
             />
             <div className="w-[50vw] h-[200px] sm:h-[300px] lg:w-[600px] md:h-[300px] lg:h-[400px] xl:w-[720px] xl:h-[460px] ml-[11px] lg:ml-[23px] mt-0 top-0 flex-shrink-0">
               <div className="flex flex-row justify-between">
-                <div className="w-[95px] h-[18px] md:w-[110px] md:h-[22px] md:text-[11px] lg:w-[128px] lg:h-[24px] flex flex-shrink-0 justify-center rounded-[40px] bg-[#B9B9B9] text-[10px] lg:text-[12px] font-[600] tracking-[0.2px] leading-[20px] text-[#FFF] text-center whitespace-nowrap items-center">
+                <div className="w-[100px] h-[18px] md:w-[110px] md:h-[22px] md:text-[11px] lg:w-[128px] lg:h-[24px] flex flex-shrink-0 justify-center rounded-[40px] bg-[#B9B9B9] text-[9px] lg:text-[12px] font-[600] tracking-[0.2px] leading-[20px] text-[#FFF] text-center whitespace-nowrap items-center">
                   2월 1일 예매 OPEN
                 </div>
                 <div className="flex mt-[3px]">
