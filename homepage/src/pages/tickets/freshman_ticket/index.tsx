@@ -93,7 +93,7 @@ export default function Freshman_ticket() {
   );
 
   return (
-    <div className="w-[100%] h-[1100px] p:h-[1150px] x:h-[1200px] sm:h-[1900px] md:h-[1850px] lg:h-[1580px] z-60">
+    <div className="w-[100%] h-[1100px] sm:h-[1900px] md:h-[1850px] lg:h-[1580px] z-60">
       <Background>
         <div className="font-pretendard px-[12.4vw] flex items-center flex-col mb-[84px]">
           <div className="flex flex-col items-center mx-[12.5vw] text-center sm:mt-[40px]">
