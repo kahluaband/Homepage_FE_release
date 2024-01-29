@@ -18,7 +18,7 @@ export default function Apply_complete() {
       if (id) {
         try {
           const response = await axios.get(
-            `https://kahluaband.com/application/apply_complete/?id=${id}`
+            `https://api.kahluaband.com/application/apply_complete/?id=${id}`
           );
           if (response.status === 200) {
             setName(response.data.data.name);

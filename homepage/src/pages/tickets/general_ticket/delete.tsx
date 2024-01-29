@@ -16,7 +16,7 @@ const General_delete = () => {
   const handleSearch = async () => {
     try {
       const response = await axios.get(
-        `https://kahluaband.com/tickets/general_complete/?merchant_order_id=${merchant_order_id}`
+        `https://api.kahluaband.com/tickets/general_complete/?merchant_order_id=${merchant_order_id}`
       );
       if (response.data) {
         if (response.data.status === "Success") {
