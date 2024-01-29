@@ -128,7 +128,7 @@ export default function Form() {
       // const validSessionChoices = ['보컬', '드럼', '기타', '베이스', '신디'];
 
       const response = await axios.post(
-        "https://kahluaband.com/application/apply/",
+        "https://api.kahluaband.com/application/apply/",
         formData
       );
 

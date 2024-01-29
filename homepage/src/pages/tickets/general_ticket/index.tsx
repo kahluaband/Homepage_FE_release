@@ -47,7 +47,7 @@ export default function General_ticket() {
         formData.append("payment", payment);
 
         const response = await axios.post(
-          `https://kahluaband.com/tickets/general_ticket/`,
+          `https://api.kahluaband.com/tickets/general_ticket/`,
           formData,
           {
             headers: {
@@ -74,7 +74,7 @@ export default function General_ticket() {
       formData.append("id", id);
       formData.append("amount", String(price));
       const response = await axios.post(
-        `https://kahluaband.com/tickets/checkout/`,
+        `https://api.kahluaband.com/tickets/checkout/`,
         formData,
         {
           headers: {
