@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AdminHeader from "./AdminHeader";
 import { useState } from "react";
 import DropdownApplication from "./DropdownApplication";
 import DropdownTicket from "./DropdownTicket";
+import { useRouter } from "next/router";
 
 export default function Admin() {
   const [viewApplication, setViewApplication] = useState(false);
   const [viewTicket, setViewTicket] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!localStorage.getItem("access")) {
+      alert("관리자 로그인 후 이용가능합니다.");
+      router.push("/login");
+    }
+  });
 
   return (
     <div className="w-full flex-col font-pretendard">

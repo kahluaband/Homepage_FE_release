@@ -1,6 +1,6 @@
 // import { createProxyMiddleware } from "http-proxy-middleware";
 
-// const baseURL = "https://kahluaband.com/";
+// const baseURL = "https://api.kahluaband.com/";
 
 // export default function (app) {
 //   app.use(
