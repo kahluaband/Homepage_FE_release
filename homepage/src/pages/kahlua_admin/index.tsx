@@ -3,10 +3,48 @@ import AdminHeader from "./AdminHeader";
 import { useState } from "react";
 import DropdownApplication from "./DropdownApplication";
 import DropdownTicket from "./DropdownTicket";
+import FreshmanTicketList from "./TicketList_freshman";
+import AllTicketList from "./TicketList_all";
+import GeneralTicketList from "./TicketList_general";
 
 export default function Admin() {
   const [viewApplication, setViewApplication] = useState(false);
   const [viewTicket, setViewTicket] = useState(false);
+  const [viewAllTicket, setViewAllTicket] = useState(false);
+  const [viewGeneralTicket, setViewGeneralTicketl] = useState(false);
+  const [viewFreshmanTicket, setViewFreshmanTicketl] = useState(false);
+
+  const DropdownTicket = () => {
+
+    return (
+      <div
+        id="dropdown"
+        className="w-[238px] h-[148px] flex-col justify-center items-center bg-white"
+      >
+        <li onClick={() => {
+            setViewAllTicket(true);
+            setViewFreshmanTicketl(false);
+            setViewGeneralTicketl(false);
+          }}>
+            전체
+        </li>
+        <li onClick={() => {
+            setViewGeneralTicketl(true);
+            setViewAllTicket(false);
+            setViewFreshmanTicketl(false);
+          }}>
+          일반 예매
+        </li>
+        <li onClick={() => {
+            setViewFreshmanTicketl(true);
+            setViewAllTicket(false);
+            setViewGeneralTicketl(false);
+          }}>
+            신입생 예매
+        </li>
+      </div>
+    );
+  };
 
   return (
     <div className="w-full flex-col font-pretendard">
@@ -16,6 +54,7 @@ export default function Admin() {
           <ul
             onClick={() => {
               setViewApplication(!viewApplication);
+              setViewTicket(false)
             }}
             className="font-bold text-[24px]"
           >
@@ -24,7 +63,8 @@ export default function Admin() {
           </ul>
           <ul
             onClick={() => {
-              setViewTicket(!viewTicket);
+              setViewTicket(true);
+              setViewApplication(false)
             }}
             className="font-bold text-[24px]"
           >
@@ -33,9 +73,9 @@ export default function Admin() {
           </ul>
         </div>
         <div className="w-[calc(100%-356px)] flex justify-center items-center text-[20px]">
-          홍익대학교 깔루아
-          <br />
-          어드민 페이지입니다.
+          {viewAllTicket && <AllTicketList/>}
+          {viewFreshmanTicket && <FreshmanTicketList/>}
+          {viewGeneralTicket && <GeneralTicketList/>}
         </div>
       </div>
     </div>
