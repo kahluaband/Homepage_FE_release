@@ -7,11 +7,18 @@ import { logout } from "@/apis/logout";
 const AdminHeader = () => {
   const router = useRouter();
 
-  const onLogoutHandler = async (
-    event: React.MouseEvent<HTMLButtonElement>
-  ) => {
+  const onLogoutHandler = async () => {
     logout();
     router.push("/login");
+  };
+
+  const logoutConfirm = () => {
+    const message = window.confirm("로그아웃 하시겠습니까?");
+
+    if (message) {
+      onLogoutHandler();
+    } else {
+    }
   };
 
   return (
@@ -19,7 +26,7 @@ const AdminHeader = () => {
       <Image src={logo} alt="admin_logo" height={26} />
       <button
         className="mr-[180px] rounded-[10px] bg-black text-white px-[12px] py-[4px]"
-        onClick={onLogoutHandler}
+        onClick={logoutConfirm}
       >
         <p>로그아웃</p>
       </button>
