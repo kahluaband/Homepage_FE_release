@@ -1,6 +1,6 @@
 import React from "react";
 
-const Main = () => {
+const AdminMain = () => {
   return (
     <div>
         홍익대학교 깔루아
@@ -10,4 +10,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default AdminMain;
