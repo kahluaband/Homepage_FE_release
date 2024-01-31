@@ -11,3 +11,8 @@
 //   localStorage.removeItem("refresh");
 //   return res;
 // };
+
+export const logout = () => {
+  localStorage.removeItem("access");
+  localStorage.removeItem("refresh");
+};

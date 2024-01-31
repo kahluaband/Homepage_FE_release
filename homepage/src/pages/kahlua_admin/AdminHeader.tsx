@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import logo from "/public/assets/images/admin/admin_logo.svg";
-import { logout } from "@/apis/logout";
 import { Router, useRouter } from "next/router";
+import { logout } from "@/apis/logout";
 
 const AdminHeader = () => {
   const router = useRouter();
@@ -10,8 +10,7 @@ const AdminHeader = () => {
   const onLogoutHandler = async (
     event: React.MouseEvent<HTMLButtonElement>
   ) => {
-    localStorage.removeItem("access");
-    localStorage.removeItem("refresh");
+    logout();
     router.push("/login");
   };
 
