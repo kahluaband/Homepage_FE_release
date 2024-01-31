@@ -35,7 +35,7 @@ export default function Tickets() {
   /*
         예매 가능 기간 설정
     */
-  const startDate = new Date("2024-02-01");
+  const startDate = new Date("2024-01-31");
   const endDate = new Date("2024-03-04");
   const today = new Date();
   const isWithinSeason = today >= startDate && today <= endDate;
@@ -107,7 +107,7 @@ export default function Tickets() {
 
   const ReserveTickets = () => (
     <div className="text-[#FFF] font-[700] leading-[17px] text-[10px] sm:text-[12px] lg:text-[14px] text-center">
-      {isWithinSeason ? (
+      { isWithinSeason ? (
         <div className="contents-center flex justify-center flex-col lg:flex-row lg:gap-4">
           <Link href="tickets/freshman_ticket">
             <button className="w-[45vw] h-[29px] md:w-[270px] md:h-[48px] rounded-[10px] bg-[#281CFF] hover:bg-[white] hover:text-[#281CFF] hover:border-[#281CFF] transition-all duration-450 border-[2px] border-[#281CFF]">
@@ -185,13 +185,15 @@ export default function Tickets() {
         <div className="font-[600] leading-[19px] w-[80px] h-[19px] text-left whitespace-nowrap">
           온라인 예매
         </div>
-        <div className="text-right font-[500] w-[70px] whitespace-nowrap text-[red] ">예매불가</div>
+        { isWithinSeason ? (<div className="text-right font-[500] w-[70px] whitespace-nowrap text-[#281CFF] ">예매가능</div>)
+        :(<div className="text-right font-[500] w-[70px] whitespace-nowrap text-[red] ">예매불가</div>)}
       </div>
       <div className="mt-[13px] flex w-[100%] lg:w-[260px] text-center flex-row justify-between lg:justify-between md:gap-[25vw] lg:gap-0">
         <div className="font-[600] leading-[19px] w-[80px] h-[19px] text-left whitespace-nowrap">
           현장 예매
         </div>
-        <div className="text-right font-[500] w-[70px] whitespace-nowrap text-[red]">예매불가</div>
+        { isWithinSeason ? (<div className="text-right font-[500] w-[70px] whitespace-nowrap text-[#281CFF] ">예매가능</div>)
+        :(<div className="text-right font-[500] w-[70px] whitespace-nowrap text-[red]">예매불가</div>)}
       </div>
     </div>
   );
@@ -211,8 +213,8 @@ export default function Tickets() {
             />
             <div className="w-[50vw] h-[200px] sm:h-[300px] lg:w-[600px] md:h-[300px] lg:h-[400px] xl:w-[720px] xl:h-[460px] ml-[11px] lg:ml-[23px] mt-0 top-0 flex-shrink-0">
               <div className="flex flex-row justify-between">
-                <div className="w-[100px] h-[18px] md:w-[110px] md:h-[22px] md:text-[11px] lg:w-[128px] lg:h-[24px] flex flex-shrink-0 justify-center rounded-[40px] bg-[#B9B9B9] text-[9px] lg:text-[12px] font-[600] tracking-[0.2px] leading-[20px] text-[#FFF] text-center whitespace-nowrap items-center">
-                  2월 1일 예매 OPEN
+                <div className="w-[70px] h-[18px] md:w-[100px] md:text-[11px] lg:h-[24px] flex flex-shrink-0 justify-center rounded-[40px] bg-[#281CFF] text-[9px] lg:text-[12px] font-[600] tracking-[0.2px] leading-[20px] text-[#FFF] text-center whitespace-nowrap items-center">
+                  예매 가능
                 </div>
                 <div className="flex mt-[3px]">
                   <Link
