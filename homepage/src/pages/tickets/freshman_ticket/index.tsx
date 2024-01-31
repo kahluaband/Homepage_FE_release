@@ -52,7 +52,6 @@ export default function Freshman_ticket() {
           `https://api.kahluaband.com/tickets/freshman_ticket/`,
           formData
         );
-        console.log(formData)
         if (response.status === 200) {
           const reservation_id = response.data.data.reservation_id;
           router.push({
