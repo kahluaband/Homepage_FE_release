@@ -4,7 +4,7 @@
 <br/>
 
 # 깔루아 밴드(KAHLUA_BAND)
-홍익대학교 컴퓨터공학과 밴드부 **KAHLUA BAND의 웹사이트 FE 레포지토리**입니다.
+홍익대학교 컴퓨터공학과 밴드부 **KAHLUA BAND의 웹사이트 FE 배포 레포지토리**입니다.
 
 <br>
 </br>
@@ -42,7 +42,7 @@
 <img src="https://img.shields.io/badge/react-61DAFB?style=flat&logo=react&logoColor=black">
 <img src="https://img.shields.io/badge/next.js-000000?style=flat&logo=nextdotjs&logoColor=white">
 <img src="https://img.shields.io/badge/tailwindcss-06B6D4?style=flat&logo=tailwindcss&logoColor=white">
-
+<img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=Vercel&logoColor=white"/>
 <br>
 </br>
 
