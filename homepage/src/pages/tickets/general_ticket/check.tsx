@@ -11,6 +11,7 @@ const General_check = () => {
   const [phone_num, setPhone_num] = useState("");
   const [input_phone_num, set_Phone_num] = useState("");
   const [validPhone_num, setValidPhone_num] = useState(true);
+  const [isValidCount, setIsValidCount] = useState(false);
   const { merchant_order_id } = router.query;
 
   useEffect(() => {
@@ -27,10 +28,9 @@ const General_check = () => {
         }
       } catch (error) {}
     };
-
+    setIsValidCount(input_phone_num.length === 11);
     fetchmerchant_orderData();
-    // need to check dependencies
-  }, [merchant_order_id, router.query.merchant_order_id]);
+  }, [merchant_order_id, router.query.merchant_order_id, input_phone_num]);
 
   const handleCancelmerchant_order = async () => {
     if (input_phone_num === phone_num) {
@@ -118,8 +118,11 @@ const General_check = () => {
               <div className="w-[75vw] sm:w-[400px] md:w-[514px] h-[48px] mt-[20px] sm:mt-[48px] mx-auto flex items-center">
                 <button
                   onClick={handleCancelmerchant_order}
-                  className="w-full h-full bg-[#E8E8E8] rounded-[10px] text-center text-[#000] hover:text-[#FFF] text-[14px] font-[600] leading-[19px] hover:bg-[#281CFF]"
-                >
+                  className={`${
+                    isValidCount
+                      ? 'w-full h-full bg-[#281CFF] text-[#FFF]'
+                      : 'w-full h-full bg-[#E8E8E8] text-[#000]'
+                  } rounded-[10px] text-center text-[14px] font-[600] leading-[19px]`}>
                   예매 취소하기
                 </button>
               </div>
