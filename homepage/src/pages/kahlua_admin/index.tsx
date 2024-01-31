@@ -145,7 +145,7 @@ export default function Admin() {
   return (
     <div className="w-full flex-col font-pretendard">
       <AdminHeader />
-      <div className="h-screen flex">
+      <div className="h-[calc(100vh-86px)] flex">
         <div className="w-[356px] flex-col text-center justify-center items-center bg-gray">
           <ul
             onClick={() => {
@@ -168,7 +168,7 @@ export default function Admin() {
             {viewTicket && <DropdownTicket />}
           </ul>
         </div>
-        <div className="w-[calc(100%-356px)] flex justify-center items-center text-[20px]">
+        <div className="w-[calc(100%-356px)] flex text-[20px]">
           {!viewApplication && !viewTicket && <AdminMain/>}
 
           {viewApplication && viewAllApplication && <AllAppList/>}
