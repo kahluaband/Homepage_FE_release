@@ -23,13 +23,26 @@ export default function General_ticket() {
   const [dynamicHeightClass, setDynamicHeightClass] = useState(
     "h-[1260px] sm:h-[1900px] md:h-[1780px] lg:h-[1600px]"
   );
+
+  const [isConfirmationModalVisible, setIsConfirmationModalVisible] =
+    useState(false);
+
   var id = "";
   var merchant_order_id = "";
 
   useEffect(() => {
     const isDataComplete = buyer.trim() !== "" && phone_num.trim() !== "";
     setIsFormComplete(isDataComplete);
-  }, [buyer, phone_num, namesArray, phonesArray]);
+  }, [buyer, phone_num]);
+
+  const handleShowConfirmationModal = () => {
+    setIsConfirmationModalVisible(true);
+  };
+
+  const handleConfirmSubmission = () => {
+    setIsConfirmationModalVisible(false);
+    handleSubmit();
+  };
 
   const handleSubmit = async () => {
     setIsClick(true);
@@ -68,6 +81,8 @@ export default function General_ticket() {
     }
   };
 
+  
+
   const fetchMerchant_order_id = async () => {
     try {
       const formData = new FormData();
@@ -95,6 +110,7 @@ export default function General_ticket() {
       setIsError(true);
     }
   };
+  
 
   const handleIncrement = () => {
     setmember((prevmember) => (prevmember < 5 ? prevmember + 1 : prevmember)); //최대값을 5로 설정
@@ -148,6 +164,87 @@ export default function General_ticket() {
     const newPrice = calculatePrice();
     setPrice(newPrice);
   }, [member]);
+
+  const ConfirmationModal = () => {
+    const [onClose, setOnClose] = useState(false);
+
+    const handleIsClose = () => {
+      setOnClose(true);
+      setIsConfirmationModalVisible(false);
+    };
+
+    const handleOverlayClick = (
+      event: React.MouseEvent<HTMLDivElement, MouseEvent>
+    ) => {
+      if (event.target === event.currentTarget) {
+        handleIsClose();
+      }
+    };
+
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        handleIsClose();
+      }
+    };
+
+    useEffect(() => {
+      document.addEventListener("keydown", handleKeyPress);
+      return () => {
+        document.removeEventListener("keydown", handleKeyPress);
+      };
+    }, [handleKeyPress]);
+    return !onClose ? (
+      <div
+        onClick={handleOverlayClick}
+        className="fixed z-50 top-0 left-0 right-0 bottom-0 bg-[#0000008a] flex justify-center items-center"
+      >
+        <div className="font-pretendard w-[250px] h-[270px] sm:w-auto sm:h-auto bg-[#FFF] flex-shrink-0 fixed rounded-[10px] z-20 sm:pb-[60px] pb-[26px] px-[12px]">
+          <button
+            onClick={handleIsClose}
+            className="ml-[210px] mt-[8px] w-[22px] sm:w-[30px] h-[22px] sm:h-[30px] sm:ml-[552px] flex-col items-center flex justify-center"
+          >
+            <Image
+              src="/assets/images/layout/close.svg"
+              width={36}
+              height={38}
+              alt="close"
+              className="w-[16px] h-[16px] sm:w-[22px] sm:h-[22px]"
+            />
+          </button>
+          <div className="flex flex-col items-center text-center content-center mt-[4px] sm:mt-[40px] leading-normal">
+            <Image
+              src="/assets/images/tickets/divider_medium.svg"
+              alt="ticket"
+              width={60}
+              height={20}
+              className="sm:w-[60px] sm:h-[20px] w-[40px] h-[15px]"
+            />
+            <p className="font-[700] mt-[12px] text-[14px] sm:text-[24px] leading-[12px] sm:leading-[28px]">
+              제출한 이후에는 수정할 수 없습니다.
+            </p>
+            <p className="font-[700] mt-[16px] text-[14px] sm:text-[24px] leading-[12px] sm:leading-[28px]">
+              제출하시겠습니까?
+            </p>
+            <p className="mt-[12px] sm:mt-[20px] sm:font-[500] text-[12px] sm:text-[14px] leading-[21px] text-[#4A4A4A]">
+              입력한 정보를 다시 한번 확인해주세요.
+            </p>
+            <button
+              onClick={handleConfirmSubmission}
+              className="mt-[28px] sm:mt-[28px] flex items-center w-[110px] h-[30px] sm:w-[160px] sm:h-[40px] justify-center rounded-[5px] bg-[#281CFF] text-[white] text-[12px] sm:text-[16px] font-[700] leading-[17px] text-center  hover:bg-[white] hover:text-[#281CFF] hover:border-[#281CFF] transition-all duration-450 border-[1px] sm:border-[2px] border-[#281CFF]"
+            >
+              제출하기
+            </button>
+            <button
+              onClick={handleIsClose}
+              className="mt-[12px] sm:mt-[16px] flex items-center w-[110px] h-[30px] sm:w-[160px] sm:h-[40px] justify-center rounded-[4px] bg-[#281CFF] text-[white] text-[12px] sm:text-[16px] font-[700] leading-[17px] text-center  hover:bg-[white] hover:text-[#281CFF] hover:border-[#281CFF] transition-all duration-450 border-[1px] sm:border-[2px] border-[#281CFF]"
+            >
+              다시 확인하기
+            </button>
+          </div>
+        </div>
+      </div>
+    ) : null;
+  };
 
   const payer_info = () => {
     const divs: JSX.Element[] = [];
@@ -405,7 +502,7 @@ export default function General_ticket() {
           <div className="flex items-center justify-center mt-[48px] sm:mt-[94px]">
             <div className="flex items-center justify-center">
               <button
-                onClick={handleSubmit}
+                onClick={handleShowConfirmationModal}
                 className="w-[170px] h-[35px] sm:w-[270px] sm:h-[53px] felx items-center justify-center rounded-[10px] bg-[#281CFF] text-[white] text-[8px] sm:text-[18px] font-[700] leading-[17px] text-center hover:bg-[white] hover:text-[#281CFF] hover:border-[#281CFF] transition-all duration-450 border-[2px] border-[#281CFF]"
               >
                 예매하기
@@ -414,6 +511,7 @@ export default function General_ticket() {
           </div>
           {isError && <Error_modal />}
           {!isFormComplete && isClick && <Input_modal />}
+          {isConfirmationModalVisible && <ConfirmationModal />}
         </div>
       </Background>
     </div>
