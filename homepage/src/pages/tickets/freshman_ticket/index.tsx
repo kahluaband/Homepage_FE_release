@@ -22,9 +22,6 @@ export default function Freshman_ticket() {
   const [isConfirmationModalVisible, setIsConfirmationModalVisible] =
     useState(false);
 
-  const [isTokenErrorModalVisible, setIsTokenErrorModalVisible] =
-  useState(false);
-
   const handleShowConfirmationModal = () => {
     setIsConfirmationModalVisible(true);
   };
@@ -34,9 +31,6 @@ export default function Freshman_ticket() {
     handleSubmit();
   };
   
-  const handleShowTokenErrorModal = () => {
-    setIsTokenErrorModalVisible(true);
-  };
 
   useEffect(() => {
     const isDataComplete =
@@ -56,7 +50,7 @@ export default function Freshman_ticket() {
         const formData = { buyer, phone_num, major, student_id, meeting };
         const response = await axios.post(
           `https://api.kahluaband.com/tickets/freshman_ticket/`,
-          formData,
+          formData
         );
         if (response.status === 200) {
           const reservation_id = response.data.data.reservation_id;
@@ -64,16 +58,11 @@ export default function Freshman_ticket() {
             pathname: "/tickets/freshman_complete",
             query: { ...router.query, reservation_id },
           });
-        } else if(response.status === 403){
-          handleShowTokenErrorModal();
-        } else{
+        } else {
           setIsError(true);
         }
-      } catch (error :any) {
-        if(error.response.status === 400){
-          setIsError(true);
-        }
-        else{handleShowTokenErrorModal();}
+      } catch (error) {
+        setIsError(true);
       }
     }
   };
@@ -196,78 +185,6 @@ export default function Freshman_ticket() {
     ) : null;
   };
 
-  const TokenErrorModal = () => {
-    const [onErrorClose, setOnErrorClose] = useState(false);
-
-    const handleIsErrorClose = () => {
-      setOnErrorClose(true);
-      setIsTokenErrorModalVisible(false);
-    };
-
-    const handleOverlayClick = (
-      event: React.MouseEvent<HTMLDivElement, MouseEvent>
-    ) => {
-      if (event.target === event.currentTarget) {
-        handleIsErrorClose();
-      }
-    };
-
-    const handleKeyPress = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        handleIsErrorClose();
-      }
-    };
-
-    useEffect(() => {
-      document.addEventListener("keydown", handleKeyPress);
-      return () => {
-        document.removeEventListener("keydown", handleKeyPress);
-      };
-    }, [handleKeyPress]);
-    return !onErrorClose ? (
-      <div
-        onClick={handleOverlayClick}
-        className="fixed z-50 top-0 left-0 right-0 bottom-0 bg-[#0000008a] flex justify-center items-center"
-      >
-        <div className="font-pretendard w-[250px] h-[180px] sm:w-auto sm:h-auto bg-[#FFF] flex-shrink-0 fixed rounded-[10px] z-20 sm:pb-[60px] pb-[26px] px-[12px]">
-          <button
-            onClick={handleIsErrorClose}
-            className="ml-[210px] mt-[8px] w-[22px] sm:w-[30px] h-[22px] sm:h-[30px] sm:ml-[552px] flex-col items-center flex justify-center"
-          >
-            <Image
-              src="/assets/images/layout/close.svg"
-              width={36}
-              height={38}
-              alt="close"
-              className="w-[16px] h-[16px] sm:w-[22px] sm:h-[22px]"
-            />
-          </button>
-          <div className="flex flex-col items-center text-center content-center mt-[4px] sm:mt-[40px] leading-normal">
-            <Image
-              src="/assets/images/tickets/divider_medium.svg"
-              alt="ticket"
-              width={60}
-              height={20}
-              className="sm:w-[60px] sm:h-[20px] w-[40px] h-[15px]"
-            />
-            <p className="font-[700] mt-[12px] text-[14px] sm:text-[24px] leading-[16px] sm:leading-[28px]">
-              브라우저 쿠키를 삭제하고
-            </p>
-            <p className="font-[700] mt-[4px] text-[14px] sm:text-[24px] leading-[16px] sm:leading-[28px]">
-              다시 시도해주세요.
-            </p>
-            <p className="mt-[12px] sm:mt-[20px] sm:font-[500] text-[12px] sm:text-[14px] leading-[14px] sm:leading-[21px] text-[#4A4A4A]">
-              문제가 해결되지 않으셨다면,
-            </p>
-            <p className="mt-[4px] sm:font-[500] text-[12px] sm:text-[14px] leading-[14px] sm:leading-[21px] text-[#4A4A4A]">
-              깔루아 카카오톡으로 문의 부탁드립니다.
-            </p>
-          </div>
-        </div>
-      </div>
-    ) : null;
-  };
-
   return (
     <div className="w-[100%] h-[1100px] sm:h-[1900px] md:h-[1850px] lg:h-[1700px] z-60">
       <Background>
@@ -350,6 +267,7 @@ export default function Freshman_ticket() {
                   <p>본인확인을 위해 정확한 정보를 입력해주세요.</p>
                   <div className="flex flex-col">
                     <div className="flex whitespace-nowrap">
+                      <p>컴퓨터공학과</p>
                       <p className="text-[#281CFF] flex flex-row">
                         &nbsp;신입생 확인
                       </p>
@@ -494,7 +412,7 @@ export default function Freshman_ticket() {
             </div>
             <ol className="list-decimal ml-[3vw] sm:ml-[16px] font-[500] text-[8px] sm:text-[14px] mt-[4px] sm:mt-[14px] leading-[26px]">
               <li>
-                예매취소는 공연 24시간 이전에만 가능하며 그 이후에는 환불이
+                예매취소는 24시간 이전에만 가능하며 그 이후에는 환불이
                 불가합니다.{" "}
               </li>
               <li>여러장을 구매했을 시에는 일괄취소만 가능합니다.</li>
@@ -516,7 +434,6 @@ export default function Freshman_ticket() {
         {isError && <Error_modal />}
         {isClick && !isFormComplete && <Input_modal />}
         {isConfirmationModalVisible && <ConfirmationModal />}
-        {isTokenErrorModalVisible && <TokenErrorModal/>}
       </Background>
     </div>
   );

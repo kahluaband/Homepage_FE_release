@@ -30,7 +30,7 @@ export default function Cancel_complete(){
                     <div className="flex ml-[0.5vw] w-[72.5vw] flex-col">
                         <div className="mt-[12px] sm:mt-[22px] flex w-[247px] h-[30px] font-[700] text-[16px] sm:text-[20px] leading-[28px] whitespace-nowrap">필독 사항</div>
                         <ol className="list-decimal ml-[24px] font-[500] text-[10px] sm:text-[12px] lg:text-[16px] mt-[8px] sm:mt-[22px] leading-[26px]">
-                            <li><div className="flex md:flex-row flex-col">계좌이체결제를 선택하신 분들은 24시간 이내로 자동 환불처리될 예정입니다. </div></li>
+                            <li><div className="flex md:flex-row flex-col">계좌이체/카카오페이 결제를 선택하신 분들은 24시간 이내로 자동 환불처리될 예정입니다. </div></li>
                             <li><div className="flex md:flex-row flex-col">여러 장의 티켓을 구매하셨을 경우 모든 티켓이 일괄취소 처리됩니다.</div></li>
                             <li><div className="flex md:flex-row flex-col">이외에 모든 문의 사항은 깔루아 카카오톡을 이용해주시기 바랍니다. </div></li>
                         </ol>
