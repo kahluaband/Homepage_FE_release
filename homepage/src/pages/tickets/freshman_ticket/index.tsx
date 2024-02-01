@@ -350,7 +350,6 @@ export default function Freshman_ticket() {
                   <p>본인확인을 위해 정확한 정보를 입력해주세요.</p>
                   <div className="flex flex-col">
                     <div className="flex whitespace-nowrap">
-                      <p>컴퓨터공학과</p>
                       <p className="text-[#281CFF] flex flex-row">
                         &nbsp;신입생 확인
                       </p>
