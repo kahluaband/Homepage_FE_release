@@ -4,6 +4,7 @@ import Background from "@/app/components/Background";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Ticket_info from "../ticket_info";
+import https from 'https';
 
 const General_check = () => {
   const router = useRouter();
@@ -24,7 +25,10 @@ const General_check = () => {
       try {
         if (router.query.merchant_order_id) {
           const response = await axios.get(
-            `https://api.kahluaband.com/tickets/general_complete/?merchant_order_id=${merchant_order_id}`
+            `https://api.kahluaband.com/tickets/general_complete/?merchant_order_id=${merchant_order_id}`,
+            {httpsAgent: new https.Agent({
+              rejectUnauthorized: false
+          })}
           );
           if (response.data) {
             setBuyer(response.data.data.buyer);
@@ -51,6 +55,9 @@ const General_check = () => {
             headers: {
               "Content-Type": "multipart/form-data",
             },
+            httpsAgent: new https.Agent({
+              rejectUnauthorized: false
+            })
           }
         );
         router.push({

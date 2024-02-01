@@ -2,6 +2,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import https from 'https';
 
 const OPTIONS_Gender = [
   { value: "남성", name: "남성" },
@@ -136,7 +137,10 @@ export default function Form() {
 
       const response = await axios.post(
         "https://api.kahluaband.com/application/apply/",
-        formData
+        formData,
+        {httpsAgent: new https.Agent({
+          rejectUnauthorized: false
+      })}
       );
 
       if (response.status === 200 || response.status === 201) {
