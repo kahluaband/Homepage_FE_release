@@ -80,11 +80,12 @@ const Freshman_delete = () => {
               className="relative bg-[#eaeaea] rounded-[4px] w-[20px] sm:w-[24px] h-[20px] sm:h-[24px] my-[12px] mr-[16px] cursor-pointer hover:bg-[#D9D9D9]"
             >
               <Image
-                src="/assets/images/tickets/search.png"
+                src="/assets/images/tickets/search.svg"
                 alt="돋보기"
-                width={1000}
-                height={1000}
-                className="flex w-[12px] h-[12px] sm:w-[16px] sm:h-[16px] mx-auto mt-[5px]"
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="flex w-[16px] h-[16px] sm:w-[20px] sm:h-[20px] mx-auto mt-[2px]"
               />
             </div>
           </div>
