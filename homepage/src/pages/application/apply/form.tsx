@@ -136,7 +136,12 @@ export default function Form() {
 
       const response = await axios.post(
         "https://api.kahluaband.com/application/apply/",
-        formData,
+        {
+          data: formData,
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
       );
 
       if (response.status === 200 || response.status === 201) {
