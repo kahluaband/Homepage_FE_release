@@ -22,16 +22,8 @@ export default function SelectBox() {
         }
     };
 
-    const handleMouseEnter = () => {
-        setIsDropdownVisible(true);
-    };
-
-    const handleMouseLeave = () => {
-        setIsDropdownVisible(false);
-    };
-
     return (
-        <div className="font-pretendard relative inline-block text-center transition-all duration-450" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div className="font-pretendard relative inline-block text-center transition-all duration-450">
             <button
                 type="button"
                 className="appearance-none outline-none text-[10px] sm:text-[14px] font-[700] leading-[17px] cursor-pointer w-[45vw] h-[29px] md:w-[270px] md:h-[48px] rounded-[10px] border-solid bg-[white] text-[#000000] border-[2px] border-[#281CFF]"
