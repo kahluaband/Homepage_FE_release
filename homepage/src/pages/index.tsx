@@ -12,6 +12,9 @@ import Link from "next/link";
 // refreshToken cookie 주고 받기 위함
 axios.defaults.withCredentials = true;
 
+axios.defaults.xsrfCookieName = 'csrftoken';
+axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+
 export default function Home() {
   return (
     // min-h-[540px] sm:min-h-[800px]
