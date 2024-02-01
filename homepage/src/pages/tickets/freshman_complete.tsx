@@ -17,7 +17,9 @@ export default function Freshman_complete() {
       if (reservation_id) {
         try {
           const response = await axios.get(
-            `https://api.kahluaband.com/tickets/freshman_complete/?reservation_id=${reservation_id}`,
+            `https://api.kahluaband.com/tickets/freshman_complete/?reservation_id=${reservation_id}`, {
+              
+            }
           );
           if (response.status === 200) {
             setBuyer(response.data.data.buyer);

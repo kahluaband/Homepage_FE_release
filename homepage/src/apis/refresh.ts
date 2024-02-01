@@ -12,7 +12,6 @@ export const getNewRefreshToken = async () => {
     {
       headers: {
         Authorization: accessToken,
-        "Content-Type": "application/json",
       },
     }
   );
