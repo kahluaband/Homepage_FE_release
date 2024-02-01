@@ -17,6 +17,7 @@ export default function General_complete() {
         try {
           const response = await axios.get(
             `https://api.kahluaband.com/tickets/general_ticket/?merchant_order_id=${merchant_order_id}`,
+            {}
           );
           if (response.status === 200) {
             setBuyer(response.data.data.buyer);
