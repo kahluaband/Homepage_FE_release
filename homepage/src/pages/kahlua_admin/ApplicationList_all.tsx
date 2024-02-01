@@ -20,15 +20,18 @@ const AllAppList = () => {
   const [meeting, setMeeting] = useState(true);
   const [readiness, setReadiness] = useState("");
   const { id } = router.query;
+  const [appID, setID] = useState("");
+  const [apps, setApps] = useState([]);
 
-  useEffect(() => {
+
+useEffect(() => {
     const fetchReservationData = async () => {
-      if (id) {
         try {
           const response = await axios.get(
-            `https://api.kahluaband.com/kahlua_admin/application/apply_forms/`
+            `https://api.kahluaband.com/kahlua_admin/application/apply_forms/`,
           );
           if (response.status === 200) {
+            setID(response.data.data.id);
             setName(response.data.data.name);
             setPhoneNum(response.data.data.phone_num);
             setBirthdate(response.data.data.birthdate);
@@ -38,14 +41,14 @@ const AllAppList = () => {
             setSecond_preference(response.data.data.second_preference);
             setInstrument(response.data.data.play_instrument);
             setMotive(response.data.data.motive);
-          } else {
+          } 
+          else {
           }
         } catch (error) {}
-      }
-    };
+      };
     fetchReservationData();
-  }, [id]);
-
+  }, [appID]);
+  
   return (
     <div className="whitespace-nowrap overflow-auto flex flex-col">
       {<>
@@ -102,6 +105,8 @@ const AllAppList = () => {
           각오 한마디
         </li>
       </div>
+      
+      {/* <ApplicationList apps={apps}/> */}
 
       <div className="flex flex-row h-16 w-[1712px] px-4 items-center text-center">
         <li className="flex justify-center items-center w-[100px] h-full text-base font-bold p-2">
@@ -154,3 +159,21 @@ const AllAppList = () => {
 };
 
 export default AllAppList;
+
+// const ApplicationList = (props) => {
+//   return(
+//     <div>
+//       {props.apps.map(app => (
+//         <Application key={app.id} app={app}/>
+//       ))}
+//     </div>
+//   );
+// }
+
+// const Application = (props) => {
+//   return(
+//     <div>
+//       {props.app.}
+//     </div>
+//   )
+// }
