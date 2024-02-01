@@ -70,7 +70,7 @@ export default function Freshman_ticket() {
           setIsError(true);
         }
       } catch (error :any) {
-        if(error.response.status == 400){
+        if(error.response.status === 400){
           setIsError(true);
         }
         else{handleShowTokenErrorModal();}

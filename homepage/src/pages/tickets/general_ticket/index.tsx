@@ -86,7 +86,7 @@ export default function General_ticket() {
           setIsError(true);
         }
       } catch (error :any) {
-        if(error.response.status == 400){
+        if(error.response.status === 400){
           setIsError(true);
         }
         else{handleShowTokenErrorModal();}
@@ -122,7 +122,7 @@ export default function General_ticket() {
         setIsError(true);
       }
     } catch (error :any) {
-      if(error.response.status == 400){
+      if(error.response.status === 400){
         setIsError(true);
       }
       else{handleShowTokenErrorModal();}
@@ -578,7 +578,7 @@ export default function General_ticket() {
               </div>
               <ol className="list-decimal ml-[12px] sm:ml-[24px] font-[500] text-[8px] sm:text-[14px] lg:text-[16px] mt-[12px] sm:mt-[14px] leading-[26px]">
                 <li>
-                  예매취소는 24시간 이전에만 가능하며 그 이후에는 환불이
+                  예매취소는 공연 24시간 이전에만 가능하며 그 이후에는 환불이
                   불가합니다.{" "}
                 </li>
                 <li>여러장을 구매했을 시에는 일괄취소만 가능합니다.</li>
