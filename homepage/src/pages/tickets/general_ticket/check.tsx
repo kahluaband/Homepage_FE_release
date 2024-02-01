@@ -63,8 +63,7 @@ const General_check = () => {
         }
       }
     } else {
-      //setValidPhone_num(false);
-      handleShowTokenErrorModal();
+      setValidPhone_num(false);
     }
   };
 
@@ -139,7 +138,7 @@ const General_check = () => {
             <p className="mt-[12px] sm:mt-[20px] sm:font-[500] text-[12px] sm:text-[14px] leading-[14px] sm:leading-[21px] text-[#4A4A4A]">
               문제가 해결되지 않으셨다면,
             </p>
-            <p className="mt-[4px] sm:mt-[20px] sm:font-[500] text-[12px] sm:text-[14px] leading-[14px] sm:leading-[21px] text-[#4A4A4A]">
+            <p className="mt-[4px] sm:font-[500] text-[12px] sm:text-[14px] leading-[14px] sm:leading-[21px] text-[#4A4A4A]">
               깔루아 카카오톡으로 문의 부탁드립니다.
             </p>
           </div>
