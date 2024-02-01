@@ -1,12 +1,10 @@
-// import { createProxyMiddleware } from "http-proxy-middleware";
+import { createProxyMiddleware } from "http-proxy-middleware";
 
-// const baseURL = "https://api.kahluaband.com/";
-
-// export default function (app) {
-//   app.use(
-//     createProxyMiddleware("/application/**", {
-//       target: baseURL,
-//       changeOrigin: true,
-//     })
-//   );
-// }
+export default function (app) {
+  app.use(
+    createProxyMiddleware("/", {
+      target: "https://api.kahluaband.com",
+      changeOrigin: true,
+    })
+  );
+}

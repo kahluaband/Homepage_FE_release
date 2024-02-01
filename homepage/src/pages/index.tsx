@@ -8,12 +8,24 @@ import circle from "/public/assets/images/Main/circle.svg";
 import cd from "/public/assets/images/Main/image_cd1.svg";
 import axios from "axios";
 import Link from "next/link";
+import { Cookies } from "react-cookie";
 
 // refreshToken cookie 주고 받기 위함
 axios.defaults.withCredentials = true;
 
-axios.defaults.xsrfCookieName = 'csrftoken';
-axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+const cookies = new Cookies();
+
+export const setCookie = (name: string, value: string, options?: any): void => {
+  return cookies.set(name, value, { ...options });
+};
+
+export const getCookie = (name: string): string | undefined => {
+  return cookies.get(name);
+};
+
+axios.defaults.xsrfCookieName = "csrftoken";
+axios.defaults.xsrfHeaderName = "X-CSRFToken";
+axios.defaults.headers.common["X-CSRFToken"] = getCookie("csrftoken");
 
 export default function Home() {
   return (
