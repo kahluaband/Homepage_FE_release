@@ -4,6 +4,7 @@ import Background from "@/app/components/Background";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Ticket_info from "../ticket_info";
+import https from 'https';
 
 const Freshman_check = () => {
   const router = useRouter();
@@ -25,6 +26,9 @@ const Freshman_check = () => {
         if (router.query?.reservation_id) {
           const response = await axios.get(
             `https://api.kahluaband.com/tickets/freshman_complete/?reservation_id=${router.query.reservation_id}`
+            ,{httpsAgent: new https.Agent({
+              rejectUnauthorized: false
+          })}
           );
 
           if (response.data) {
@@ -52,6 +56,9 @@ const Freshman_check = () => {
             headers: {
               "Content-Type": "multipart/form-data",
             },
+            httpsAgent: new https.Agent({
+              rejectUnauthorized: false
+            })
           }
         );
         router.push({

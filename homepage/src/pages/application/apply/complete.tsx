@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Background from "@/app/components/Background";
 import Image from "next/image";
-
+import https from 'https';
 import { useRouter } from "next/router";
 
 export default function Apply_complete() {
@@ -18,7 +18,10 @@ export default function Apply_complete() {
       if (id) {
         try {
           const response = await axios.get(
-            `https://api.kahluaband.com/application/apply_complete/?id=${id}`
+            `https://api.kahluaband.com/application/apply_complete/?id=${id}`,
+            {httpsAgent: new https.Agent({
+              rejectUnauthorized: false
+          })}
           );
           if (response.status === 200) {
             setName(response.data.data.name);

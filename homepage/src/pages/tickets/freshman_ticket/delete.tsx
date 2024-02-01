@@ -4,6 +4,7 @@ import Background from "@/app/components/Background";
 import Ticket_info from "../ticket_info";
 import axios from "axios";
 import { useRouter } from "next/router";
+import https from 'https';
 
 const Freshman_delete = () => {
   const router = useRouter();
@@ -15,7 +16,10 @@ const Freshman_delete = () => {
   const handleSearch = async () => {
     try {
       const response = await axios.get(
-        `https://api.kahluaband.com/tickets/freshman_complete/?reservation_id=${reservation_id}`
+        `https://api.kahluaband.com/tickets/freshman_complete/?reservation_id=${reservation_id}`,
+        {httpsAgent: new https.Agent({
+          rejectUnauthorized: false
+        })}
       );
 
       if (response.data) {
