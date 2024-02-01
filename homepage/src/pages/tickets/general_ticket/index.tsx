@@ -6,7 +6,6 @@ import Background from "@/app/components/Background";
 import axios from "axios";
 import Error_modal from "./error_modal";
 import Input_modal from "./input_modal";
-import https from 'https';
 
 export default function General_ticket() {
   const router = useRouter();
@@ -75,9 +74,6 @@ export default function General_ticket() {
             headers: {
               "Content-Type": "multipart/form-data",
             },
-            httpsAgent: new https.Agent({
-              rejectUnauthorized: false
-            })
           }
         );
 
@@ -112,9 +108,6 @@ export default function General_ticket() {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-          httpsAgent: new https.Agent({
-            rejectUnauthorized: false
-          })
         },
       );
       if (response.status === 200) {

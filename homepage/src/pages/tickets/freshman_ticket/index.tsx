@@ -6,7 +6,6 @@ import Background from "@/app/components/Background";
 import axios from "axios";
 import Error_modal from "./error_modal";
 import Input_modal from "./input_modal";
-import https from 'https';
 
 export default function Freshman_ticket() {
   const router = useRouter();
@@ -58,9 +57,6 @@ export default function Freshman_ticket() {
         const response = await axios.post(
           `https://api.kahluaband.com/tickets/freshman_ticket/`,
           formData,
-          {httpsAgent: new https.Agent({
-              rejectUnauthorized: false
-          })}
         );
         if (response.status === 200) {
           const reservation_id = response.data.data.reservation_id;

@@ -3,7 +3,6 @@ import Image from "next/image";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import https from 'https';
 
 export default function General_complete() {
   const router = useRouter();
@@ -18,9 +17,6 @@ export default function General_complete() {
         try {
           const response = await axios.get(
             `https://api.kahluaband.com/tickets/general_ticket/?merchant_order_id=${merchant_order_id}`,
-            {httpsAgent: new https.Agent({
-              rejectUnauthorized: false
-          })}
           );
           if (response.status === 200) {
             setBuyer(response.data.data.buyer);
