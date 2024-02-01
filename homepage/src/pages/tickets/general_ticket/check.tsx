@@ -13,6 +13,11 @@ const General_check = () => {
   const [validPhone_num, setValidPhone_num] = useState(true);
   const [isValidCount, setIsValidCount] = useState(false);
   const { merchant_order_id } = router.query;
+  const [isTokenErrorModalVisible, setIsTokenErrorModalVisible] = useState(false);
+
+  const handleShowTokenErrorModal = () => {
+    setIsTokenErrorModalVisible(true);
+  };
 
   useEffect(() => {
     const fetchmerchant_orderData = async () => {
@@ -52,7 +57,11 @@ const General_check = () => {
           pathname: "/tickets/cancel_complete/",
           query: { rid },
         });
-      } catch (error) {}
+      } catch (error:any) {
+        if(error.response.status === 403){
+          handleShowTokenErrorModal();
+        }
+      }
     } else {
       setValidPhone_num(false);
     }
@@ -64,6 +73,78 @@ const General_check = () => {
     if (event.key === "Enter") {
       handleCancelmerchant_order();
     }
+  };
+
+  const TokenErrorModal = () => {
+    const [onErrorClose, setOnErrorClose] = useState(false);
+
+    const handleIsErrorClose = () => {
+      setOnErrorClose(true);
+      setIsTokenErrorModalVisible(false);
+    };
+
+    const handleOverlayClick = (
+      event: React.MouseEvent<HTMLDivElement, MouseEvent>
+    ) => {
+      if (event.target === event.currentTarget) {
+        handleIsErrorClose();
+      }
+    };
+
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        handleIsErrorClose();
+      }
+    };
+
+    useEffect(() => {
+      document.addEventListener("keydown", handleKeyPress);
+      return () => {
+        document.removeEventListener("keydown", handleKeyPress);
+      };
+    }, [handleKeyPress]);
+    return !onErrorClose ? (
+      <div
+        onClick={handleOverlayClick}
+        className="fixed z-50 top-0 left-0 right-0 bottom-0 bg-[#0000008a] flex justify-center items-center"
+      >
+        <div className="font-pretendard w-[250px] h-[180px] sm:w-auto sm:h-auto bg-[#FFF] flex-shrink-0 fixed rounded-[10px] z-20 sm:pb-[60px] pb-[26px] px-[12px]">
+          <button
+            onClick={handleIsErrorClose}
+            className="ml-[210px] mt-[8px] w-[22px] sm:w-[30px] h-[22px] sm:h-[30px] sm:ml-[552px] flex-col items-center flex justify-center"
+          >
+            <Image
+              src="/assets/images/layout/close.svg"
+              width={36}
+              height={38}
+              alt="close"
+              className="w-[16px] h-[16px] sm:w-[22px] sm:h-[22px]"
+            />
+          </button>
+          <div className="flex flex-col items-center text-center content-center mt-[4px] sm:mt-[40px] leading-normal">
+            <Image
+              src="/assets/images/tickets/divider_medium.svg"
+              alt="ticket"
+              width={60}
+              height={20}
+              className="sm:w-[60px] sm:h-[20px] w-[40px] h-[15px]"
+            />
+            <p className="font-[700] mt-[12px] text-[14px] sm:text-[24px] leading-[16px] sm:leading-[28px]">
+              브라우저 쿠키를 삭제하고
+            </p>
+            <p className="font-[700] mt-[4px] text-[14px] sm:text-[24px] leading-[16px] sm:leading-[28px]">
+              다시 시도해주세요.
+            </p>
+            <p className="mt-[12px] sm:mt-[20px] sm:font-[500] text-[12px] sm:text-[14px] leading-[14px] sm:leading-[21px] text-[#4A4A4A]">
+              문제가 해결되지 않으셨다면,
+            </p>
+            <p className="mt-[4px] sm:font-[500] text-[12px] sm:text-[14px] leading-[14px] sm:leading-[21px] text-[#4A4A4A]">
+              깔루아 카카오톡으로 문의 부탁드립니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    ) : null;
   };
 
   return (
@@ -129,6 +210,7 @@ const General_check = () => {
             </div>
           )}
         </div>
+        {isTokenErrorModalVisible && <TokenErrorModal/>}
       </Background>
     </div>
   );
