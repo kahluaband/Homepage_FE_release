@@ -16,7 +16,8 @@ export default function General_complete() {
       if (merchant_order_id) {
         try {
           const response = await axios.get(
-            `https://api.kahluaband.com/tickets/general_ticket/?merchant_order_id=${merchant_order_id}`
+            `https://api.kahluaband.com/tickets/general_ticket/?merchant_order_id=${merchant_order_id}`,
+            {}
           );
           if (response.status === 200) {
             setBuyer(response.data.data.buyer);
@@ -112,8 +113,7 @@ export default function General_complete() {
                 </li>
                 <li>
                   <div className="flex md:flex-row flex-col">
-                    결제 취소를 원하시면 [예매하기 - 결제 내역확인하기 -
-                    예매번호 조회]를 통해 취소하실 수 있습니다.{" "}
+                    결제 취소를 원하시면 [예매하기 - 일반 예매내역 조회하기]를 통해 취소하실 수 있습니다.{" "}
                   </div>
                 </li>
                 <li>

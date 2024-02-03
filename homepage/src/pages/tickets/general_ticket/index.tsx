@@ -108,7 +108,7 @@ export default function General_ticket() {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-        }
+        },
       );
       if (response.status === 200) {
         merchant_order_id = response.data.merchant_order_id;
@@ -581,8 +581,9 @@ export default function General_ticket() {
                   예매취소는 공연 24시간 이전에만 가능하며 그 이후에는 환불이
                   불가합니다.{" "}
                 </li>
-                <li>여러장을 구매했을 시에는 일괄취소만 가능합니다.</li>
-                <li>예매하기-예매확인 - 예매취소 버튼으로 취소 가능합니다.</li>
+                <li>여러 장의 티켓을 구매하셨을 경우 결제와 결제 취소의 경우 모든 티켓이 일괄처리됩니다.{" "}</li>
+                <li>결제 취소를 원하시면 [예매하기 - 일반 예매내역 조회하기]를 통해 취소하실 수 있습니다.{" "}
+                </li>
                 <li>
                   공연 24시간 전 이후에 예매 확정 및 안내 문자 발송예정입니다.
                 </li>

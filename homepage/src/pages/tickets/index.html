@@ -10,6 +10,7 @@
     <script>
         axios.defaults.xsrfCookieName = 'csrftoken';
         axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+        axios.defaults.headers.common['X-CSRFToken'] = getCookie("csrftoken");
         
         const resultMap = document.querySelector('.result-map')
         const map = new kakao.maps.Map(resultMap, {

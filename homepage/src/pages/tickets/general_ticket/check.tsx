@@ -24,7 +24,7 @@ const General_check = () => {
       try {
         if (router.query.merchant_order_id) {
           const response = await axios.get(
-            `https://api.kahluaband.com/tickets/general_complete/?merchant_order_id=${merchant_order_id}`
+            `https://api.kahluaband.com/tickets/general_complete/?merchant_order_id=${merchant_order_id}`,
           );
           if (response.data) {
             setBuyer(response.data.data.buyer);
