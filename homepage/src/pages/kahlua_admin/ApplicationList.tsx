@@ -31,18 +31,19 @@ const AppList = (session: any) => {
     const access = localStorage.getItem("access");
     const authAxios = getAuthAxios(access);
     const [applications, setApplications] = useState<any[]>([]);
+    const [num, setNum] = useState("");
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const query = session === "전체" ? "" : `&session = ${session}`
+                const query = session === "전체" ? "" : `&session = ${session}`;
                 const response = await authAxios.get(
                     `https://api.kahluaband.com/kahlua_admin/application/apply_forms?first_preference=${session}`,{
                     }
                 );
-                setApplications(response.data.apply_forms)
+                setApplications(response.data.apply_forms);
                 console.log(applications);
             } catch(error){
                 console.log(error);
