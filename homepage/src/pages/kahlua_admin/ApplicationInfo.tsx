@@ -1,4 +1,4 @@
-const AppItem = ({application}) => {
+const AppItem = (application: any) => {
     const {key, st_name, gender, birthdate, phone_num, major, address, first_preference, second_preference, reason, motive, instrument, finish_time, meeting, readiness} = application
     return(
     <div className="whitespace-nowrap overflow-auto flex flex-col">

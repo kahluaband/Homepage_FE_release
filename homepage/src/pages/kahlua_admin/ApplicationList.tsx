@@ -1,44 +1,8 @@
-import React, {Component, useEffect, useState} from "react";
-import ApplicationInfo from "./ApplicationInfo";
+import React, {useEffect, useState} from "react";
 import AppItem from "./ApplicationInfo";
 import axios from "axios";
-
-// class ApplicationList extends Component {
-//     id = 1;
-//     state = {};
-
-//     render() {
-//         const { Applicationinfo } = this.props;
-//         return (
-//             <ul>
-//                 {Applicationinfo &&
-//                     Applicationinfo.map((itemdata, insertIndex) => {
-//                         return (
-//                             <ApplicationInfo
-//                                 key={insertIndex}
-//                                 st_name={itemdata.name}
-//                                 gender={itemdata.gender}
-//                                 birthdate={itemdata.birthdate}
-//                                 phone_num={itemdata.phoneNum}
-//                                 major={itemdata.major}
-//                                 address={itemdata.address}
-//                                 first_preference={itemdata.first_preference}
-//                                 second_preference={itemdata.second_preference}
-//                                 reason={itemdata.experience_and_reason}
-//                                 motive={itemdata.motive}
-//                                 instrument={itemdata.play_instrument}
-//                                 finish_time={itemdata.finish_time}
-//                                 meeting={itemdata.meeting}
-//                                 readiness={itemdata.readiness}
-//                             />
-//                         );
-//                     })}
-//             </ul>
-//         )
-//     }
-// }
-
-// export default ApplicationList;
+import { access } from "fs";
+import { getAuthAxios } from "@/apis/authAxios";
 
 const sampleApplication = {
     "id": 196,
@@ -63,6 +27,8 @@ const sampleApplication = {
 
 const AppList = () => {
 
+    const access = localStorage.getItem("access");
+    const authAxios = getAuthAxios(access);
     const [applications, setApplications] = useState<any[]>([]);
     const [loading, setLoading] = useState(false);
 
@@ -70,10 +36,12 @@ const AppList = () => {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const response = await axios.get(
-                    `https://api.kahluaband.com/kahlua_admin/application/apply_forms/`,
+                const response = await authAxios.get(
+                    `https://api.kahluaband.com/kahlua_admin/application/apply_forms/`,{
+                    }
                 );
                 setApplications(response.data.apply_forms)
+                console.log(applications);
             } catch(error){
                 console.log(error);
             }
@@ -93,7 +61,7 @@ const AppList = () => {
     return (
         <div>
             {applications.map((application) => (
-                <AppItem application={sampleApplication}/>
+                <AppItem key={application.id} application={application}/>
             ))}
         </div>
     );
