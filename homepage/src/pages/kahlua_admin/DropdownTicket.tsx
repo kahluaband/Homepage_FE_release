@@ -9,19 +9,19 @@ const DropdownTicket = () => {
   return (
     <div
       id="dropdown"
-      className="w-[238px] h-[148px] flex-col justify-center items-center bg-white"
+      className="w-[220px] h-suto text-[18px] flex-col justify-center items-center bg-white"
     >
-      <li onClick={() => {
+      <li className="p-1" onClick={() => {
           setViewAllTicket(!viewAllTicket);
         }}>
           전체
       </li>
-      <li onClick={() => {
+      <li className="p-1" onClick={() => {
           setViewGeneralTicketl(!viewGeneralTicket);
         }}>
         일반 예매
       </li>
-      <li onClick={() => {
+      <li className="p-1" onClick={() => {
           setViewFreshmanTicketl(!viewFreshmanTicket);
         }}>
           신입생 예매

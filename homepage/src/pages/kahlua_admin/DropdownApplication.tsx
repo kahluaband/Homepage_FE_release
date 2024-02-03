@@ -37,10 +37,10 @@ const DropdownApplication: React.FC<DropdownApplicationProps> = ({ onSelect, ses
   return (
     <div
       id="dropdown"
-      className="w-[238px] h-[332px] flex-col justify-center items-center bg-white"
+      className="w-[220px] h-auto flex-col justify-center items-center bg-white text-[18px]"
     >
       {sessions.map((s) => (
-        <li key={s.name} onClick={() => onSelect(s.name)}>
+        <li className="p-1" key={s.name} onClick={() => onSelect(s.name)}>
           {s.text}
         </li>
       ))}

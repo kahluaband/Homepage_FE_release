@@ -36,23 +36,23 @@ export default function Admin() {
     return (
       <div
         id="dropdown"
-        className="w-[238px] h-[148px] flex-col justify-center items-center bg-white"
+        className="w-[220px] h-auto text-[18px] flex-col justify-center items-center bg-white"
       >
-        <li onClick={() => {
+        <li className="p-1" onClick={() => {
             setViewAllTicket(true);
             setViewFreshmanTicketl(false);
             setViewGeneralTicketl(false);
           }}>
             전체
         </li>
-        <li onClick={() => {
+        <li className="p-1" onClick={() => {
             setViewGeneralTicketl(true);
             setViewAllTicket(false);
             setViewFreshmanTicketl(false);
           }}>
           일반 예매
         </li>
-        <li onClick={() => {
+        <li className="p-1" onClick={() => {
             setViewFreshmanTicketl(true);
             setViewAllTicket(false);
             setViewGeneralTicketl(false);
@@ -67,13 +67,13 @@ export default function Admin() {
     <div className="w-full flex-col font-pretendard">
       <AdminHeader />
       <div className="h-[calc(100vh-86px)] flex">
-        <div className="w-[356px] flex-col text-center justify-center items-center bg-gray">
+        <div className="w-[220px] flex-col text-center justify-center items-center bg-gray">
           <ul
             onClick={() => {
               setViewApplication(true);
               setViewTicket(false)
             }}
-            className="font-bold text-[24px]"
+            className="py-1 font-bold text-[20px]"
           >
             지원자 정보 {viewApplication ? "<" : ">"}
             {viewApplication && <DropdownApplication session={session} onSelect={onSelect}/>}
@@ -83,13 +83,13 @@ export default function Admin() {
               setViewTicket(true);
               setViewApplication(false)
             }}
-            className="font-bold text-[24px]"
+            className="py-1 font-bold text-[20px]"
           >
             예매자 정보 {viewTicket ? "<" : ">"}
             {viewTicket && <DropdownTicket />}
           </ul>
         </div>
-        <div className="w-[calc(100%-356px)] flex text-[20px]">
+        <div className="w-[calc(100%-220px)] flex text-[20px]">
           {!viewApplication && !viewTicket && <AdminMain/>}
 
           {viewApplication && <ApplicationDataList session={session}/>}
