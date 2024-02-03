@@ -1,29 +1,50 @@
 import React, { useState } from "react";
 
-const DropdownApplication = () => {
+const sessions = [
+  {
+    name: "전체",
+    text: "전체",
+  },
+  {
+    name: "보컬",
+    text: "보컬",
+  },
+  {
+    name: "드럼",
+    text: "드럼",
+  },
+  {
+    name: "베이스",
+    text: "베이스",
+  },
+  {
+    name: "신디",
+    text: "신디",
+  },
+  {
+    name: "기타",
+    text: "기타",
+  },
+];
 
-  const [viewAll, setViewAll] = useState(false);
-  const [viewVocal, setViewVocal] = useState(false);
-  const [viewDrum, setViewDrum] = useState(false);
-  const [viewBase, setViewBase] = useState(false);
-  const [viewSyn, setViewSyn] = useState(false);
-  const [viewGuitar, setViewGuitar] = useState(false);
+interface DropdownApplicationProps {
+  onSelect: (session: string) => void;
+  session: string;
+}
+
+const DropdownApplication: React.FC<DropdownApplicationProps> = ({ onSelect, session }) => {
 
   return (
     <div
       id="dropdown"
       className="w-[238px] h-[332px] flex-col justify-center items-center bg-white"
     >
-      <li onClick={() => {
-          setViewAll(!viewAll);
-        }}>
-        전체
-      </li>
-      <li>보컬</li>
-      <li>드럼</li>
-      <li>베이스</li>
-      <li>신디</li>
-      <li>기타</li>
+      {sessions.map((s) => (
+        <li key={s.name} onClick={() => onSelect(s.name)}>
+          {s.text}
+        </li>
+      ))}
+
     </div>
   );
 };
