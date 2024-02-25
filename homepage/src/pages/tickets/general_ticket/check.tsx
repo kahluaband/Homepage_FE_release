@@ -159,7 +159,7 @@ const General_check = () => {
               height={12}
               className="w-[50px] h-[11px] sm:w-[75px] sm:h-[17px]"
             />
-            <p className="mt-[8px] sm:mt-[16px] font-[700] text-[20px] sm:text-[32px] leading-[42px] whitespace-nowrap flex flex-row">
+            <p className="mt-8 sm:mt-[16px] font-[700] text-[20px] sm:text-[32px] leading-[42px] whitespace-nowrap flex flex-row">
               예매내역 취소
             </p>
             <p className="mt-[16px] sm:mt-[32px] font-[500] text-[10px] sm:text-[14px] leading-[21px] text-[#4A4A4A] w-[75vw]">
@@ -167,7 +167,7 @@ const General_check = () => {
             </p>
           </div>
           {merchant_order_id && (
-            <div className="mt-[12px] sm:mt-[48px] mx-auto items-center content-center flex flex-col ">
+            <div className="mt-8 sm:mt-[48px] mx-auto items-center content-center flex flex-col ">
               <Ticket_info
                 reservation_id={
                   Array.isArray(router.query.merchant_order_id)
@@ -176,7 +176,7 @@ const General_check = () => {
                 }
                 buyer={buyer}
               />
-              <div className="flex mt-[16px] mx-auto sm:ml-[4px] flex-col w-[75vw] sm:w-[300px] md:w-[516px] text-left text-[#4A4A4A] text-[10px] sm:text-[12px] leading-[21px]">
+              <div className="flex mt-8 mx-auto sm:ml-[4px] flex-col w-[75vw] sm:w-[300px] md:w-[516px] text-left text-[#4A4A4A] text-[10px] sm:text-[12px] leading-[21px]">
                 <p> 예매 취소 인증 절차입니다.</p>
                 <p>
                   {" "}
@@ -187,7 +187,7 @@ const General_check = () => {
                   value={input_phone_num}
                   onChange={(e) => set_Phone_num(e.target.value)}
                   placeholder="전화번호를 입력해 주세요."
-                  className="mt-[10px] bg-[#FFF] border border-[#4A4A4A] rounded-[10px] text-[10px] sm:text-[14px] outline-none w-[150px] h-[28px] sm:w-[180px] sm:h-[36px] text-[black] px-[8px]"
+                  className="mt-[10px] bg-[#FFF] border border-[#4A4A4A] rounded-[10px] text-[10px] sm:text-[14px] outline-none w-[180px] h-[48px] text-[black] px-[8px]"
                   onKeyDown={handleInputKeyPress}
                 />
                 {!validPhone_num && (
@@ -196,7 +196,7 @@ const General_check = () => {
                   </p>
                 )}
               </div>
-              <div className="w-[75vw] sm:w-[400px] md:w-[514px] h-[48px] mt-[20px] sm:mt-[48px] mx-auto flex items-center">
+              <div className="w-[75vw] sm:w-[400px] md:w-[514px] h-[64px] mt-8 mx-auto flex items-center">
                 <button
                   onClick={handleCancelmerchant_order}
                   className={`${

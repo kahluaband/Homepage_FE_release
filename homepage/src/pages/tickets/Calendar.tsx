@@ -37,12 +37,12 @@ const handleDateClick = (date: Date) => {
 };
 
 return (
-    <div className="font-pretendard w-[50vw] h-[190px] md:w-[270px] md:h-[200px] bg-[white] flex-shrink-0 rounded-[10px] border-solid border-[#6C6C6C] border text-center text-[10px] sm:text-[12px] font-[600] pt-[8px] px-[20px]">
+    <div className="font-pretendard w-[50vw] h-[190px] md:w-[270px] md:h-[200px] bg-[white] flex-shrink-0 rounded-[10px] border-solid border-[#6C6C6C] border text-center text-[10px] sm:text-[12px] font-[500] md:font-[600] pt-[8px] px-[20px]">
         {format(selectedDate, "yyyy년 M월")}
         <div className="w-[100%] h-[100%] mx-auto mt-[4px]">
             <div className="flex font-[400] text-[8px] sm:text-[12px] items-center justify-center ">
                 {dayNames.map((dayName) => (
-                <div key={dayName} className="mx-auto w-[20px] h-[16px] flex-shrink-0 mb-[4px] ">
+                <div key={dayName} className="mx-auto w-[18px] h-[16px] flex-shrink-0 mb-[4px] ">
                     <div className={`${dayName === "Sun" ? "text-[red]" : ""} ${dayName==="Sat" ? "text-[blue]":""} w-[20px] h-[20px] font-[500] flex items-center justify-center`}>
                     {dayName}
                     </div>
@@ -54,7 +54,7 @@ return (
                     {week.map((date, dayIndex) => (
                     <div
                         key={dayIndex}
-                        className={`w-[16px] h-[16px] flex-shrink-0 my-auto mx-auto text-center
+                        className={`w-[18px] h-[16px] flex-shrink-0 my-auto mx-auto text-center
                         ${
                             isConcertDay(date) && !isSameDay(selectedDate, concertDay)
                             ? "border border-solid border-[#c6c6c6] rounded-full flex items-center"
@@ -66,7 +66,7 @@ return (
                         }`}
                         onClick={() => handleDateClick(date)}
                     >
-                        <div className="w-[16px] h-[16px] font-[400] text-[8px] sm:text-[10px] flex items-center justify-center text-center ">
+                        <div className="w-[18px] h-[16px] font-[400] text-[8px] sm:text-[10px] flex items-center justify-center text-center ">
                         {format(date, "d")}
                         </div>
                     </div>

@@ -147,7 +147,7 @@ export default function General_complete() {
                 height={17}
                 className="w-[50px] h-[11px] sm:w-[75px] sm:h-[17px]"
               />
-              <div className="mt-[8px] sm:mt-[16px] flex flex-row">
+              <div className="mt-8 flex flex-row">
                 <div className="font-[700] text-[20px] sm:text-[32px] leading-[42px] whitespace-nowrap ">
                   예매 현황
                 </div>
