@@ -149,7 +149,7 @@ export default function General_ticket() {
   const handlePhoneNumberChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    const phoneNumber = event.target.value.replace(/[^0-9]/g, ""); // 숫자 이외의 문자 제거
+    const phoneNumber = event.target.value;
     setphone_num(phoneNumber);
   };
 

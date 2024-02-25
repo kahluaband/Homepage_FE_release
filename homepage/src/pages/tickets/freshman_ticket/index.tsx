@@ -97,7 +97,7 @@ export default function Freshman_ticket() {
   const handlePhoneNumberChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    const phone_num = event.target.value.replace(/[^0-9]/g, ""); // 숫자 이외의 문자 제거
+    const phone_num = event.target.value;
     setphone_num(phone_num);
   };
 
