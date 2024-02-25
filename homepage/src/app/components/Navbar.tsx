@@ -100,7 +100,7 @@ export default function Navbar() {
                       width={32}
                       height={32}
                       alt="close"
-                      className="w-[30px] h-[30px] sm:w-[32px] sm:h-[32px] "
+                      className="w-[30px] h-[30px] sm:w-[32px] sm:h-[32px]"
                     />
                   ) : (
                     <Image
@@ -151,7 +151,7 @@ export default function Navbar() {
                             : "hover:text-[#575757]"
                         }  ${
                           showMenu
-                            ? "text-[20px] w-[100%] h-[100%] font-[700] text-center"
+                            ? "text-[20px] w-[100%] h-[100%] font-[500] md:font-[700] text-center"
                             : "text-[16px] w-[80px]  h-[32px] font-[600] leading-[19px] flex-shrink-0 flex items-center justify-center"
                         }`}
                       >

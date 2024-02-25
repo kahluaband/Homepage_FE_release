@@ -46,7 +46,7 @@ export default function Freshman_complete() {
                 height={17}
                 className="w-[50px] h-[11px] sm:w-[75px] sm:h-[17px]"
               />
-              <div className="mt-[8px] sm:mt-[16px] flex flex-row">
+              <div className="mt-8 flex flex-row">
                 <div className="font-[700] text-[20px] sm:text-[32px] leading-[42px] whitespace-nowrap ">
                   예매 현황
                 </div>
@@ -116,8 +116,7 @@ export default function Freshman_complete() {
                 </li>
                 <li>
                   <div className="flex md:flex-row flex-col">
-                    결제 취소를 원하시면 [예매하기 - 결제 내역확인하기 -
-                    예매번호 조회]를 통해 취소하실 수 있습니다.{" "}
+                    결제 취소를 원하시면 [예매하기 - 신입생 예매내역 조회하기]를 통해 취소하실 수 있습니다.{" "}
                   </div>
                 </li>
                 <li>

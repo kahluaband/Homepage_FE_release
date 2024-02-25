@@ -137,7 +137,6 @@ export default function Form() {
       const response = await axios.post(
         "https://api.kahluaband.com/application/apply/", 
         formData, {
-          
         }
       );
 
