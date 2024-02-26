@@ -30,7 +30,7 @@ const Freshman_check = () => {
               withCredentials: true,
             }
           );
-
+  
           if (response.data) {
             setBuyer(response.data.data.buyer);
             setStudent_id(response.data.data.student_id);
@@ -38,7 +38,9 @@ const Freshman_check = () => {
         }
       } catch (error) {}
     };
-    setIsValidCount(input_sid.length === 7);
+    if(input_sid.length===7){
+      setIsValidCount(true);
+    }
     fetchReservationData();
   }, [router.query?.reservation_id, input_sid]);
 
@@ -200,8 +202,8 @@ const Freshman_check = () => {
                 className="mt-8 bg-[#FFF] border  border-[#4A4A4A] rounded-[10px] text-sm sm:text-[14px] outline-none w-[100%] h-[64px]  text-[black] px-[8px]"
                 onKeyDown={handleInputKeyPress}
               />
-              {!validSid && (
-                <p className="text-[#F00] text-[10px] font-[400] leading-[19px] align-center mt-[2px]">
+              {validSid && (
+                <p className="text-[#F00] ml-0 align-left flex justify-start text-[10px] font-[400] leading-[19px] mt-[2px] w-full">
                   ⚠️ 잘못된 입력 정보입니다.
                 </p>
               )}
