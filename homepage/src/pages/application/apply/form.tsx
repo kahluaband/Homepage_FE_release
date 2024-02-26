@@ -137,7 +137,9 @@ export default function Form() {
       const response = await axios.post(
         "https://api.kahluaband.com/application/apply/",
         formData,
-        { withCredentials: true }
+        {
+          withCredentials: true,
+        }
       );
 
       if (response.status === 200 || response.status === 201) {
