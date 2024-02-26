@@ -28,7 +28,7 @@ export default function General_ticket() {
     useState(false);
 
   const [isTokenErrorModalVisible, setIsTokenErrorModalVisible] =
-  useState(false);
+    useState(false);
 
   var id = "";
   var merchant_order_id = "";
@@ -51,7 +51,6 @@ export default function General_ticket() {
     setIsTokenErrorModalVisible(true);
   };
 
-
   const handleSubmit = async () => {
     setIsClick(true);
 
@@ -72,6 +71,7 @@ export default function General_ticket() {
           formData,
           {
             headers: {
+              withCredentials: true,
               "Content-Type": "multipart/form-data",
             },
           }
@@ -80,21 +80,20 @@ export default function General_ticket() {
         if (response.status === 200) {
           id = response.data.data.id;
           fetchMerchant_order_id();
-        } else if(response.status === 403){
+        } else if (response.status === 403) {
           handleShowTokenErrorModal();
-        } else{
+        } else {
           setIsError(true);
         }
-      } catch (error :any) {
-        if(error.response.status === 400){
+      } catch (error: any) {
+        if (error.response.status === 400) {
           setIsError(true);
+        } else {
+          handleShowTokenErrorModal();
         }
-        else{handleShowTokenErrorModal();}
       }
     }
   };
-
-  
 
   const fetchMerchant_order_id = async () => {
     try {
@@ -106,9 +105,10 @@ export default function General_ticket() {
         formData,
         {
           headers: {
+            withCredentials: true,
             "Content-Type": "multipart/form-data",
           },
-        },
+        }
       );
       if (response.status === 200) {
         merchant_order_id = response.data.merchant_order_id;
@@ -116,19 +116,19 @@ export default function General_ticket() {
           pathname: "/tickets/general_complete",
           query: { ...router.query, merchant_order_id },
         });
-      } else if(response.status === 403){
+      } else if (response.status === 403) {
         handleShowTokenErrorModal();
-      } else{
+      } else {
         setIsError(true);
       }
-    } catch (error :any) {
-      if(error.response.status === 400){
+    } catch (error: any) {
+      if (error.response.status === 400) {
         setIsError(true);
+      } else {
+        handleShowTokenErrorModal();
       }
-      else{handleShowTokenErrorModal();}
     }
   };
-  
 
   const handleIncrement = () => {
     setmember((prevmember) => (prevmember < 5 ? prevmember + 1 : prevmember)); //최대값을 5로 설정
@@ -581,8 +581,13 @@ export default function General_ticket() {
                   예매취소는 공연 24시간 이전에만 가능하며 그 이후에는 환불이
                   불가합니다.{" "}
                 </li>
-                <li>여러 장의 티켓을 구매하셨을 경우 결제와 결제 취소의 경우 모든 티켓이 일괄처리됩니다.{" "}</li>
-                <li>결제 취소를 원하시면 [예매하기 - 일반 예매내역 조회하기]를 통해 취소하실 수 있습니다.{" "}
+                <li>
+                  여러 장의 티켓을 구매하셨을 경우 결제와 결제 취소의 경우 모든
+                  티켓이 일괄처리됩니다.{" "}
+                </li>
+                <li>
+                  결제 취소를 원하시면 [예매하기 - 일반 예매내역 조회하기]를
+                  통해 취소하실 수 있습니다.{" "}
                 </li>
                 <li>
                   공연 24시간 전 이후에 예매 확정 및 안내 문자 발송예정입니다.
@@ -603,7 +608,7 @@ export default function General_ticket() {
           {isError && <Error_modal />}
           {!isFormComplete && isClick && <Input_modal />}
           {isConfirmationModalVisible && <ConfirmationModal />}
-          {isTokenErrorModalVisible && <TokenErrorModal/>}
+          {isTokenErrorModalVisible && <TokenErrorModal />}
         </div>
       </Background>
     </div>

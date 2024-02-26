@@ -17,8 +17,9 @@ export default function Freshman_complete() {
       if (reservation_id) {
         try {
           const response = await axios.get(
-            `https://api.kahluaband.com/tickets/freshman_complete/?reservation_id=${reservation_id}`, {
-              
+            `https://api.kahluaband.com/tickets/freshman_complete/?reservation_id=${reservation_id}`,
+            {
+              withCredentials: true,
             }
           );
           if (response.status === 200) {
@@ -116,7 +117,8 @@ export default function Freshman_complete() {
                 </li>
                 <li>
                   <div className="flex md:flex-row flex-col">
-                    결제 취소를 원하시면 [예매하기 - 신입생 예매내역 조회하기]를 통해 취소하실 수 있습니다.{" "}
+                    결제 취소를 원하시면 [예매하기 - 신입생 예매내역 조회하기]를
+                    통해 취소하실 수 있습니다.{" "}
                   </div>
                 </li>
                 <li>

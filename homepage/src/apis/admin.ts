@@ -24,11 +24,15 @@ export const getAdminData = async () => {
   const access = localStorage.getItem("access");
   const authAxios = getAuthAxios(access);
   const freshmanTicketsData = (
-    await authAxios.get("/kahlua_admin/tickets/freshman_tickets/")
+    await authAxios.get("/kahlua_admin/tickets/freshman_tickets/", {
+      withCredentials: true,
+    })
   ).data;
 
   const generalTicketsData = (
-    await authAxios.get("/kahlua_admin/tickets/general_tickets/")
+    await authAxios.get("/kahlua_admin/tickets/general_tickets/", {
+      withCredentials: true,
+    })
   ).data;
 
   return { freshmanTicketsData, generalTicketsData };
