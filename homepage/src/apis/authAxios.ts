@@ -6,7 +6,6 @@ export const getAuthAxios = (token: string | null) => {
   const authAxios = axios.create({
     baseURL: "https://api.kahluaband.com/",
     headers: {
-      withCredentials: true,
       Authorization: token,
     },
   });
