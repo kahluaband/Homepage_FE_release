@@ -35,7 +35,9 @@ const General_check = () => {
         }
       } catch (error) {}
     };
-    setIsValidCount(input_phone_num.length === 11);
+    if(input_phone_num.length===11){
+      setIsValidCount(true);
+    }
     fetchmerchant_orderData();
   }, [merchant_order_id, router.query.merchant_order_id, input_phone_num]);
 
