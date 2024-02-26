@@ -54,6 +54,7 @@ const General_check = () => {
               withCredentials: true,
               "Content-Type": "multipart/form-data",
             },
+            withCredentials: true,
           }
         );
         router.push({

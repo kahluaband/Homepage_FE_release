@@ -56,6 +56,7 @@ const Freshman_check = () => {
             headers: {
               "Content-Type": "multipart/form-data",
             },
+            withCredentials: true,
           }
         );
         router.push({
