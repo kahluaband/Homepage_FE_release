@@ -17,6 +17,7 @@ const General_delete = () => {
     try {
       const response = await axios.get(
         `https://api.kahluaband.com/tickets/general_complete/?merchant_order_id=${merchant_order_id}`,
+        { withCredentials: true }
       );
       if (response.data) {
         if (response.data.status === "Success") {

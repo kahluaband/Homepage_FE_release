@@ -23,7 +23,7 @@ export default function Freshman_ticket() {
     useState(false);
 
   const [isTokenErrorModalVisible, setIsTokenErrorModalVisible] =
-  useState(false);
+    useState(false);
 
   const handleShowConfirmationModal = () => {
     setIsConfirmationModalVisible(true);
@@ -33,7 +33,7 @@ export default function Freshman_ticket() {
     setIsConfirmationModalVisible(false);
     handleSubmit();
   };
-  
+
   const handleShowTokenErrorModal = () => {
     setIsTokenErrorModalVisible(true);
   };
@@ -57,6 +57,7 @@ export default function Freshman_ticket() {
         const response = await axios.post(
           `https://api.kahluaband.com/tickets/freshman_ticket/`,
           formData,
+          { withCredentials: true }
         );
         if (response.status === 200) {
           const reservation_id = response.data.data.reservation_id;
@@ -64,16 +65,17 @@ export default function Freshman_ticket() {
             pathname: "/tickets/freshman_complete",
             query: { ...router.query, reservation_id },
           });
-        } else if(response.status === 403){
+        } else if (response.status === 403) {
           handleShowTokenErrorModal();
-        } else{
+        } else {
           setIsError(true);
         }
-      } catch (error :any) {
-        if(error.response.status === 400){
+      } catch (error: any) {
+        if (error.response.status === 400) {
           setIsError(true);
+        } else {
+          handleShowTokenErrorModal();
         }
-        else{handleShowTokenErrorModal();}
       }
     }
   };
@@ -428,7 +430,7 @@ export default function Freshman_ticket() {
                     티켓현장수령은 예매가 완료되면 부여되는
                   </p>
                   <div className="flex flex-row">
-                      [예약번호]로 공연 당일 티켓을 수령하여 입장합니다.
+                    [예약번호]로 공연 당일 티켓을 수령하여 입장합니다.
                   </div>
                 </div>
               </div>
@@ -455,7 +457,7 @@ export default function Freshman_ticket() {
                 신입생 뒷풀이 참여 여부
               </div>
               <div className="lg:w-[740px] lg:mt-[36px] sm:mt-[15px] mt-[4px] lg:ml-[40px] text-xs sm:text-[14px] font-[500] leading-[21px] text-[#464646] flex-shrink-0 flex flex-row">
-                공연 후 조가 배정되어{" "}뒷풀이가 있을 예정입니다.
+                공연 후 조가 배정되어 뒷풀이가 있을 예정입니다.
               </div>
             </div>
             <div className="mt-8 sm:mt-[20px] text-sm sm:text-[20px] flex flex-row gap-[8.8vw]">
@@ -483,8 +485,13 @@ export default function Freshman_ticket() {
                 예매취소는 공연 24시간 이전에만 가능하며 그 이후에는 환불이
                 불가합니다.{" "}
               </li>
-              <li>여러 장의 티켓을 구매하셨을 경우 결제와 결제 취소의 경우 모든 티켓이 일괄처리됩니다.{" "}</li>
-              <li>결제 취소를 원하시면 [예매하기 - 신입생 예매내역 조회하기]를 통해 취소하실 수 있습니다.{" "}
+              <li>
+                여러 장의 티켓을 구매하셨을 경우 결제와 결제 취소의 경우 모든
+                티켓이 일괄처리됩니다.{" "}
+              </li>
+              <li>
+                결제 취소를 원하시면 [예매하기 - 신입생 예매내역 조회하기]를
+                통해 취소하실 수 있습니다.{" "}
               </li>
               <li>
                 공연 24시간 전 이후에 예매 확정 및 안내 문자 발송예정입니다.
@@ -503,7 +510,7 @@ export default function Freshman_ticket() {
         {isError && <Error_modal />}
         {isClick && !isFormComplete && <Input_modal />}
         {isConfirmationModalVisible && <ConfirmationModal />}
-        {isTokenErrorModalVisible && <TokenErrorModal/>}
+        {isTokenErrorModalVisible && <TokenErrorModal />}
       </Background>
     </div>
   );
