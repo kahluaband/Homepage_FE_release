@@ -25,7 +25,10 @@ const Freshman_check = () => {
       try {
         if (router.query?.reservation_id) {
           const response = await axios.get(
-            `https://api.kahluaband.com/tickets/freshman_complete/?reservation_id=${router.query.reservation_id}`
+            `https://api.kahluaband.com/tickets/freshman_complete/?reservation_id=${router.query.reservation_id}`,
+            {
+              withCredentials: true,
+            }
           );
 
           if (response.data) {
@@ -187,21 +190,20 @@ const Freshman_check = () => {
                   {" "}
                   정말 취소하시려면 예매하실 때 입력한 학번을 입력해주세요.
                 </p>
-                
               </div>
               <input
-                  type="text"
-                  value={input_sid}
-                  onChange={(e) => set_sid(e.target.value)}
-                  placeholder="학번을 입력해 주세요."
-                  className="mt-8 bg-[#FFF] border  border-[#4A4A4A] rounded-[10px] text-sm sm:text-[14px] outline-none w-[100%] h-[64px]  text-[black] px-[8px]"
-                  onKeyDown={handleInputKeyPress}
-                />
-                {!validSid && (
-                  <p className="text-[#F00] text-[10px] font-[400] leading-[19px] align-center mt-[2px]">
-                    ⚠️ 잘못된 입력 정보입니다.
-                  </p>
-                )}
+                type="text"
+                value={input_sid}
+                onChange={(e) => set_sid(e.target.value)}
+                placeholder="학번을 입력해 주세요."
+                className="mt-8 bg-[#FFF] border  border-[#4A4A4A] rounded-[10px] text-sm sm:text-[14px] outline-none w-[100%] h-[64px]  text-[black] px-[8px]"
+                onKeyDown={handleInputKeyPress}
+              />
+              {!validSid && (
+                <p className="text-[#F00] text-[10px] font-[400] leading-[19px] align-center mt-[2px]">
+                  ⚠️ 잘못된 입력 정보입니다.
+                </p>
+              )}
               <div className="w-[75vw] sm:w-[400px] md:w-[514px] h-[64px] mt-8 sm:mt-[48px] mx-auto flex items-center">
                 <button
                   onClick={handleCancelReservation}

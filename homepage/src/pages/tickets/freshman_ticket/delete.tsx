@@ -16,6 +16,7 @@ const Freshman_delete = () => {
     try {
       const response = await axios.get(
         `https://api.kahluaband.com/tickets/freshman_complete/?reservation_id=${reservation_id}`,
+        { withCredentials: true }
       );
 
       if (response.data) {

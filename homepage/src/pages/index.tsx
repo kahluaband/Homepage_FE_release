@@ -11,7 +11,7 @@ import Link from "next/link";
 import { Cookies } from "react-cookie";
 
 // refreshToken cookie 주고 받기 위함
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true;
 
 const cookies = new Cookies();
 

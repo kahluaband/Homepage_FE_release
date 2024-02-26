@@ -13,7 +13,8 @@ const General_check = () => {
   const [validPhone_num, setValidPhone_num] = useState(true);
   const [isValidCount, setIsValidCount] = useState(false);
   const { merchant_order_id } = router.query;
-  const [isTokenErrorModalVisible, setIsTokenErrorModalVisible] = useState(false);
+  const [isTokenErrorModalVisible, setIsTokenErrorModalVisible] =
+    useState(false);
 
   const handleShowTokenErrorModal = () => {
     setIsTokenErrorModalVisible(true);
@@ -25,6 +26,7 @@ const General_check = () => {
         if (router.query.merchant_order_id) {
           const response = await axios.get(
             `https://api.kahluaband.com/tickets/general_complete/?merchant_order_id=${merchant_order_id}`,
+            { withCredentials: true }
           );
           if (response.data) {
             setBuyer(response.data.data.buyer);
@@ -57,8 +59,8 @@ const General_check = () => {
           pathname: "/tickets/cancel_complete/",
           query: { rid },
         });
-      } catch (error:any) {
-        if(error.response.status === 403){
+      } catch (error: any) {
+        if (error.response.status === 403) {
           handleShowTokenErrorModal();
         }
       }
@@ -201,16 +203,17 @@ const General_check = () => {
                   onClick={handleCancelmerchant_order}
                   className={`${
                     isValidCount
-                      ? 'w-full h-full bg-[#281CFF] text-[#FFF]'
-                      : 'w-full h-full bg-[#E8E8E8] text-[#000]'
-                  } rounded-[10px] text-center text-[14px] font-[600] leading-[19px]`}>
+                      ? "w-full h-full bg-[#281CFF] text-[#FFF]"
+                      : "w-full h-full bg-[#E8E8E8] text-[#000]"
+                  } rounded-[10px] text-center text-[14px] font-[600] leading-[19px]`}
+                >
                   예매 취소하기
                 </button>
               </div>
             </div>
           )}
         </div>
-        {isTokenErrorModalVisible && <TokenErrorModal/>}
+        {isTokenErrorModalVisible && <TokenErrorModal />}
       </Background>
     </div>
   );
