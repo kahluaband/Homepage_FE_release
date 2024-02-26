@@ -57,7 +57,9 @@ export default function Freshman_ticket() {
         const response = await axios.post(
           `https://api.kahluaband.com/tickets/freshman_ticket/`,
           formData,
-          { withCredentials: true }
+          {
+            withCredentials: true,
+          }
         );
         if (response.status === 200) {
           const reservation_id = response.data.data.reservation_id;

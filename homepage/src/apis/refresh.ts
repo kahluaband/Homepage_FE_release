@@ -10,7 +10,6 @@ export const getNewRefreshToken = async () => {
       refreshToken,
     },
     {
-      withCredentials: true,
       headers: {
         Authorization: accessToken,
       },
