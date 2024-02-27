@@ -33,7 +33,21 @@ export default function General_complete() {
     fetchReservationData();
   }, [merchant_order_id, phone_num]);
 
-  if (merchant_order_id && buyer) {
+  
+  const copyReservationId = () => {
+    if (typeof merchant_order_id === 'string') {
+        navigator.clipboard.writeText(merchant_order_id).then(() => {
+            alert("예매번호가 복사되었습니다!");
+        }).catch((error) => {
+            console.error("Failed to copy reservation ID:", error);
+        });
+    } else {
+        console.error("Invalid merchant_order_id:", merchant_order_id);
+    }
+};
+
+
+  if (merchant_order_id) {
     return (
       <div className="h-[700px] sm:h-[900px]">
         <Background>
@@ -62,9 +76,12 @@ export default function General_complete() {
                   <div className="text-[12px] sm:text-[20px] w-[100px] font-[500] leading-[0.4px]">
                     예매번호
                   </div>
-                  <div className="ml-[2vw] sm:ml-[5.5vw] text-[10px] sm:text-[16px] font-[500] w-[35vw] leading-[21px] text-[#281CFF]">
+                  <div className="ml-[2vw] sm:ml-[5.5vw] text-[10px] sm:text-[16px] font-[500] w-[20vw] sm:w-[17vw] lg:w-[12vw] xl:w-[10vw] leading-[21px] text-[#281CFF] whitespace-nowrap">
                     {merchant_order_id}
                   </div>
+                  <button onClick={copyReservationId}>
+                    <Image src="/assets/images/tickets/copy.svg" alt="copy" width={15} height={15} className="ml-[5vw] sm:ml-[2vw] md:ml-0 w-[10px] h-[10px] sm:w-[15px] sm:h-[15px]"/>
+                  </button>
                 </div>
                 <div className="mt-[12px] sm:mt-[32px] flex flex-row items-center">
                   <div className="text-[12px] sm:text-[20px] w-[100px] font-[500] leading-[0.4px]">
@@ -105,6 +122,11 @@ export default function General_complete() {
                 </div>
               </div>
               <ol className="list-decimal ml-[24px] font-[500] text-[10px] sm:text-[14px] lg:text-[16px] mt-[8px] sm:mt-[22px] leading-[26px]">
+                <li>
+                  <div className="flex md:flex-row flex-col text-[#281CFF]">
+                    예매를 완료하신 분들은 예매 조회 및 확인을 위해 반드시 예매번호를 확인하고 기억해주시기 바랍니다.
+                  </div>
+                </li>
                 <li>
                   <div className="flex md:flex-row flex-col">
                     계좌이체 결제를 선택하신 분들은 [예매현황-입금계좌]에 24시간
