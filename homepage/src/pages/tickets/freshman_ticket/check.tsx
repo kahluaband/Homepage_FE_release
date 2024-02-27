@@ -11,7 +11,6 @@ const Freshman_check = () => {
   const [student_id, setStudent_id] = useState("");
   const [input_sid, set_sid] = useState("");
   const [validSid, setValidSid] = useState(true);
-  const [isValidCount, setIsValidCount] = useState(false);
   const { reservation_id } = router.query;
   const [isTokenErrorModalVisible, setIsTokenErrorModalVisible] =
     useState(false);
@@ -20,29 +19,24 @@ const Freshman_check = () => {
     setIsTokenErrorModalVisible(true);
   };
 
-  useEffect(() => {
-    const fetchReservationData = async () => {
-      try {
-        if (router.query?.reservation_id) {
-          const response = await axios.get(
-            `https://api.kahluaband.com/tickets/freshman_complete/?reservation_id=${router.query.reservation_id}`,
-            {
-              withCredentials: true,
-            }
-          );
-  
-          if (response.data) {
-            setBuyer(response.data.data.buyer);
-            setStudent_id(response.data.data.student_id);
+  const fetchReservationData = async () => {
+    try {
+      if (router.query?.reservation_id) {
+        const response = await axios.get(
+          `https://api.kahluaband.com/tickets/freshman_complete/?reservation_id=${router.query.reservation_id}`,
+          {
+            withCredentials: true,
           }
+        );
+
+        if (response.data) {
+          setBuyer(response.data.data.buyer);
+          setStudent_id(response.data.data.student_id);
         }
-      } catch (error) {}
-    };
-    if(input_sid.length===7){
-      setIsValidCount(true);
-    }
-    fetchReservationData();
-  }, [router.query?.reservation_id, input_sid]);
+      }
+    } catch (error) {}
+  };
+  fetchReservationData();
 
   const handleCancelReservation = async () => {
     if (input_sid === student_id) {
@@ -111,6 +105,7 @@ const Freshman_check = () => {
         document.removeEventListener("keydown", handleKeyPress);
       };
     }, [handleKeyPress]);
+    
     return !onErrorClose ? (
       <div
         onClick={handleOverlayClick}
@@ -202,7 +197,7 @@ const Freshman_check = () => {
                 className="mt-8 bg-[#FFF] border  border-[#4A4A4A] rounded-[10px] text-sm sm:text-[14px] outline-none w-[100%] h-[64px]  text-[black] px-[8px]"
                 onKeyDown={handleInputKeyPress}
               />
-              {validSid && (
+              {!validSid && (
                 <p className="text-[#F00] ml-0 align-left flex justify-start text-[10px] font-[400] leading-[19px] mt-[2px] w-full">
                   ⚠️ 잘못된 입력 정보입니다.
                 </p>
@@ -210,11 +205,7 @@ const Freshman_check = () => {
               <div className="w-[75vw] sm:w-[400px] md:w-[514px] h-[64px] mt-8 sm:mt-[48px] mx-auto flex items-center">
                 <button
                   onClick={handleCancelReservation}
-                  className={`${
-                    isValidCount
-                      ? "w-full h-full bg-[#281CFF] text-[#FFF]"
-                      : "w-full h-full bg-[#E8E8E8] text-[#000]"
-                  } rounded-[10px] text-center text-[14px] font-[600] leading-[19px]`}
+                  className="w-full h-full bg-[#281CFF] text-[#FFF] rounded-[10px] text-center text-[14px] font-[600] leading-[19px]"
                 >
                   예매 취소하기
                 </button>
