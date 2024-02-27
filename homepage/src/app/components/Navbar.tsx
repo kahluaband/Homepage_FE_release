@@ -144,14 +144,14 @@ export default function Navbar() {
                       <li
                         key={link.name}
                         onClick={showMenu ? toggleMenu : undefined}
-                        className={` text-[#000] ${
+                        className={` text-[#000] text-center items-center flex justify-center ${
                           focusedLink === link.name ||
                           pathname?.startsWith(link.link)
-                            ? "border-t-4 border-t-[#281CFF] "
+                            ? "border-t-4 border-t-[#281CFF] my-[35px]"
                             : "hover:text-[#575757]"
                         }  ${
                           showMenu
-                            ? "text-[20px] w-[100%] h-[100%] font-[500] md:font-[700] text-center"
+                            ? "text-[20px] w-[100%] h-[100%] font-[500] md:font-[700]"
                             : "text-[16px] w-[80px]  h-[32px] font-[600] leading-[19px] flex-shrink-0 flex items-center justify-center"
                         }`}
                       >
