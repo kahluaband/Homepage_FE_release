@@ -536,7 +536,7 @@ export default function General_ticket() {
                 </div>
               </div>
               <div className="mt-8 sm:mt-[18px] flex lg:flex-row flex-col">
-                <label className="flex items-center mt-4 sm:mt-[20px]">
+                <label className="flex items-center sm:mt-[20px]">
                   <input
                     type="radio"
                     name="결제방법"
