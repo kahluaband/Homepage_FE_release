@@ -35,9 +35,15 @@ export default function Freshman_complete() {
   }, [reservation_id]);
 
   const copyReservationId= () => {
-    navigator.clipboard.writeText(reservation_id).then((res) => {
-      alert("예매번호가 복사되었습니다!");
-    });
+    if (typeof reservation_id === 'string') {
+      navigator.clipboard.writeText(reservation_id).then(() => {
+          alert("예매번호가 복사되었습니다!");
+      }).catch((error) => {
+          console.error("Failed to copy reservation ID:", error);
+      });
+  } else {
+      console.error("Invalid reservation_id:", reservation_id);
+  }
   }
 
   if (reservation_id && buyer) {
