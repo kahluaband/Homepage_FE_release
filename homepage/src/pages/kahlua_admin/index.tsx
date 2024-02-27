@@ -91,7 +91,8 @@ export default function Admin() {
         </div>
         <div className="w-[calc(100%-220px)] flex text-[20px]">
           {!viewApplication && !viewTicket && <AdminMain/>}
-
+          
+          {/*application은 세션 선택을 카테고리화 시켰는데, 티켓은 백엔드 보면 query params 이용하지 않고 모든티켓/신입생티켓/일반티켓이 다 따로 만들어져있어서 카테고리화 시키지 않고 따로따로 페이지 만들어두었음*/}
           {viewApplication && <ApplicationDataList session={session}/>}
 
           {viewTicket && viewAllTicket && <AllTicketList/>}

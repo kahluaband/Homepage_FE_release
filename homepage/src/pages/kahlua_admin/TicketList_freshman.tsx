@@ -21,9 +21,7 @@ const FreshmanTicketList = () => {
           );
           if (response.status === 200) {
             setBuyer(response.data.tickets.buyer);
-            setPhoneNum(response.data.tickets.phone_num);
-
-            
+            setPhoneNum(response.data.tickets.phone_num);            
           } 
           else {
           }
