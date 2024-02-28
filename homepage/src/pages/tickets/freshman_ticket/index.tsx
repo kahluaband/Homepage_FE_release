@@ -15,7 +15,7 @@ export default function Freshman_ticket() {
   const [major, setmajor] = useState("");
   const [student_id, setstudent_id] = useState("");
   const [isCheck, setIsCheck] = useState(true);
-  const [meeting, setMeeting] = useState(true);
+  const [meeting, setMeeting] = useState("불참");
   const [isFormComplete, setIsFormComplete] = useState(false);
   const [isError, setIsError] = useState(false);
   const [isClick, setIsClick] = useState(false);
@@ -92,8 +92,8 @@ export default function Freshman_ticket() {
     setIsCheck(event.target.value === "true");
   };
 
-  const handleCheckboxChange2 = () => {
-    setMeeting(!meeting);
+  const handleCheckboxChange2 = (value: any) => {
+    setMeeting(value);
   };
 
   const handlePhoneNumberChange = (
@@ -110,7 +110,7 @@ export default function Freshman_ticket() {
         name="뒷풀이"
         value={value}
         checked={checked}
-        onChange={() => onChange(value === "참")}
+        onChange={() => onChange(value)}
         className="mr-[18px] accent-[#281CFF] w-[14px] h-[14px] sm:w-[18px] sm:h-[18px] flex-shrink-0"
       />
       <div className="font-[500]">{label}</div>
@@ -462,15 +462,21 @@ export default function Freshman_ticket() {
             </div>
             <div className="mt-8 sm:mt-[20px] text-sm sm:text-[20px] flex flex-row gap-[8.8vw]">
               <RadioButton
-                label="참"
-                value="참"
-                checked={meeting}
+                label="3/5 참여"
+                value="3/5 참여"
+                checked= {meeting === "3/5 참여"}
+                onChange={handleCheckboxChange2}
+              />
+              <RadioButton
+                label="3/6 참여"
+                value="3/6 참여"
+                checked={meeting === "3/6 참여"}
                 onChange={handleCheckboxChange2}
               />
               <RadioButton
                 label="불참"
                 value="불참"
-                checked={!meeting}
+                checked={meeting === "불참"}
                 onChange={handleCheckboxChange2}
               />
             </div>
