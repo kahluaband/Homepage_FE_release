@@ -8,11 +8,11 @@ const ApplicationDataList = (session: any) => {
     {/*리스트 보는 스크린 내에서 좌우 스크롤 생기도록*/}
         {<>
         {/*리스트 상단에 고정으로 나오는 항목들 */}
-            <div className="flex flex-row w-full px-10 py-4 gap-4">
-                <p className="flex justify-center items-center w-[140px] h-8 rounded-[24px] bg-[#D9D9D9] text-center text-base text-black">
+            <div className="flex flex-row px-10 py-4 gap-4">
+                <p className="flex justify-center items-center p-4 w-[140px] h-8 rounded-[24px] bg-[#D9D9D9] text-center text-base text-black">
                     23기 지원자 정보
                 </p>
-                <p className="flex justify-center items-center w-[80px] h-8 rounded-[24px] bg-[#D9D9D9] text-center text-base text-black">
+                <p className="flex justify-center items-center p-4 w-[80px] h-8 rounded-[24px] bg-[#D9D9D9] text-center text-base text-black">
                     ?명
                 </p>
             </div>
