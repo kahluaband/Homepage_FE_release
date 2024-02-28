@@ -71,7 +71,6 @@ export default function General_ticket() {
           formData,
           {
             headers: {
-              // withCredentials: true,
               "Content-Type": "multipart/form-data",
             },
           }
@@ -86,9 +85,7 @@ export default function General_ticket() {
           setIsError(true);
         }
       } catch (error: any) {
-        if (error.response.status === 400) {
-          setIsError(true);
-        } else {
+        if (error) {
           handleShowTokenErrorModal();
         }
       }
@@ -105,7 +102,7 @@ export default function General_ticket() {
         formData,
         {
           headers: {
-            //withCredentials: true,
+            withCredentials: true,
             "Content-Type": "multipart/form-data",
           },
         }
@@ -122,9 +119,7 @@ export default function General_ticket() {
         setIsError(true);
       }
     } catch (error: any) {
-      if (error.response.status === 400) {
-        setIsError(true);
-      } else {
+      if (error) {
         handleShowTokenErrorModal();
       }
     }
@@ -300,7 +295,7 @@ export default function General_ticket() {
         <div className="font-pretendard w-[250px] h-[180px] sm:w-auto sm:h-auto bg-[#FFF] flex-shrink-0 fixed rounded-[10px] z-20 sm:pb-[60px] pb-[26px] px-[12px]">
           <button
             onClick={handleIsErrorClose}
-            className="ml-[210px] mt-8 w-[22px] sm:w-[30px] h-[22px] sm:h-[30px] sm:ml-[552px] flex-col items-center flex justify-center"
+            className="ml-[210px] mt-[8px] w-[22px] sm:w-[30px] h-[22px] sm:h-[30px] sm:ml-[552px] flex-col items-center flex justify-center"
           >
             <Image
               src="/assets/images/layout/close.svg"
@@ -542,7 +537,7 @@ export default function General_ticket() {
                 </div>
               </div>
               <div className="mt-8 sm:mt-[18px] flex lg:flex-row flex-col">
-                <label className="flex items-center mt-4 sm:mt-[20px]">
+                <label className="flex items-center sm:mt-[20px]">
                   <input
                     type="radio"
                     name="결제방법"

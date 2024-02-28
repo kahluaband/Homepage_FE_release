@@ -106,7 +106,7 @@ export default function Tickets() {
   }
 
   const ReserveTickets = () => (
-    <div className="text-[#FFF] font-[500] md:font-[700] leading-[17px] text-[10px] sm:text-[12px] lg:text-[14px] text-center">
+    <div className="text-[#FFF] font-[600] md:font-[700] leading-[17px] text-[10px] sm:text-[12px] lg:text-[14px] text-center">
       { isWithinSeason ? (
         <div className="contents-center flex justify-center flex-col lg:flex-row lg:gap-4">
           <Link href="tickets/freshman_ticket">
@@ -144,7 +144,7 @@ export default function Tickets() {
         <TicketButton
           href="tickets/freshman_ticket/delete/"
           label="신입생 예매내역 조회하기"
-          width="35vw"
+          width="36vw"
           height="33px"
           margin="0"
           text="10px"
@@ -152,7 +152,7 @@ export default function Tickets() {
         <TicketButton
           href="tickets/general_ticket/delete/"
           label="일반 예매내역 조회하기"
-          width="35vw"
+          width="36vw"
           height="33px"
           margin="2vw"
           text="10px"
@@ -213,7 +213,7 @@ export default function Tickets() {
             />
             <div className="w-[50vw] h-[200px] sm:h-[300px] lg:w-[600px] md:h-[300px] lg:h-[400px] xl:w-[720px] xl:h-[460px] ml-[11px] lg:ml-[23px] mt-0 top-0 flex-shrink-0">
               <div className="flex flex-row justify-between">
-                <div className="w-[70px] h-[18px] md:w-[100px] md:text-[11px] lg:h-[24px] flex flex-shrink-0 justify-center rounded-[40px] bg-[#281CFF] text-[9px] lg:text-[12px] font-[400] md:font-[600] tracking-[0.2px] leading-[20px] text-[#FFF] text-center whitespace-nowrap items-center">
+                <div className="w-[70px] h-[18px] md:w-[100px] md:text-[11px] lg:h-[24px] flex flex-shrink-0 justify-center rounded-[40px] bg-[#281CFF] text-[9px] lg:text-[12px] font-[500] md:font-[600] tracking-[0.2px] leading-[20px] text-[#FFF] text-center whitespace-nowrap items-center">
                   예매 가능
                 </div>
                 <div className="flex mt-[3px]">
@@ -353,12 +353,12 @@ export default function Tickets() {
                 </div>
                 <div
                   id="map1"
-                  className="hidden lg:flex xl:ml-[50px] lg:right-[1vw] lg:w-[180px] lg:h-[180px] xl:w-[242px] xl:h-[242px] rounded-[10px] border-[1px] border-[#B9B9B9] flex-shrink-0 z-0"
+                  className="hidden lg:flex xl:ml-[50px] lg:right-[1vw] lg:w-[170px] lg:h-[170px] xl:w-[242px] xl:h-[242px] rounded-[10px] border-[1px] border-[#B9B9B9] flex-shrink-0 z-0"
                 ></div>
               </div>
             </div>
           </div>
-          <div className="flex lg:hidden mt-[50px] md:mt-[60px]">
+          <div className="flex lg:hidden mt-[50px] md:mt-[60px] whitespace-nowrap">
             {checkTickets()}
           </div>
 
@@ -389,14 +389,14 @@ export default function Tickets() {
               </div>
             </div>
             <div className="flex flex-row w-[90vw] xl:w-[1079px] border-solid  border-y border-[#B9B9B9]">
-              <div className="w-[30vw] xl:w-[360px] h-[260px] border-r border-[#E8E8E8] bg-[#F1F5FF]  flex flex-row">
-                <div className="w-[30vw] xl:w-[270px] h-[200px] ml-[45px] mt-[30px]">
+              <div className="w-[30vw] xl:w-[360px] h-[260px] justify-center border-r border-[#E8E8E8] bg-[#F1F5FF] flex flex-row">
+                <div className="w-[30vw] xl:w-[270px] h-[200px] mt-[30px] flex justify-center">
                   <Calendar />
                 </div>
               </div>
-              <div className="w-[30vw] xl:w-[360px] h-[260px] border-r bg-[#F1F5FF]  border-[#E8E8E8] flex flex-col">
-                <div className="flex">
-                  <div className="ml-[45px] mt-[30px]">
+              <div className="w-[30vw] xl:w-[360px] h-[260px] border-r bg-[#F1F5FF] border-[#E8E8E8] flex flex-col">
+                <div className="flex justify-center">
+                  <div className=" xl:mx-[2vw] mt-[30px]">
                     <SelectBox />
                   </div>
                 </div>
@@ -416,7 +416,7 @@ export default function Tickets() {
             <div
               id="map2"
               className="lg:hidden items-center justify-center mx-auto flex w-[80vw] h-[20vw] flex-shrink-0 z-0 rounded-[10px] border-[1px] border-[#B9B9B9]"
-            ></div>
+            />
             <div className="flex lg:hidden flex-col mt-[16px] w-[80vw] ml-[2px] h-[530px] md:h-[660px] flex-shrink-0 rounded-[10px] border-solid border-[#B9B9B9] border mx-auto bg-[white]">
               <div className="w-[60vw] h-[20px] flex md:h-[28px] text-[8px] md:text-[12px] flex-row gap-[13px] items-center justify-center text-center">
                 <div className="font-[400]  w-[37px] h-[19px] text-center items-center flex whitespace-nowrap">

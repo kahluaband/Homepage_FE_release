@@ -20,24 +20,21 @@ const General_check = () => {
     setIsTokenErrorModalVisible(true);
   };
 
-  useEffect(() => {
-    const fetchmerchant_orderData = async () => {
-      try {
-        if (router.query.merchant_order_id) {
-          const response = await axios.get(
-            `https://api.kahluaband.com/tickets/general_complete/?merchant_order_id=${merchant_order_id}`,
-            { withCredentials: true }
-          );
-          if (response.data) {
-            setBuyer(response.data.data.buyer);
-            setPhone_num(response.data.data.phone_num);
-          }
+  const fetchmerchant_orderData = async () => {
+    try {
+      if (router.query.merchant_order_id) {
+        const response = await axios.get(
+          `https://api.kahluaband.com/tickets/general_complete/?merchant_order_id=${merchant_order_id}`,
+          { withCredentials: true }
+        );
+        if (response.data) {
+          setBuyer(response.data.data.buyer);
+          setPhone_num(response.data.data.phone_num);
         }
-      } catch (error) {}
-    };
-    setIsValidCount(input_phone_num.length === 11);
-    fetchmerchant_orderData();
-  }, [merchant_order_id, router.query.merchant_order_id, input_phone_num]);
+      }
+    } catch (error) {}
+  };
+  fetchmerchant_orderData();
 
   const handleCancelmerchant_order = async () => {
     if (input_phone_num === phone_num) {
@@ -202,11 +199,7 @@ const General_check = () => {
               <div className="w-[75vw] sm:w-[400px] md:w-[514px] h-[64px] mt-8 mx-auto flex items-center">
                 <button
                   onClick={handleCancelmerchant_order}
-                  className={`${
-                    isValidCount
-                      ? "w-full h-full bg-[#281CFF] text-[#FFF]"
-                      : "w-full h-full bg-[#E8E8E8] text-[#000]"
-                  } rounded-[10px] text-center text-[14px] font-[600] leading-[19px]`}
+                  className="w-full h-full bg-[#E8E8E8] text-[#000] rounded-[10px] text-center text-[14px] font-[600] leading-[19px]"
                 >
                   예매 취소하기
                 </button>

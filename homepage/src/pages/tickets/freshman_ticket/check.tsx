@@ -11,7 +11,6 @@ const Freshman_check = () => {
   const [student_id, setStudent_id] = useState("");
   const [input_sid, set_sid] = useState("");
   const [validSid, setValidSid] = useState(true);
-  const [isValidCount, setIsValidCount] = useState(false);
   const { reservation_id } = router.query;
   const [isTokenErrorModalVisible, setIsTokenErrorModalVisible] =
     useState(false);
@@ -20,27 +19,24 @@ const Freshman_check = () => {
     setIsTokenErrorModalVisible(true);
   };
 
-  useEffect(() => {
-    const fetchReservationData = async () => {
-      try {
-        if (router.query?.reservation_id) {
-          const response = await axios.get(
-            `https://api.kahluaband.com/tickets/freshman_complete/?reservation_id=${router.query.reservation_id}`,
-            {
-              withCredentials: true,
-            }
-          );
-
-          if (response.data) {
-            setBuyer(response.data.data.buyer);
-            setStudent_id(response.data.data.student_id);
+  const fetchReservationData = async () => {
+    try {
+      if (router.query?.reservation_id) {
+        const response = await axios.get(
+          `https://api.kahluaband.com/tickets/freshman_complete/?reservation_id=${router.query.reservation_id}`,
+          {
+            withCredentials: true,
           }
+        );
+
+        if (response.data) {
+          setBuyer(response.data.data.buyer);
+          setStudent_id(response.data.data.student_id);
         }
-      } catch (error) {}
-    };
-    setIsValidCount(input_sid.length === 7);
-    fetchReservationData();
-  }, [router.query?.reservation_id, input_sid]);
+      }
+    } catch (error) {}
+  };
+  fetchReservationData();
 
   const handleCancelReservation = async () => {
     if (input_sid === student_id) {
@@ -109,6 +105,7 @@ const Freshman_check = () => {
         document.removeEventListener("keydown", handleKeyPress);
       };
     }, [handleKeyPress]);
+    
     return !onErrorClose ? (
       <div
         onClick={handleOverlayClick}
@@ -201,18 +198,14 @@ const Freshman_check = () => {
                 onKeyDown={handleInputKeyPress}
               />
               {!validSid && (
-                <p className="text-[#F00] text-[10px] font-[400] leading-[19px] align-center mt-[2px]">
+                <p className="text-[#F00] ml-0 align-left flex justify-start text-[10px] font-[400] leading-[19px] mt-[2px] w-full">
                   ⚠️ 잘못된 입력 정보입니다.
                 </p>
               )}
               <div className="w-[75vw] sm:w-[400px] md:w-[514px] h-[64px] mt-8 sm:mt-[48px] mx-auto flex items-center">
                 <button
                   onClick={handleCancelReservation}
-                  className={`${
-                    isValidCount
-                      ? "w-full h-full bg-[#281CFF] text-[#FFF]"
-                      : "w-full h-full bg-[#E8E8E8] text-[#000]"
-                  } rounded-[10px] text-center text-[14px] font-[600] leading-[19px]`}
+                  className="w-full h-full bg-[#281CFF] text-[#FFF] rounded-[10px] text-center text-[14px] font-[600] leading-[19px]"
                 >
                   예매 취소하기
                 </button>
