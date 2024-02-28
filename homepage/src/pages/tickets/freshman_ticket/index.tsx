@@ -15,7 +15,7 @@ export default function Freshman_ticket() {
   const [major, setmajor] = useState("");
   const [student_id, setstudent_id] = useState("");
   const [isCheck, setIsCheck] = useState(true);
-  const [meeting, setMeeting] = useState(true);
+  const [meeting, setMeeting] = useState("불참");
   const [isFormComplete, setIsFormComplete] = useState(false);
   const [isError, setIsError] = useState(false);
   const [isClick, setIsClick] = useState(false);
@@ -92,8 +92,8 @@ export default function Freshman_ticket() {
     setIsCheck(event.target.value === "true");
   };
 
-  const handleCheckboxChange2 = () => {
-    setMeeting(!meeting);
+  const handleCheckboxChange2 = (value: any) => {
+    setMeeting(value);
   };
 
   const handlePhoneNumberChange = (
@@ -110,7 +110,7 @@ export default function Freshman_ticket() {
         name="뒷풀이"
         value={value}
         checked={checked}
-        onChange={() => onChange(value === "참")}
+        onChange={() => onChange(value)}
         className="mr-[18px] accent-[#281CFF] w-[14px] h-[14px] sm:w-[18px] sm:h-[18px] flex-shrink-0"
       />
       <div className="font-[500]">{label}</div>
@@ -271,7 +271,7 @@ export default function Freshman_ticket() {
   };
 
   return (
-    <div className="w-[100%] h-[1900px] sm:h-[2000px] md:h-[2100px] lg:h-[1700px] z-60">
+    <div className="w-[100%] h-[2000px] sm:h-[2000px] md:h-[2100px] lg:h-[1700px] z-60">
       <Background>
         <div className="font-pretendard px-[12.4vw] flex items-center flex-col mb-[84px]">
           <div className="flex flex-col items-center mx-[12.5vw] text-center mt-8 sm:mt-[40px]">
@@ -460,17 +460,23 @@ export default function Freshman_ticket() {
                 공연 후 조가 배정되어 뒷풀이가 있을 예정입니다.
               </div>
             </div>
-            <div className="mt-8 sm:mt-[20px] text-sm sm:text-[20px] flex flex-row gap-[8.8vw]">
+            <div className="mt-8 sm:mt-[20px] text-sm sm:text-[20px] flex flex-col sm:flex-row gap-4 sm:gap-[8.8vw] items-start">
               <RadioButton
-                label="참"
-                value="참"
-                checked={meeting}
+                label="3월 5일 참여"
+                value="3/5 참여"
+                checked= {meeting === "3/5 참여"}
+                onChange={handleCheckboxChange2}
+              />
+              <RadioButton
+                label="3월 6일 참여"
+                value="3/6 참여"
+                checked={meeting === "3/6 참여"}
                 onChange={handleCheckboxChange2}
               />
               <RadioButton
                 label="불참"
                 value="불참"
-                checked={!meeting}
+                checked={meeting === "불참"}
                 onChange={handleCheckboxChange2}
               />
             </div>

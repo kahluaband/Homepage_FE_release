@@ -147,7 +147,7 @@ export default function Navbar() {
                         className={` text-[#000] text-center items-center flex justify-center ${
                           focusedLink === link.name ||
                           pathname?.startsWith(link.link)
-                            ? "border-t-4 border-t-[#281CFF] my-[35px]"
+                            ? (showMenu ? "border-t-4 border-t-[#281CFF] my-[35px]" : "border-t-4 border-t-[#281CFF]")
                             : "hover:text-[#575757]"
                         }  ${
                           showMenu
