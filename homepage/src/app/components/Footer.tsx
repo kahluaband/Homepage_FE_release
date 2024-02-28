@@ -119,7 +119,7 @@ export default function Footer() {
             target="_blank"
             passHref
           >
-            <div className="text-[8px] sm:text-[12px] text-[#6A6A6A] font-[600] tracking-[0.015rem] leading-[8px] underline whitespace-nowrap">
+            <div className="text-[8px] sm:text-[12px] text-[#6A6A6A] font-[500] md:font-[600] tracking-[0.015rem] leading-[8px] underline whitespace-nowrap">
               개인정보처리방침{" "}
             </div>
           </Link>
@@ -129,7 +129,7 @@ export default function Footer() {
             target="_blank"
             passHref
           >
-            <div className="text-[8px] sm:text-[12px] text-[#6A6A6A] font-[600] tracking-[0.015rem] leading-[8px] underline whitespace-nowrap">
+            <div className="text-[8px] sm:text-[12px] text-[#6A6A6A] font-[500] md:font-[600] tracking-[0.015rem] leading-[8px] underline whitespace-nowrap">
               {" "}
               이용약관
             </div>
@@ -139,7 +139,7 @@ export default function Footer() {
       <div className="sm:mt-[4px]">
         <div className="mt-[8px] sm:mt-[12px] flex item-center justify-center">
           <div
-            className="text-[8px] sm:text-[12px] text-[#6A6A6A] font-[600] tracking-[0.015rem] leading-4 whitespace-nowrap"
+            className="text-[8px] sm:text-[12px] text-[#6A6A6A] font-[500] md:font-[600] tracking-[0.015rem] leading-4 whitespace-nowrap"
             onClick={routeAdmin}
           >
             © KAHLUA. All rights reserved.
