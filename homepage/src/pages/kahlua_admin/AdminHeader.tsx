@@ -22,10 +22,10 @@ const AdminHeader = () => {
   };
 
   return (
-    <div className="w-full bg-white pl-[166px] mt-[28px] mb-[26px] flex justify-between">
-      <Image src={logo} alt="admin_logo" height={26} />
+    <div className="w-full bg-white mt-[28px] mb-[26px] px-[24px] sm:px-[40px] md:px-[100px] lg:px-[180px] flex justify-between">
+      <Image src={logo} alt="admin_logo" className="h-[24px] sm:h-[32px] w-auto" height={32} onClick={() => location.reload()} />
       <button
-        className="mr-[180px] rounded-[10px] bg-black text-white px-[12px] py-[4px]"
+        className="rounded-[10px] bg-black text-white text-xs sm:text-base px-[12px] py-[4px]"
         onClick={logoutConfirm}
       >
         <p>로그아웃</p>
