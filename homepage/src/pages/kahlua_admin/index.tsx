@@ -72,7 +72,7 @@ export default function Admin() {
         <div className="w-full sm:w-[180px] md:w-[220px] h-auto gap-4 sm:gap-0 flex sm:flex-col text-center justify-center items-center sm:justify-start bg-gray">
           <ul
             onClick={() => {
-              setViewApplication(!viewApplication);
+              setViewApplication(true);
               setViewTicket(false)
             }}
             className="font-bold text-[20px] w-[170px] sm:w-[180px] md:w-[220px]"
@@ -82,7 +82,7 @@ export default function Admin() {
           </ul>
           <ul
             onClick={() => {
-              setViewTicket(!viewTicket);
+              setViewTicket(true);
               setViewApplication(false)
             }}
             className="font-bold text-[20px] w-[170px] sm:w-[180px] md:w-[220px]"
