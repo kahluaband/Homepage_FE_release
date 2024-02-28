@@ -11,7 +11,6 @@ const Freshman_check = () => {
   const [student_id, setStudent_id] = useState("");
   const [input_sid, set_sid] = useState("");
   const [validSid, setValidSid] = useState(true);
-  const [isValidCount, setIsValidCount] = useState(false);
   const { reservation_id } = router.query;
   const [isTokenErrorModalVisible, setIsTokenErrorModalVisible] =
     useState(false);
@@ -20,24 +19,24 @@ const Freshman_check = () => {
     setIsTokenErrorModalVisible(true);
   };
 
-  useEffect(() => {
-    const fetchReservationData = async () => {
-      try {
-        if (router.query?.reservation_id) {
-          const response = await axios.get(
-            `https://api.kahluaband.com/tickets/freshman_complete/?reservation_id=${router.query.reservation_id}`
-          );
-
-          if (response.data) {
-            setBuyer(response.data.data.buyer);
-            setStudent_id(response.data.data.student_id);
+  const fetchReservationData = async () => {
+    try {
+      if (router.query?.reservation_id) {
+        const response = await axios.get(
+          `https://api.kahluaband.com/tickets/freshman_complete/?reservation_id=${router.query.reservation_id}`,
+          {
+            withCredentials: true,
           }
+        );
+
+        if (response.data) {
+          setBuyer(response.data.data.buyer);
+          setStudent_id(response.data.data.student_id);
         }
-      } catch (error) {}
-    };
-    setIsValidCount(input_sid.length === 7);
-    fetchReservationData();
-  }, [router.query?.reservation_id, input_sid]);
+      }
+    } catch (error) {}
+  };
+  fetchReservationData();
 
   const handleCancelReservation = async () => {
     if (input_sid === student_id) {
@@ -53,6 +52,7 @@ const Freshman_check = () => {
             headers: {
               "Content-Type": "multipart/form-data",
             },
+            withCredentials: true,
           }
         );
         router.push({
@@ -105,6 +105,7 @@ const Freshman_check = () => {
         document.removeEventListener("keydown", handleKeyPress);
       };
     }, [handleKeyPress]);
+    
     return !onErrorClose ? (
       <div
         onClick={handleOverlayClick}
@@ -153,7 +154,7 @@ const Freshman_check = () => {
     <div className="h-[600px] sm:h-[700px]  min-h-screen">
       <Background>
         <div className="font-pretendard mx-[12.5vw] flex items-center flex-col mb-[84px] ">
-          <div className="flex flex-col items-center mx-[12.5vw] text-center content-center mt-[10px] sm:mt-[40px] leading-normal">
+          <div className="flex flex-col items-center mx-[12.5vw] text-center content-center mt-8 sm:mt-[40px] leading-normal">
             <Image
               src="/assets/images/tickets/divider_medium.svg"
               alt="ticket"
@@ -161,15 +162,15 @@ const Freshman_check = () => {
               height={12}
               className="w-[50px] h-[11px] sm:w-[75px] sm:h-[17px]"
             />
-            <p className="mt-[8px] sm:mt-[16px] font-[700] text-[20px] sm:text-[32px] leading-[42px] whitespace-nowrap flex flex-row">
+            <p className="mt-8 sm:mt-[16px] font-[700] text-[20px] sm:text-[32px] leading-[42px] whitespace-nowrap flex flex-row">
               예매내역 취소
             </p>
-            <p className="mt-[16px] sm:mt-[32px] font-[500] text-[10px] sm:text-[14px] leading-[21px] text-[#4A4A4A] whitespace-nowrap">
+            <p className="mt-[16px] sm:mt-[32px] font-[500] text-sm sm:text-[14px] leading-[21px] text-[#4A4A4A] ">
               [예매 취소하기] 버튼을 누르시면 예매 취소가 완료됩니다.
             </p>
           </div>
           {reservation_id && (
-            <div className="mt-[12px] sm:mt-[48px] mx-auto items-center content-center flex flex-col ">
+            <div className="mt-8 sm:mt-[48px] mx-auto items-center content-center flex flex-col ">
               <Ticket_info
                 reservation_id={
                   Array.isArray(router.query.reservation_id)
@@ -178,37 +179,33 @@ const Freshman_check = () => {
                 }
                 buyer={buyer}
               />
-              <div className="flex mt-[16px] mx-auto sm:ml-[4px] flex-col w-[75vw] sm:w-[300px] md:w-[516px]">
-                <p className="ml-0 text-left text-[#4A4A4A] text-[10px] sm:text-[12px] leading-[21px]">
+              <div className="flex mt-8 mx-auto sm:ml-[4px] flex-col w-[75vw] sm:w-[300px] md:w-[516px]">
+                <p className="ml-0 text-left text-[#4A4A4A] text-xs sm:text-[12px] leading-[21px]">
                   {" "}
                   예매 취소 인증 절차입니다.
                 </p>
-                <p className="ml-0 text-left text-[#4A4A4A] text-[10px] sm:text-[12px] leading-[21px]">
+                <p className="ml-0 text-left text-[#4A4A4A] text-xs sm:text-[12px] leading-[21px]">
                   {" "}
                   정말 취소하시려면 예매하실 때 입력한 학번을 입력해주세요.
                 </p>
-                <input
-                  type="text"
-                  value={input_sid}
-                  onChange={(e) => set_sid(e.target.value)}
-                  placeholder="학번을 입력해 주세요."
-                  className="mt-[10px] bg-[#FFF] border  border-[#4A4A4A] rounded-[10px] text-[10px] sm:text-[14px] outline-none w-[150px] h-[28px] sm:w-[180px] sm:h-[36px] text-[black] px-[8px]"
-                  onKeyDown={handleInputKeyPress}
-                />
-                {!validSid && (
-                  <p className="text-[#F00] text-[10px] font-[400] leading-[19px] align-center mt-[2px]">
-                    ⚠️ 잘못된 입력 정보입니다.
-                  </p>
-                )}
               </div>
-              <div className="w-[75vw] sm:w-[400px] md:w-[514px] h-[48px] mt-[20px] sm:mt-[48px] mx-auto flex items-center">
+              <input
+                type="text"
+                value={input_sid}
+                onChange={(e) => set_sid(e.target.value)}
+                placeholder="학번을 입력해 주세요."
+                className="mt-8 bg-[#FFF] border  border-[#4A4A4A] rounded-[10px] text-sm sm:text-[14px] outline-none w-[100%] h-[64px]  text-[black] px-[8px]"
+                onKeyDown={handleInputKeyPress}
+              />
+              {!validSid && (
+                <p className="text-[#F00] ml-0 align-left flex justify-start text-[10px] font-[400] leading-[19px] mt-[2px] w-full">
+                  ⚠️ 잘못된 입력 정보입니다.
+                </p>
+              )}
+              <div className="w-[75vw] sm:w-[400px] md:w-[514px] h-[64px] mt-8 sm:mt-[48px] mx-auto flex items-center">
                 <button
                   onClick={handleCancelReservation}
-                  className={`${
-                    isValidCount
-                      ? "w-full h-full bg-[#281CFF] text-[#FFF]"
-                      : "w-full h-full bg-[#E8E8E8] text-[#000]"
-                  } rounded-[10px] text-center text-[14px] font-[600] leading-[19px]`}
+                  className="w-full h-full bg-[#281CFF] text-[#FFF] rounded-[10px] text-center text-[14px] font-[600] leading-[19px]"
                 >
                   예매 취소하기
                 </button>

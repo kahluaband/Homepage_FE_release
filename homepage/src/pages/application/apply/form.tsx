@@ -135,8 +135,10 @@ export default function Form() {
       // const validSessionChoices = ['보컬', '드럼', '기타', '베이스', '신디'];
 
       const response = await axios.post(
-        "https://api.kahluaband.com/application/apply/", 
-        formData, {
+        "https://api.kahluaband.com/application/apply/",
+        formData,
+        {
+          withCredentials: true,
         }
       );
 
@@ -617,7 +619,7 @@ export default function Form() {
         </button>
       </div>
       {isConfirmationModalVisible && <ConfirmationModal />}
-      {isTokenErrorModalVisible && <TokenErrorModal/>}
+      {isTokenErrorModalVisible && <TokenErrorModal />}
     </>
   );
 }

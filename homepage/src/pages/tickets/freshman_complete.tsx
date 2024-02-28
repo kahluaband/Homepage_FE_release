@@ -17,8 +17,9 @@ export default function Freshman_complete() {
       if (reservation_id) {
         try {
           const response = await axios.get(
-            `https://api.kahluaband.com/tickets/freshman_complete/?reservation_id=${reservation_id}`, {
-              
+            `https://api.kahluaband.com/tickets/freshman_complete/?reservation_id=${reservation_id}`,
+            {
+              withCredentials: true,
             }
           );
           if (response.status === 200) {
@@ -33,9 +34,21 @@ export default function Freshman_complete() {
     fetchReservationData();
   }, [reservation_id]);
 
+  const copyReservationId= () => {
+    if (typeof reservation_id === 'string') {
+      navigator.clipboard.writeText(reservation_id).then(() => {
+          alert("예매번호가 복사되었습니다!");
+      }).catch((error) => {
+          console.error("Failed to copy reservation ID:", error);
+      });
+  } else {
+      console.error("Invalid reservation_id:", reservation_id);
+  }
+  }
+
   if (reservation_id && buyer) {
     return (
-      <div className="h-[700px] sm:h-[900px]">
+      <div className="h-[800px] sm:h-[900px]">
         <Background>
           <div className="font-pretendard mx-[12.5vw] flex items-center flex-col mb-[84px]">
             <div className="flex flex-col items-center mx-[12.5vw] text-center mt-[12px] sm:mt-[40px]">
@@ -46,7 +59,7 @@ export default function Freshman_complete() {
                 height={17}
                 className="w-[50px] h-[11px] sm:w-[75px] sm:h-[17px]"
               />
-              <div className="mt-[8px] sm:mt-[16px] flex flex-row">
+              <div className="mt-8 flex flex-row">
                 <div className="font-[700] text-[20px] sm:text-[32px] leading-[42px] whitespace-nowrap ">
                   예매 현황
                 </div>
@@ -62,9 +75,12 @@ export default function Freshman_complete() {
                   <div className="text-[12px] sm:text-[20px] w-[100px] font-[500] leading-[0.4px]">
                     예매번호
                   </div>
-                  <div className="ml-[2vw] sm:ml-[5.5vw] text-[10px] sm:text-[16px] font-[500] w-[35vw] leading-[21px] text-[#281CFF]">
+                  <div className="ml-[2vw] sm:ml-[5.5vw] text-[10px] sm:text-[16px] font-[500] w-[20vw] sm:w-[17vw] lg:w-[12vw] xl:w-[10vw] leading-[21px] text-[#281CFF] whitespace-nowrap">
                     {reservation_id}
                   </div>
+                  <button onClick={copyReservationId}>
+                    <Image src="/assets/images/tickets/copy.svg" alt="copy" width={15} height={15} className="ml-[5vw] sm:ml-[2vw] md:ml-0 w-[10px] h-[10px] sm:w-[15px] sm:h-[15px]"/>
+                  </button>
                 </div>
                 <div className="mt-[12px] sm:mt-[32px] flex flex-row items-center">
                   <div className="text-[12px] sm:text-[20px] w-[100px] font-[500] leading-[0.4px]">
@@ -109,6 +125,11 @@ export default function Freshman_complete() {
               </div>
               <ol className="list-decimal ml-[24px] font-[500] text-[10px] sm:text-[14px] lg:text-[16px] mt-[8px] sm:mt-[22px] leading-[26px]">
                 <li>
+                  <div className="flex md:flex-row flex-col text-[#281CFF]">
+                    예매를 완료하신 분들은 예매 조회 및 확인을 위해 반드시 예매번호를 확인하고 기억해주시기 바랍니다.
+                  </div>
+                </li>
+                <li>
                   <div className="flex md:flex-row flex-col">
                     계좌이체 결제를 선택하신 분들은 [예매현황-입금계좌]에 24시간
                     이내로 입금해주시면 자동으로 결제 완료 처리됩니다.{" "}
@@ -116,7 +137,8 @@ export default function Freshman_complete() {
                 </li>
                 <li>
                   <div className="flex md:flex-row flex-col">
-                    결제 취소를 원하시면 [예매하기 - 신입생 예매내역 조회하기]를 통해 취소하실 수 있습니다.{" "}
+                    결제 취소를 원하시면 [예매하기 - 신입생 예매내역 조회하기]를
+                    통해 취소하실 수 있습니다.{" "}
                   </div>
                 </li>
                 <li>
