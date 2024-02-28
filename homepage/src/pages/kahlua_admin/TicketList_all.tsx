@@ -11,8 +11,7 @@ const AllTicketList = () => {
     const fetchReservationData = async () => {
       try {
         const response = await axios.get(
-          `https://api.kahluaband.com/kahlua_admin/tickets/all/`,
-          { withCredentials: true }
+          `https://api.kahluaband.com/kahlua_admin/tickets/all/`
         );
         if (response.status === 200) {
           setName(response.data.data.name);

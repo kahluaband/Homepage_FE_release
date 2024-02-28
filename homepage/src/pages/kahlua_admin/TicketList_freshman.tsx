@@ -16,8 +16,7 @@ const FreshmanTicketList = () => {
     const fetchReservationData = async () => {
       try {
         const response = await axios.get(
-          `https://api.kahluaband.com/kahlua_admin/tickets/freshman_tickets/`,
-          { withCredentials: true }
+          `https://api.kahluaband.com/kahlua_admin/tickets/freshman_tickets/`
         );
         if (response.status === 200) {
           setBuyer(response.data.tickets.buyer);
