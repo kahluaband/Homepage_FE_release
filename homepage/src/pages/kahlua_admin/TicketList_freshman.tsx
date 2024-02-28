@@ -2,20 +2,21 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
+import { getAuthAxios } from "@/apis/authAxios";
 
 const FreshmanTicketList = () => {
-  const router = useRouter();
-
   const [buyer, setBuyer] = useState("");
   const [phoneNum, setPhoneNum] = useState("");
   const [major, setMajor] = useState("");
   const [studentID, setStudentID] = useState("");
   const [meeting, setMeeting] = useState(false);
+  const access = localStorage.getItem("access");
+  const authAxios = getAuthAxios(access);
 
   useEffect(() => {
     const fetchReservationData = async () => {
       try {
-        const response = await axios.get(
+        const response = await authAxios.get(
           `https://api.kahluaband.com/kahlua_admin/tickets/freshman_tickets/`
         );
         if (response.status === 200) {
