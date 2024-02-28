@@ -3,11 +3,11 @@ import AdminHeader from "./AdminHeader";
 import { useState } from "react";
 import DropdownApplication from "./DropdownApplication";
 import { useRouter } from "next/router";
-import FreshmanTicketList from "./TicketList_freshman";
-import AllTicketList from "./TicketList_all";
-import GeneralTicketList from "./TicketList_general";
+import FreshmanTicketList from "@/app/components/kahlua_admin/TicketList_freshman";
+import AllTicketList from "@/app/components/kahlua_admin/TicketList_all";
+import GeneralTicketList from "@/app/components/kahlua_admin/TicketList_general";
 import AdminMain from "./Main";
-import ApplicationDataList from "../../app/components/kahlua_admin/ApplicationDataList";
+import ApplicationDataList from "@/app/components/kahlua_admin/ApplicationDataList";
 
 export default function Admin() {
   const router = useRouter();
