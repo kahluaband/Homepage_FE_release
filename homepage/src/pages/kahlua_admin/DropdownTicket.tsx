@@ -9,7 +9,7 @@ const DropdownTicket = () => {
   return (
     <div
       id="dropdown"
-      className="w-[220px] h-suto text-[18px] flex-col justify-center items-center bg-white"
+      className="w-[180px] md:w-[220px] h-auto text-[18px] text-center flex-col justify-center items-center bg-white"
     >
       <li className="p-1" onClick={() => {
           setViewAllTicket(!viewAllTicket);
