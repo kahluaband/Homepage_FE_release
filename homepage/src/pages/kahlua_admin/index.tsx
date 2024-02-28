@@ -2,7 +2,6 @@ import React, { useCallback, useEffect } from "react";
 import AdminHeader from "./AdminHeader";
 import { useState } from "react";
 import DropdownApplication from "./DropdownApplication";
-import DropdownTicket from "./DropdownTicket";
 import { useRouter } from "next/router";
 import FreshmanTicketList from "./TicketList_freshman";
 import AllTicketList from "./TicketList_all";
