@@ -1,5 +1,5 @@
 const FreshmanTicketItem: React.FC<{ ticket: any }> = ({ticket}) => {
-    const {id, buyer, phone_num, count, member, major, student_id, meeting, reservation_id, merchant_order_id, transaction_status} = ticket;
+    const {id, buyer, phone_num, count, member, major, student_id, meeting, reservation_id, merchant_order_id} = ticket;
     
     return(
         <li className="flex flex-row h-16 w-[1380px] px-4 items-center text-center">
