@@ -5,9 +5,9 @@ import DropdownApplication from "./DropdownApplication";
 import { useRouter } from "next/router";
 import AdminMain from "./Main";
 import ApplicationDataList from "@/app/components/kahlua_admin/ApplicationDataList";
-import AllTicketDataList from "@/app/components/kahlua_admin/TicketDataList_all";
-import FreshmanTicketDataList from "@/app/components/kahlua_admin/TicketDataList_freshman";
-import GeneralTicketDataList from "@/app/components/kahlua_admin/TicketDataList_general";
+import FreshmanTicketList from "@/app/components/kahlua_admin/TicketList_freshman";
+import AllTicketList from "@/app/components/kahlua_admin/TicketList_all";
+import GeneralTicketList from "@/app/components/kahlua_admin/TicketList_general";
 
 export default function Admin() {
   const router = useRouter();
@@ -113,9 +113,9 @@ export default function Admin() {
           {/*application은 세션 선택을 카테고리화 시켰는데, 티켓은 백엔드 보면 query params 이용하지 않고 모든티켓/신입생티켓/일반티켓이 다 따로 만들어져있어서 카테고리화 시키지 않고 따로따로 페이지 만들어두었음*/}
           {viewApplication && <ApplicationDataList session={selectedSession} />}
 
-          {viewTicket && viewAllTicket && <AllTicketDataList />}
-          {viewTicket && viewFreshmanTicket && <FreshmanTicketDataList />}
-          {viewTicket && viewGeneralTicket && <GeneralTicketDataList />}
+          {viewTicket && viewAllTicket && <AllTicketList />}
+          {viewTicket && viewFreshmanTicket && <FreshmanTicketList />}
+          {viewTicket && viewGeneralTicket && <GeneralTicketList />}
         </div>
       </div>
     </div>
