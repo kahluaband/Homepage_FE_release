@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import AllTicketList from "./TicketList_all";
 
-const AllTicketDataList = () => {
+const AllTicketDataList = (type: any) => {
   return (
     <div className="whitespace-nowrap overflow-auto flex flex-col">
       {
@@ -43,7 +43,7 @@ const AllTicketDataList = () => {
             </li>
           </div>
 
-          <AllTicketList/>
+          <AllTicketList type={type}/>
         </>
       }
     </div>

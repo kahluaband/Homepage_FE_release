@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { getAuthAxios } from "@/apis/authAxios";
 import AllTicketItem from "./TicketItem_all";
 
-const AllTicketList = () => {
+const AllTicketList = ({type}: {type: any}) => {
   const access = localStorage.getItem("access");
   const authAxios = getAuthAxios(access);
   const [tickets, setTickets] = useState<any[]>([]);
@@ -14,9 +14,8 @@ const AllTicketList = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const type = 'all';
         const response = await authAxios.get(
-          `https://api.kahluaband.com/kahlua_admin/tickets/${type}/`
+          `https://api.kahluaband.com/kahlua_admin/tickets/all/`
         );
         setTickets(response.data.data.tickets);
         console.log(tickets);
@@ -26,7 +25,7 @@ const AllTicketList = () => {
       setLoading(false);
     };
     fetchData();
-  }, []);
+  }, [type]);
 
   if (loading) {
     return <div>대기 중 ...</div>;
