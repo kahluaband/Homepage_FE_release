@@ -18,7 +18,6 @@ const FreshmanTicketList = () => {
           `https://api.kahluaband.com/kahlua_admin/tickets/freshman_tickets/`
         );
         setTickets(response.data.data.tickets);
-        console.log(tickets);
       } catch (error) {
         console.log(error);
       }

@@ -18,7 +18,6 @@ const AllTicketList = () => {
           `https://api.kahluaband.com/kahlua_admin/tickets/all/`
         );
         setTickets(response.data.data.tickets);
-        console.log(tickets);
       } catch (error) {
         console.log(error);
       }

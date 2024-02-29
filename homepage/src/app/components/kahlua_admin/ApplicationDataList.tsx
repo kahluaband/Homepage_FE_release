@@ -1,8 +1,7 @@
 import React from "react";
-import axios from "axios";
 import AppList from "./ApplicationList";
 
-const ApplicationDataList = (session: any) => {
+const ApplicationDataList = ({ session }: { session: string }) => {
   return (
     <div className="whitespace-nowrap overflow-auto flex flex-col">
       {/*리스트 보는 스크린 내에서 좌우 스크롤 생기도록*/}
@@ -13,9 +12,9 @@ const ApplicationDataList = (session: any) => {
             <p className="flex justify-center items-center p-4 w-[140px] h-8 rounded-[24px] bg-[#D9D9D9] text-center text-base text-black">
               23기 지원자 정보
             </p>
-            <p className="flex justify-center items-center p-4 w-[80px] h-8 rounded-[24px] bg-[#D9D9D9] text-center text-base text-black">
+            {/* <p className="flex justify-center items-center p-4 w-[80px] h-8 rounded-[24px] bg-[#D9D9D9] text-center text-base text-black">
               ?명
-            </p>
+            </p> */}
           </div>
 
           <li className="flex flex-row h-16 w-[3292px] bg-[#D9D9D9] px-4 items-center text-center">

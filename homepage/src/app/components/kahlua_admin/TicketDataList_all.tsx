@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import AllTicketList from "./TicketList_all";
 
 const AllTicketDataList = () => {
@@ -16,32 +15,32 @@ const AllTicketDataList = () => {
             </p>
           </div>
 
-          <div className="flex flex-row h-16 w-[1000px] bg-[#D9D9D9] px-4 items-center text-center">
-            <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+          <li className="flex flex-row h-16 w-[1380px] bg-[#D9D9D9] px-4 items-center text-center">
+            <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               예매번호
-            </li>
-            <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+            </p>
+            <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               이름
-            </li>
-            <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+            </p>
+            <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               전화번호
-            </li>
-            <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+            </p>
+            <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               매수
-            </li>
-            <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+            </p>
+            <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               학과
-            </li>
-            <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+            </p>
+            <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               학번
-            </li>
-            <li className="flex justify-center items-center w-[120px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+            </p>
+            <p className="flex justify-center items-center w-[120px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               뒷풀이 참석 여부
-            </li>
-            <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+            </p>
+            <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               결제상황
-            </li>
-          </div>
+            </p>
+          </li>
 
           <AllTicketList/>
         </>

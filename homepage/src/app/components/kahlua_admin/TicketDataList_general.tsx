@@ -1,6 +1,4 @@
 import React from "react";
-import axios from "axios";
-import AllTicketList from "./TicketList_all";
 import GeneralTicketList from "./TicketList_general";
 
 const GeneralTicketDataList = () => {
@@ -17,7 +15,7 @@ const GeneralTicketDataList = () => {
             </p>
           </div>
 
-          <div className="flex flex-row h-16 w-[1000px] bg-[#D9D9D9] px-4 items-center text-center">
+          <div className="flex flex-row h-16 w-[1380px] bg-[#D9D9D9] px-4 items-center text-center">
             <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               예매번호
             </li>

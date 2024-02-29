@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import AppItem from "./ApplicationItem";
 import { getAuthAxios } from "@/apis/authAxios";
 
-//통신이 안돼서 값 잘 보이는지, 레이아웃 잘 되는지 확인용 샘플
 interface Application {
   id: number;
   created: string;
@@ -24,8 +23,11 @@ interface Application {
   count: number;
 };
 
-const AppList = (props: {session: any}) => {
-  const {session} = props;
+interface AppListProps {
+  session: string;
+}
+
+const AppList: React.FC<AppListProps> = ({session}) => {
   const access = localStorage.getItem("access");
   const authAxios = getAuthAxios(access);
   const [applications, setApplications] = useState<Application[]>([]);
@@ -36,14 +38,12 @@ const AppList = (props: {session: any}) => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const query = session === "전체" ? "" : `&session=${session}`;
+        const query = session === "전체" ? "" : `?first_preference=${session}`;
         const response = await authAxios.get(
-          `https://api.kahluaband.com/kahlua_admin/application/apply_forms`
-
+          `https://api.kahluaband.com/kahlua_admin/application/apply_forms${query}`
           // query params에서 first_preference를 각 세션으로 설정해서 해당 세션을 1지망으로 선택한 지원서 디비를 받아옴
         );
         setApplications(response.data.data.apply_forms);
-        console.log(applications);
       } catch (error) {
         console.log(error);
       }

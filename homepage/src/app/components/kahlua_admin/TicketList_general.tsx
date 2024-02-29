@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { getAuthAxios } from "@/apis/authAxios";
-import FreshmanTicketItem from "./TicketItem_freshman";
 import GeneralTicketItem from "./TicketItem_general";
 
 const GeneralTicketList = () => {
@@ -19,7 +18,6 @@ const GeneralTicketList = () => {
           `https://api.kahluaband.com/kahlua_admin/tickets/general_tickets/`
         );
         setTickets(response.data.data.tickets);
-        console.log(tickets);
       } catch (error) {
         console.log(error);
       }
