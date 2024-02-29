@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AppItem from "./ApplicationItem";
-import axios from "axios";
-import { access } from "fs";
 import { getAuthAxios } from "@/apis/authAxios";
-import { StringifyOptions } from "querystring";
 
 //통신이 안돼서 값 잘 보이는지, 레이아웃 잘 되는지 확인용 샘플
 interface Application {
@@ -31,7 +28,7 @@ const AppList = (props: {session: any}) => {
   const {session} = props;
   const access = localStorage.getItem("access");
   const authAxios = getAuthAxios(access);
-  const [applications, setApplications] = useState<any[]>([]);
+  const [applications, setApplications] = useState<Application[]>([]);
   const [loading, setLoading] = useState(false);
   
   useEffect(() => {
