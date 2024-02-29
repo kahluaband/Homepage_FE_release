@@ -36,7 +36,7 @@ function Apply_vocal() {
 function Apply_others() {
   return (
     <div className="md:w-[calc(50%-16px)] w-full h-auto rounded-[10px] bg-[#F1F5FF] py-8 px-6 mt-8">
-      <p className="md:text-2xl text-xl font-bold text-center">
+      <p className="md:text-2xl text-xl font-bold text-center ">
         드럼/기타/베이스/신디 부문
       </p>
       <p className="md:text-sm text-xs mt-8 text-center">
