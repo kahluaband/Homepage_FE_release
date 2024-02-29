@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { getAuthAxios } from "@/apis/authAxios";
 import AllTicketItem from "./TicketItem_all";
 
-const AllTicketList = ({type}: {type: any}) => {
+const AllTicketList = () => {
   const access = localStorage.getItem("access");
   const authAxios = getAuthAxios(access);
   const [tickets, setTickets] = useState<any[]>([]);
@@ -25,7 +25,7 @@ const AllTicketList = ({type}: {type: any}) => {
       setLoading(false);
     };
     fetchData();
-  }, [type]);
+  }, []);
 
   if (loading) {
     return <div>대기 중 ...</div>;

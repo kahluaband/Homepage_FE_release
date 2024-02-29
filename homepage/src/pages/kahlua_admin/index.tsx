@@ -9,6 +9,8 @@ import GeneralTicketList from "@/app/components/kahlua_admin/TicketList_general"
 import AdminMain from "./Main";
 import ApplicationDataList from "@/app/components/kahlua_admin/ApplicationDataList";
 import AllTicketDataList from "@/app/components/kahlua_admin/TicketDataList_all";
+import FreshmanTicketDataList from "@/app/components/kahlua_admin/TicketDataList_freshman";
+import GeneralTicketDataList from "@/app/components/kahlua_admin/TicketDataList_general";
 
 export default function Admin() {
   const router = useRouter();
@@ -116,8 +118,8 @@ export default function Admin() {
           {viewApplication && <ApplicationDataList session={session} />}
 
           {viewTicket && viewAllTicket && <AllTicketDataList />}
-          {viewTicket && viewFreshmanTicket && <FreshmanTicketList />}
-          {viewTicket && viewGeneralTicket && <GeneralTicketList />}
+          {viewTicket && viewFreshmanTicket && <FreshmanTicketDataList />}
+          {viewTicket && viewGeneralTicket && <GeneralTicketDataList />}
         </div>
       </div>
     </div>
