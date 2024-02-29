@@ -27,12 +27,12 @@ const Login = () => {
   };
 
   return (
-    <div className="font-pretendard w-full h-screen flex justify-center items-center">
-      <div className="w-[780px] h-[560px] bg-gray">
+    <div className="font-pretendard w-full h-screen flex justify-center items-center py-10">
+      <div className="w-[300px] md:w-[540px] lg:w-[780px] h-auto bg-gray p-10">
         <Image
           src={logo}
           alt="admin-logo"
-          className="w-[250px] h-[30px] m-[40px]"
+          className="w-[250px] h-[30px] my-[40px] ml-4"
         />
         <form
           style={{
@@ -48,7 +48,7 @@ const Login = () => {
             value={email}
             onChange={onEmailHandler}
             required
-            className="w-[580px] h-[74px] mt-[40px] mb-[60px] pl-[30px] rounded-[10px]"
+            className="w-full h-[74px] mt-[40px] mb-[60px] pl-[30px] rounded-[10px]"
           />
           <label style={{ display: "none" }}>비밀번호</label>
           <input
@@ -57,11 +57,11 @@ const Login = () => {
             value={password}
             onChange={onPwHandler}
             required
-            className="w-[580px] h-[74px] mb-[90px] pl-[30px] rounded-[10px]"
+            className="w-full h-[74px] mb-[90px] pl-[30px] rounded-[10px]"
           />
           <button
             // onClick={onLoginHandler}
-            className="w-[214px] h-[60px] bg-btnGray text-white text-xl font-bold rounded-[10px]"
+            className="w-full md:w-[214px] h-[60px] bg-btnGray text-white text-xl font-bold rounded-[10px]"
             onClick={onLoginHandler}
           >
             관리자 로그인
