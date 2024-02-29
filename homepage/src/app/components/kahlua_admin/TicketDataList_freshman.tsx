@@ -15,7 +15,7 @@ const FreshmanTicketDataList = () => {
             </p>
           </div>
 
-          <div className="flex flex-row h-16 w-[1712px] bg-[#D9D9D9] px-4 items-center text-center">
+          <div className="flex flex-row h-16 w-[1000px] bg-[#D9D9D9] px-4 items-center text-center">
             <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               예매번호
             </li>

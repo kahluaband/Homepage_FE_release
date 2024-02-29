@@ -18,7 +18,7 @@ const ApplicationDataList = (session: any) => {
             </p>
           </div>
 
-          <li className="flex flex-row h-16 w-[1712px] bg-[#D9D9D9] px-4 items-center text-center">
+          <li className="flex flex-row h-16 w-[3292px] bg-[#D9D9D9] px-4 items-center text-center">
             <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               이름
             </p>
@@ -43,13 +43,13 @@ const ApplicationDataList = (session: any) => {
             <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               2지망 선택
             </p>
-            <p className="flex justify-center items-center w-[220px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+            <p className="flex justify-center items-center w-[600px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               지원 세션의 경력과 지원 이유
             </p>
-            <p className="flex justify-center items-center w-[140px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+            <p className="flex justify-center items-center w-[600px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               깔루아 지원 동기
             </p>
-            <p className="flex justify-center items-center w-[140px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+            <p className="flex justify-center items-center w-[600px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               다룰 줄 아는 악기
             </p>
             <p className="flex justify-center items-center w-[140px] h-full bg-[#D9D9D9] text-base font-bold p-2">
@@ -58,7 +58,7 @@ const ApplicationDataList = (session: any) => {
             <p className="flex justify-center items-center w-[120px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               뒷풀이 참여
             </p>
-            <p className="flex justify-center items-center w-[120px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+            <p className="flex justify-center items-center w-[400px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               각오 한마디
             </p>
           </li>

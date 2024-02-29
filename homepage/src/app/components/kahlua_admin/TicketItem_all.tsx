@@ -2,7 +2,7 @@ const AllTicketItem: React.FC<{ ticket: any }> = ({ticket}) => {
     const {id, buyer, phone_num, count, member, major, student_id, meeting, reservation_id, merchant_order_id, transaction_status} = ticket;
     
     return(
-        <li className="flex flex-row h-16 w-[1712px] px-4 items-center text-center">
+        <li className="flex flex-row h-16 w-[1000px] px-4 items-center text-center">
             <p className="flex justify-center items-center w-[100px] h-full text-base font-bold p-2">
                 {reservation_id}
                 {merchant_order_id}
