@@ -23,6 +23,8 @@ export const getCookie = (name: string): string | undefined => {
   return cookies.get(name);
 };
 
+axios.defaults.withCredentials = true;
+
 axios.defaults.xsrfCookieName = "csrftoken";
 axios.defaults.xsrfHeaderName = "X-CSRFToken";
 axios.defaults.headers.common["X-CSRFToken"] = getCookie("csrftoken");
