@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AppItem from "./ApplicationItem";
-import axios from "axios";
-import { access } from "fs";
 import { getAuthAxios } from "@/apis/authAxios";
-import { StringifyOptions } from "querystring";
 
 //통신이 안돼서 값 잘 보이는지, 레이아웃 잘 되는지 확인용 샘플
 interface Application {
@@ -39,13 +36,13 @@ const AppList = (props: {session: any}) => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        // const query = session === "전체" ? "" : `&session=${session}`;
+        const query = session === "전체" ? "" : `&session=${session}`;
         const response = await authAxios.get(
-          `https://api.kahluaband.com/kahlua_admin/application/apply_forms/?first_preference=${session}`
+          `https://api.kahluaband.com/kahlua_admin/application/apply_forms`
 
           // query params에서 first_preference를 각 세션으로 설정해서 해당 세션을 1지망으로 선택한 지원서 디비를 받아옴
         );
-        setApplications(response.data.apply_forms);
+        setApplications(response.data.data.apply_forms);
         console.log(applications);
       } catch (error) {
         console.log(error);
@@ -54,10 +51,6 @@ const AppList = (props: {session: any}) => {
     };
     fetchData();
   }, [session]);
-
-  useEffect(()=>{
-    console.log(applications);
-  },[session, applications]);
 
   if (loading) {
     return <div>대기 중 ...</div>;

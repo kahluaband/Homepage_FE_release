@@ -102,7 +102,7 @@ export default function General_ticket() {
         formData,
         {
           headers: {
-            withCredentials: true,
+            // withCredentials: true,
             "Content-Type": "multipart/form-data",
           },
         }
