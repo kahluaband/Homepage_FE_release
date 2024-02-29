@@ -14,12 +14,10 @@ const AllTicketList = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const type = 'all';
         const response = await authAxios.get(
-          `https://api.kahluaband.com/kahlua_admin/tickets/${type}/`
+          `https://api.kahluaband.com/kahlua_admin/tickets/all/`
         );
         setTickets(response.data.data.tickets);
-        console.log(tickets);
       } catch (error) {
         console.log(error);
       }

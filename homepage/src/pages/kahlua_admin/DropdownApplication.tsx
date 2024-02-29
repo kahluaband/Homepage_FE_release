@@ -32,7 +32,7 @@ interface DropdownApplicationProps {
   session: string;
 }
 
-const DropdownApplication: React.FC<DropdownApplicationProps> = ({ onSelect, session }) => {
+const DropdownApplication: React.FC<DropdownApplicationProps> = ({ onSelect }) => {
 
   return (
     <div

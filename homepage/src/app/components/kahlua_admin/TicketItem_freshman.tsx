@@ -1,4 +1,4 @@
-const AllTicketItem: React.FC<{ ticket: any }> = ({ticket}) => {
+const FreshmanTicketItem: React.FC<{ ticket: any }> = ({ticket}) => {
     const {id, buyer, phone_num, count, member, major, student_id, meeting, reservation_id, merchant_order_id, transaction_status} = ticket;
     
     return(
@@ -26,11 +26,8 @@ const AllTicketItem: React.FC<{ ticket: any }> = ({ticket}) => {
             <p className="flex justify-center items-center w-[120px] h-full text-sm p-2">
                 {meeting}
             </p>
-            <p className="flex justify-center items-center w-[100px] h-full text-sm p-2">
-                {transaction_status}
-            </p>
         </li>
     )
 }
 
-export default AllTicketItem;
+export default FreshmanTicketItem;
