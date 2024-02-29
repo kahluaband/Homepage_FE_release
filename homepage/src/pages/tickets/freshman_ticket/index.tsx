@@ -58,7 +58,7 @@ export default function Freshman_ticket() {
           `https://api.kahluaband.com/tickets/freshman_ticket/`,
           formData,
           {
-            withCredentials: true,
+            // withCredentials: true,
           }
         );
         if (response.status === 200) {

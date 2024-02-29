@@ -138,7 +138,7 @@ export default function Form() {
         "https://api.kahluaband.com/application/apply/",
         formData,
         {
-          withCredentials: true,
+          // withCredentials: true,
         }
       );
 
