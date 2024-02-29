@@ -39,7 +39,7 @@ const AppList = (props: {session: any}) => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        // const query = session === "전체" ? "" : `&session=${session}`;
+        const query = session === "전체" ? "" : `&session=${session}`;
         const response = await authAxios.get(
           `https://api.kahluaband.com/kahlua_admin/application/apply_forms`
 
@@ -54,10 +54,6 @@ const AppList = (props: {session: any}) => {
     };
     fetchData();
   }, [session]);
-
-  useEffect(()=>{
-    console.log(applications);
-  },[session, applications]);
 
   if (loading) {
     return <div>대기 중 ...</div>;
