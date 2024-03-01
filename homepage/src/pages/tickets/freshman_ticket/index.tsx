@@ -73,7 +73,7 @@ export default function Freshman_ticket() {
           setIsError(true);
         }
       } catch (error: any) {
-        if (error){
+        if (error) {
           handleShowTokenErrorModal();
         }
       }
@@ -454,17 +454,17 @@ export default function Freshman_ticket() {
             <div className="mx-auto w-[100%] h-[1.5px] sm:h-[3px] mt-8 sm:mt-[40px] bg-[#D3D3D3]" />
             <div className="flex flex-col lg:flex-row">
               <div className="w-[200px] h-[29px] mt-8 sm:mt-[32px] font-[700] text-lg sm:text-[20px] leading-[30px] whitespace-nowrap">
-                신입생 뒷풀이 참여 여부
+                새내기 소모임 참여 여부
               </div>
               <div className="lg:w-[740px] lg:mt-[36px] sm:mt-[15px] mt-[4px] lg:ml-[40px] text-xs sm:text-[14px] font-[500] leading-[21px] text-[#464646] flex-shrink-0 flex flex-row">
-                공연 후 조가 배정되어 뒷풀이가 있을 예정입니다.
+                공연 후 조가 배정되어 새내기 소모임이 있을 예정입니다.
               </div>
             </div>
             <div className="mt-8 sm:mt-[20px] text-sm sm:text-[20px] flex flex-col sm:flex-row gap-4 sm:gap-[8.8vw] items-start">
               <RadioButton
                 label="3월 5일 참여"
                 value="3/5 참여"
-                checked= {meeting === "3/5 참여"}
+                checked={meeting === "3/5 참여"}
                 onChange={handleCheckboxChange2}
               />
               <RadioButton
