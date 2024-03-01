@@ -1,41 +1,55 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { getAuthAxios } from "@/apis/authAxios";
+import GeneralTicketItem from "./TicketItem_general";
 
 const GeneralTicketList = () => {
-  const [name, setName] = useState("");
   const access = localStorage.getItem("access");
   const authAxios = getAuthAxios(access);
+  const [tickets, setTickets] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [count, setCount] = useState();
 
   useEffect(() => {
-    const fetchReservationData = async () => {
+
+    const fetchData = async () => {
+      setLoading(true);
       try {
         const response = await authAxios.get(
           `https://api.kahluaband.com/kahlua_admin/tickets/general_tickets/`
         );
-        if (response.status === 200) {
-          setName(response.data.data.name);
-        } else {
-        }
-      } catch (error) {}
+        setTickets(response.data.data.tickets);
+        setCount(response.data.data.total_general);
+      } catch (error) {
+        console.log(error);
+      }
+      setLoading(false);
     };
-    fetchReservationData();
-  });
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <div>대기 중 ...</div>;
+  }
+
+  if (!tickets) {
+    return null;
+  }
 
   return (
     <div className="whitespace-nowrap overflow-auto flex flex-col">
       {
         <>
           <div className="flex flex-row w-full px-10 py-4 gap-4">
-            <p className="flex justify-center items-center w-[140px] h-8 rounded-[24px] bg-[#D9D9D9] text-center text-base text-black">
+            <p className="flex justify-center items-center w-[140px] h-8 p-4 rounded-[24px] bg-[#D9D9D9] text-center text-base text-black">
               2024.03 정기공연
             </p>
-            <p className="flex justify-center items-center w-[80px] h-8 rounded-[24px] bg-[#D9D9D9] text-center text-base text-black">
-              ?명
+            <p className="flex justify-center items-center w-[80px] h-8 p-4 rounded-[24px] bg-[#D9D9D9] text-center text-base text-black">
+              {count} 매
             </p>
           </div>
 
-          <div className="flex flex-row h-16 w-[1712px] bg-[#D9D9D9] px-4 items-center text-center">
+          <div className="flex flex-row h-16 w-[1380px] bg-[#D9D9D9] px-4 items-center text-center">
             <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               예매번호
             </li>
@@ -52,9 +66,16 @@ const GeneralTicketList = () => {
               결제상황
             </li>
           </div>
+
+          <>
+            {tickets.map((ticket) => (
+              <GeneralTicketItem key={ticket.id} ticket={ticket} />
+            ))}
+          </>
         </>
       }
     </div>
+    
   );
 };
 

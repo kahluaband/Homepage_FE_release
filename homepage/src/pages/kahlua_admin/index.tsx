@@ -3,11 +3,11 @@ import AdminHeader from "./AdminHeader";
 import { useState } from "react";
 import DropdownApplication from "./DropdownApplication";
 import { useRouter } from "next/router";
+import AdminMain from "./Main";
 import FreshmanTicketList from "@/app/components/kahlua_admin/TicketList_freshman";
 import AllTicketList from "@/app/components/kahlua_admin/TicketList_all";
 import GeneralTicketList from "@/app/components/kahlua_admin/TicketList_general";
-import AdminMain from "./Main";
-import ApplicationDataList from "@/app/components/kahlua_admin/ApplicationDataList";
+import AppList from "@/app/components/kahlua_admin/ApplicationList";
 
 export default function Admin() {
   const router = useRouter();
@@ -23,15 +23,15 @@ export default function Admin() {
   const [viewTicket, setViewTicket] = useState(false);
 
   const [nameSorted, setNameSorted] = useState(true);
-  const [session, setSession] = useState("전체");
-  const onSelect = useCallback((session: string) => {
-    setSession(session);
-    console.log(session);
+  const [selectedSession, setSession] = useState("전체");
+  const onSelect = useCallback((selectedSession: string) => {
+    setSession(selectedSession);
   }, []);
 
   const [viewAllTicket, setViewAllTicket] = useState(false);
   const [viewGeneralTicket, setViewGeneralTicketl] = useState(false);
   const [viewFreshmanTicket, setViewFreshmanTicketl] = useState(false);
+  const [ticketType, setTicketType] = useState("all");
 
   const DropdownTicket = () => {
     // const handleDropdownItemClick = (e :any) => {
@@ -49,6 +49,7 @@ export default function Admin() {
             setViewAllTicket(true);
             setViewFreshmanTicketl(false);
             setViewGeneralTicketl(false);
+            setTicketType("전체");
           }}
         >
           전체
@@ -59,6 +60,7 @@ export default function Admin() {
             setViewGeneralTicketl(true);
             setViewAllTicket(false);
             setViewFreshmanTicketl(false);
+            setTicketType("general")
           }}
         >
           일반 예매
@@ -91,7 +93,7 @@ export default function Admin() {
           >
             지원자 정보 {viewApplication ? "<" : ">"}
             {viewApplication && (
-              <DropdownApplication session={session} onSelect={onSelect} />
+              <DropdownApplication session={selectedSession} onSelect={onSelect} />
             )}
           </ul>
           <ul
@@ -109,7 +111,7 @@ export default function Admin() {
           {!viewApplication && !viewTicket && <AdminMain />}
 
           {/*application은 세션 선택을 카테고리화 시켰는데, 티켓은 백엔드 보면 query params 이용하지 않고 모든티켓/신입생티켓/일반티켓이 다 따로 만들어져있어서 카테고리화 시키지 않고 따로따로 페이지 만들어두었음*/}
-          {viewApplication && <ApplicationDataList session={session} />}
+          {viewApplication && <AppList session={selectedSession} />}
 
           {viewTicket && viewAllTicket && <AllTicketList />}
           {viewTicket && viewFreshmanTicket && <FreshmanTicketList />}
