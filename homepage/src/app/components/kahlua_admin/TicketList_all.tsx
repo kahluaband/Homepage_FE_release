@@ -51,7 +51,7 @@ const AllTicketList = () => {
             </p>
           </div>
 
-          <li className="flex flex-row h-16 w-[1380px] bg-[#D9D9D9] px-4 items-center text-center">
+          <li className="flex flex-row h-16 w-[1476px] bg-[#D9D9D9] px-4 items-center text-center">
             <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               예매번호
             </p>
@@ -75,6 +75,18 @@ const AllTicketList = () => {
             </p>
             <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               결제상황
+            </p>
+            <p className="flex justify-center items-center w-[140px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+              참석자 1
+            </p>
+            <p className="flex justify-center items-center w-[140px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+              참석자 2
+            </p>
+            <p className="flex justify-center items-center w-[140px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+              참석자 3
+            </p>
+            <p className="flex justify-center items-center w-[140px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+              참석자 4
             </p>
           </li>
 

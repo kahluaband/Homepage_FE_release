@@ -2,13 +2,11 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { getAuthAxios } from "@/apis/authAxios";
 import GeneralTicketItem from "./TicketItem_general";
-import ParticipantItem from "./ParticipantItem_general";
 
 const GeneralTicketList = () => {
   const access = localStorage.getItem("access");
   const authAxios = getAuthAxios(access);
   const [tickets, setTickets] = useState<any[]>([]);
-  const [participants, setParticipants] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
   const [count, setCount] = useState();
   const [name_sorted, setNameSorted] = useState(false);
@@ -23,8 +21,6 @@ const GeneralTicketList = () => {
           `https://api.kahluaband.com/kahlua_admin/tickets/general_tickets/${sorting}`
         );
         setTickets(response.data.data.tickets);
-        setParticipants(response.data.data.tickets.participants);
-        console.log(participants);
         setCount(response.data.data.total_general);
       } catch (error) {
         console.log(error);
@@ -56,34 +52,39 @@ const GeneralTicketList = () => {
           </div>
 
           <div className="flex flex-row h-16 w-[1380px] bg-[#D9D9D9] px-4 items-center text-center">
-            <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+            <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               예매번호
-            </li>
-            <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2" onClick={()=>setNameSorted(!name_sorted)}>
+            </p>
+            <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2" onClick={()=>setNameSorted(!name_sorted)}>
               이름 {name_sorted ? "∧" : "∨"}
-            </li>
-            <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+            </p>
+            <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               전화번호
-            </li>
-            <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+            </p>
+            <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               매수
-            </li>
-            <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+            </p>
+            <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               결제상황
-            </li>
+            </p>
+            <p className="flex justify-center items-center w-[140px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+              참석자 1
+            </p>
+            <p className="flex justify-center items-center w-[140px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+              참석자 2
+            </p>
+            <p className="flex justify-center items-center w-[140px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+              참석자 3
+            </p>
+            <p className="flex justify-center items-center w-[140px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+              참석자 4
+            </p>
           </div>
 
-          <>
-            {tickets.map((ticket) => (
-              <GeneralTicketItem key={ticket.id} ticket={ticket} participants={participants}/>
-            ))}
-          </>
+          {tickets.map((ticket) => (
+            <GeneralTicketItem key={ticket.id} ticket={ticket}/>
+          ))}
 
-          {/* <>
-            {participants.map((participant) => (
-              <ParticipantItem key={participant.id} participant={participant}/>
-            ))}
-          </> */}
         </>
       }
     </div>

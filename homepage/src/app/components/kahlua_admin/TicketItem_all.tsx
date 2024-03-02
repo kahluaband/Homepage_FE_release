@@ -1,5 +1,7 @@
+import ParticipantItem from "./ParticipantItem_general";
+
 const AllTicketItem: React.FC<{ ticket: any }> = ({ticket}) => {
-    const {id, buyer, phone_num, count, member, major, student_id, meeting, reservation_id, merchant_order_id, status} = ticket;
+    const {id, buyer, phone_num, count, member, major, student_id, meeting, reservation_id, merchant_order_id, status, participants} = ticket;
     let statusText
     if (status === true) {
         statusText = "결제완료"
@@ -9,7 +11,7 @@ const AllTicketItem: React.FC<{ ticket: any }> = ({ticket}) => {
     }
 
     return(
-        <li className="flex flex-row h-16 w-[1380px] px-4 items-center text-center">
+        <li className="flex flex-row h-16 w-[1476px] px-4 items-center text-center">
             <p className="flex justify-center items-center w-[100px] h-full text-sm p-2">
                 {reservation_id}
                 {merchant_order_id}
@@ -38,6 +40,10 @@ const AllTicketItem: React.FC<{ ticket: any }> = ({ticket}) => {
                     {statusText}
                 </p>
             </div>
+
+            {participants && participants.map((participant: any) => (
+                <ParticipantItem key={participant.name} participant={participant} />
+            ))}
         </li>
     )
 }
