@@ -4,7 +4,8 @@ const ParticipantItem: React.FC<{ participant: any }> = ({participant}) => {
     return(
         <li className="flex flex-row h-16 w-[1380px] px-4 items-center text-center">
             <p className="flex justify-center items-center w-[100px] h-full text-sm p-2">
-                {name}
+                {name}<br/>
+                {phone_num}
             </p>
             <p className="flex justify-center items-center w-[100px] h-full text-sm p-2">
                 {phone_num}

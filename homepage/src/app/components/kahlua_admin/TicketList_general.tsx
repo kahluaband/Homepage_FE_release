@@ -75,7 +75,7 @@ const GeneralTicketList = () => {
 
           <>
             {tickets.map((ticket) => (
-              <GeneralTicketItem key={ticket.id} ticket={ticket}/>
+              <GeneralTicketItem key={ticket.id} ticket={ticket} participants={participants}/>
             ))}
           </>
 
