@@ -9,14 +9,16 @@ const FreshmanTicketList = () => {
   const [tickets, setTickets] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
   const [count, setCount] = useState();
+  const [name_sorted, setNameSorted] = useState(false);
   
   useEffect(() => {
 
     const fetchData = async () => {
       setLoading(true);
       try {
+        const sorting = name_sorted ? `?name=${name_sorted}` : ""
         const response = await authAxios.get(
-          `https://api.kahluaband.com/kahlua_admin/tickets/freshman_tickets/`
+          `https://api.kahluaband.com/kahlua_admin/tickets/freshman_tickets/${sorting}`
         );
         setTickets(response.data.data.tickets);
         setCount(response.data.data.total_freshman);
@@ -26,7 +28,7 @@ const FreshmanTicketList = () => {
       setLoading(false);
     };
     fetchData();
-  }, []);
+  }, [name_sorted]);
 
   if (loading) {
     return <div>대기 중 ...</div>;
@@ -53,8 +55,8 @@ const FreshmanTicketList = () => {
             <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               예매번호
             </li>
-            <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
-              이름
+            <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2" onClick={()=>setNameSorted(!name_sorted)}>
+              이름 {name_sorted ? "∧" : "∨"}
             </li>
             <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               전화번호
@@ -75,7 +77,7 @@ const FreshmanTicketList = () => {
 
           <>
             {tickets.map((ticket) => (
-              <FreshmanTicketItem key={ticket.id} ticket={ticket} />
+              <FreshmanTicketItem key={ticket.id} ticket={ticket}/>
             ))}
           </>
         </>
