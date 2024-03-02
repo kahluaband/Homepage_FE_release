@@ -9,14 +9,16 @@ const GeneralTicketList = () => {
   const [tickets, setTickets] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
   const [count, setCount] = useState();
+  const [name_sorted, setNameSorted] = useState(false);
 
   useEffect(() => {
 
     const fetchData = async () => {
       setLoading(true);
       try {
+        const sorting = name_sorted ? `?name=${name_sorted}` : ""
         const response = await authAxios.get(
-          `https://api.kahluaband.com/kahlua_admin/tickets/general_tickets/`
+          `https://api.kahluaband.com/kahlua_admin/tickets/general_tickets/${sorting}`
         );
         setTickets(response.data.data.tickets);
         setCount(response.data.data.total_general);
@@ -26,7 +28,7 @@ const GeneralTicketList = () => {
       setLoading(false);
     };
     fetchData();
-  }, []);
+  }, [name_sorted]);
 
   if (loading) {
     return <div>대기 중 ...</div>;
@@ -50,28 +52,39 @@ const GeneralTicketList = () => {
           </div>
 
           <div className="flex flex-row h-16 w-[1380px] bg-[#D9D9D9] px-4 items-center text-center">
-            <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+            <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               예매번호
-            </li>
-            <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
-              이름
-            </li>
-            <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+            </p>
+            <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2" onClick={()=>setNameSorted(!name_sorted)}>
+              이름 {name_sorted ? "∧" : "∨"}
+            </p>
+            <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               전화번호
-            </li>
-            <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+            </p>
+            <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               매수
-            </li>
-            <li className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+            </p>
+            <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               결제상황
-            </li>
+            </p>
+            <p className="flex justify-center items-center w-[140px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+              참석자 1
+            </p>
+            <p className="flex justify-center items-center w-[140px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+              참석자 2
+            </p>
+            <p className="flex justify-center items-center w-[140px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+              참석자 3
+            </p>
+            <p className="flex justify-center items-center w-[140px] h-full bg-[#D9D9D9] text-base font-bold p-2">
+              참석자 4
+            </p>
           </div>
 
-          <>
-            {tickets.map((ticket) => (
-              <GeneralTicketItem key={ticket.id} ticket={ticket} />
-            ))}
-          </>
+          {tickets.map((ticket) => (
+            <GeneralTicketItem key={ticket.id} ticket={ticket}/>
+          ))}
+
         </>
       }
     </div>

@@ -33,6 +33,7 @@ const AppList: React.FC<AppListProps> = ({session}) => {
   const [applications, setApplications] = useState<Application[]>([]);
   const [loading, setLoading] = useState(false);
   const [count, setCount] = useState();
+  const [name_sorted, setNameSorted] = useState(false);
   
   useEffect(() => {
 
@@ -40,8 +41,9 @@ const AppList: React.FC<AppListProps> = ({session}) => {
       setLoading(true);
       try {
         const query = session === "전체" ? "" : `?first_preference=${session}`;
+        const sorting = name_sorted ? `?name=${name_sorted}` : ""
         const response = await authAxios.get(
-          `https://api.kahluaband.com/kahlua_admin/application/apply_forms${query}`
+          `https://api.kahluaband.com/kahlua_admin/application/apply_forms${sorting}${query}`
           // query params에서 first_preference를 각 세션으로 설정해서 해당 세션을 1지망으로 선택한 지원서 디비를 받아옴
         );
         setApplications(response.data.data.apply_forms);
@@ -52,7 +54,7 @@ const AppList: React.FC<AppListProps> = ({session}) => {
       setLoading(false);
     };
     fetchData();
-  }, [session]);
+  }, [session, name_sorted]);
 
   if (loading) {
     return <div>대기 중 ...</div>;
@@ -79,8 +81,8 @@ const AppList: React.FC<AppListProps> = ({session}) => {
           </div>
 
           <li className="flex flex-row h-16 w-[2692px] bg-[#D9D9D9] px-4 items-center text-center">
-            <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
-              이름
+            <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2" onClick={()=>setNameSorted(!name_sorted)}>
+              이름 {name_sorted ? "∨" : "∧"}
             </p>
             <p className="flex justify-center items-center w-[100px] h-full bg-[#D9D9D9] text-base font-bold p-2">
               성별
