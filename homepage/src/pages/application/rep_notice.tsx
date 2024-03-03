@@ -13,7 +13,7 @@ export default function RepNotice() {
                     KAHLUA
                 </p>
                 <p className=" font-GothamItalic text-center font-bold text-2xl x:text-3xl s:text-4xl m:text-5xl mt-10 text-[#FFFFFF]">
-                    23nd MEMBER<br/>RECUIRMENT
+                    23rd MEMBER<br/>RECUIRMENT
                 </p>
                 <p className="text-center text-sm mt-6 text-[#FFFFFF]">
                     모집기간 : 2024.01.19(금) ~ 2024.03.15(금)
