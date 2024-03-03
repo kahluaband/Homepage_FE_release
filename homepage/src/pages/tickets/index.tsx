@@ -212,9 +212,11 @@ export default function Tickets() {
             />
             <div className="w-[50vw] h-[200px] sm:h-[300px] lg:w-[600px] md:h-[300px] lg:h-[400px] xl:w-[720px] xl:h-[460px] ml-[11px] lg:ml-[23px] mt-0 top-0 flex-shrink-0">
               <div className="flex flex-row justify-between">
-                <div className="w-[70px] h-[18px] md:w-[100px] md:text-[11px] lg:h-[24px] flex flex-shrink-0 justify-center rounded-[40px] bg-[#281CFF] text-[9px] lg:text-[12px] font-[500] md:font-[600] tracking-[0.2px] leading-[20px] text-[#FFF] text-center whitespace-nowrap items-center">
+                {isWithinSeason ? (<div className="w-[70px] h-[18px] md:w-[100px] md:text-[11px] lg:h-[24px] flex flex-shrink-0 justify-center rounded-[40px] bg-[#281CFF] text-[9px] lg:text-[12px] font-[500] md:font-[600] tracking-[0.2px] leading-[20px] text-[#FFF] text-center whitespace-nowrap items-center">
                   예매 가능
-                </div>
+                </div>):(<div className="w-[70px] h-[18px] md:w-[100px] md:text-[11px] lg:h-[24px] flex flex-shrink-0 justify-center rounded-[40px] bg-[#B9B9B9] text-[9px] lg:text-[12px] font-[500] md:font-[600] tracking-[0.2px] leading-[20px] text-[#FFF] text-center whitespace-nowrap items-center">
+                  사전예매 마감
+                </div>)}
                 <div className="flex mt-[3px]">
                   <Link
                     href="https://instagram.com/kahlua_band_?igshid=MzRlODBiNWFlZA=="
