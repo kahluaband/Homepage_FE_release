@@ -13,6 +13,12 @@ const General_delete = () => {
   const [validMerchant_order_id, setValidMerchant_order_id] = useState(true);
   const [buyer, setBuyer] = useState("");
 
+
+  const startDate = new Date("2024-01-31");
+  const endDate = new Date("2024-03-02");
+  const today = new Date();
+  const isWithinSeason = today >= startDate && today <= endDate;
+
   const handleSearch = async () => {
     try {
       const response = await axios.get(
@@ -102,12 +108,16 @@ const General_delete = () => {
             <div className="mt-8 items-center content-center flex flex-col ">
               <Ticket_info reservation_id={merchant_order_id} buyer={buyer} />
               <div className="w-[75vw] sm:w-[400px] md:w-[514px] h-[48px] mt-[64px] mx-auto flex items-center">
-                <button
+                {isWithinSeason ? (<button
                   onClick={handleCancelReservation}
                   className="w-full h-full bg-[#E8E8E8] rounded-[10px] text-center text-[#000] hover:text-[#FFF] text-[14px] font-[600] leading-[19px] hover:bg-[#281CFF]"
                 >
                   예매 취소하기
-                </button>
+                </button>):(<button
+                  className="w-full h-full bg-[#E8E8E8] rounded-[10px] text-center text-[#000] hover:text-[#FFF] text-[14px] font-[600] leading-[19px]"
+                >
+                  취소 가능 기간이 아닙니다.
+                </button>)}
               </div>
             </div>
           )}
