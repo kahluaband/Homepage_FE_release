@@ -17,7 +17,7 @@ return (
     <div className="flex flex-row align-center justify-center text-[10px] sm:text-[14px] font-[500]">
         <div className="mt-[19px] ml-[3vw] sm:ml-[24px] w-[33%] md:w-[118px] h-[21px] flex text-center justify-center items-center "> {reservation_id} </div>
         <div className="mt-[19px] mx-auto w-[33%] md:w-[118px] flex text-center justify-center items-center "> {buyer} </div>
-        <div className="mt-[19px] mr-[3vw] sm:mr-[24px] w-[33%] md:w-[118px] flex text-center justify-center items-center ">취소 가능</div>
+        <div className="mt-[19px] mr-[3vw] sm:mr-[24px] w-[33%] md:w-[118px] flex text-center justify-center items-center ">취소 불가</div>
     </div>
     </div>
 );

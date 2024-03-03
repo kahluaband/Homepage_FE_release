@@ -36,7 +36,7 @@ export default function Tickets() {
         예매 가능 기간 설정
     */
   const startDate = new Date("2024-01-31");
-  const endDate = new Date("2024-03-04");
+  const endDate = new Date("2024-03-03");
   const today = new Date();
   const isWithinSeason = today >= startDate && today <= endDate;
 
@@ -121,7 +121,7 @@ export default function Tickets() {
           </Link>
         </div>
       ) : (
-        <button className="w-[48vw] h-[29px] md:w-[270px] md:h-[48px] flex-shrink-0 rounded-[10px] bg-[#B9B9B9] cursor-not-allowed">
+        <button className="md:mt-2 w-[48vw] h-[29px] md:w-[270px] md:h-[48px] flex-shrink-0 rounded-[10px] bg-[#B9B9B9] cursor-not-allowed">
           지금은 예매 가능 기간이 아닙니다.
         </button>
       )}
@@ -192,8 +192,7 @@ export default function Tickets() {
         <div className="font-[500] md:font-[600] leading-[19px] w-[80px] h-[19px] text-left whitespace-nowrap">
           현장 예매
         </div>
-        { isWithinSeason ? (<div className="text-right font-[500] w-[70px] whitespace-nowrap text-[#281CFF] ">예매가능</div>)
-        :(<div className="text-right font-[500] w-[70px] whitespace-nowrap text-[red]">예매불가</div>)}
+        <div className="text-right font-[500] w-[70px] whitespace-nowrap text-[#281CFF] ">예매가능</div>
       </div>
     </div>
   );
