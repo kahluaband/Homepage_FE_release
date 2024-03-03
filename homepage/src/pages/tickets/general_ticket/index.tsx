@@ -85,7 +85,7 @@ export default function General_ticket() {
           setIsError(true);
         }
       } catch (error: any) {
-        if (error){
+        if (error) {
           handleShowTokenErrorModal();
         }
       }
@@ -102,6 +102,7 @@ export default function General_ticket() {
         formData,
         {
           headers: {
+            // withCredentials: true,
             "Content-Type": "multipart/form-data",
           },
         }
@@ -118,7 +119,7 @@ export default function General_ticket() {
         setIsError(true);
       }
     } catch (error: any) {
-      if (error){
+      if (error) {
         handleShowTokenErrorModal();
       }
     }

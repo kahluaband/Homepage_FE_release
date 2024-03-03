@@ -3,7 +3,6 @@ import axios from "axios";
 import Background from "@/app/components/Background";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import useSWR from "swr";
 
 export default function Apply_complete() {
   const router = useRouter();

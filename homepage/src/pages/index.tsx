@@ -11,7 +11,7 @@ import Link from "next/link";
 import { Cookies } from "react-cookie";
 
 // refreshToken cookie 주고 받기 위함
-// axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = true;
 
 const cookies = new Cookies();
 
@@ -22,6 +22,8 @@ export const setCookie = (name: string, value: string, options?: any): void => {
 export const getCookie = (name: string): string | undefined => {
   return cookies.get(name);
 };
+
+axios.defaults.withCredentials = true;
 
 axios.defaults.xsrfCookieName = "csrftoken";
 axios.defaults.xsrfHeaderName = "X-CSRFToken";
