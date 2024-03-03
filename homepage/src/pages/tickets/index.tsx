@@ -36,7 +36,7 @@ export default function Tickets() {
         예매 가능 기간 설정
     */
   const startDate = new Date("2024-01-31");
-  const endDate = new Date("2024-03-03");
+  const endDate = new Date("2024-03-02");
   const today = new Date();
   const isWithinSeason = today >= startDate && today <= endDate;
 
