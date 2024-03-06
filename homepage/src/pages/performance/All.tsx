@@ -16,11 +16,85 @@ const thumbnails = [
   "/assets/images/performance/thumbnail11.jpg",
   "/assets/images/performance/thumbnail12.jpg",
   "/assets/images/performance/thumbnail13.jpg",
+  "/assets/images/performance/thumbnail14.jpg",
+  "/assets/images/performance/thumbnail15.jpg",
 ];
 
 export default function All() {
   return (
     <>
+      <div
+        className={styles.gridItem}
+        onClick={() =>
+          window.open(
+            "https://www.youtube.com/playlist?list=PLLmJk1z9Luut6RrZvInAnzspEsL2JG2S9"
+          )
+        }
+      >
+        <div className={styles.thumbnail}>
+          <Image
+            src={thumbnails[13]}
+            alt="thumbnail"
+            width={0}
+            height={0}
+            layout="fill"
+          />
+          <Image src={playIcon} alt="playIcon" className={styles.playicon} />
+        </div>
+        <div
+          className="w-full pt-[1rem]"
+          onClick={(event) => {
+            event.stopPropagation();
+          }}
+        >
+          <h3 className="text-[20px] font-bold">2024.03.04 정기공연</h3>
+          <div className="flex flex-wrap flex-row mt-[0.5rem]">
+            <p className={styles.subText}># 행복했던 날들이었다</p>
+            <p className={styles.subText}># 검정치마</p>
+            <p className={styles.subText}># 터치드</p>
+            <p className={styles.subText}># 알루미늄</p>
+            <p className={styles.subText}># Green Day</p>
+            <p className={styles.subText}># 데이브레이크</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className={styles.gridItem}
+        onClick={() =>
+          window.open(
+            "https://www.youtube.com/playlist?list=PLLmJk1z9LuuuqqH-qjH3ERD37qNJOcbpl"
+          )
+        }
+      >
+        <div className={styles.thumbnail}>
+          <Image
+            src={thumbnails[14]}
+            alt="thumbnail"
+            width={0}
+            height={0}
+            layout="fill"
+          />
+          <Image src={playIcon} alt="playIcon" className={styles.playicon} />
+        </div>
+        <div
+          className="w-full pt-[1rem]"
+          onClick={(event) => {
+            event.stopPropagation();
+          }}
+        >
+          <h3 className="text-[20px] font-bold">2023.09.01 정기공연</h3>
+          <div className="flex flex-wrap flex-row mt-[0.5rem]">
+            <p className={styles.subText}># 그대에게</p>
+            <p className={styles.subText}># LUCY</p>
+            <p className={styles.subText}># 직감</p>
+            <p className={styles.subText}># 실리카겔</p>
+            <p className={styles.subText}># 멋진헛간 remix</p>
+            <p className={styles.subText}># Lacuna</p>
+          </div>
+        </div>
+      </div>
+
       <div
         className={styles.gridItem}
         onClick={() =>
