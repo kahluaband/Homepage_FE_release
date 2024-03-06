@@ -18,8 +18,8 @@ const sessions = [
     text: "베이스",
   },
   {
-    name: "신디",
-    text: "신디",
+    name: "신디(피아노)",
+    text: "신디(피아노)",
   },
   {
     name: "기타",
@@ -32,8 +32,9 @@ interface DropdownApplicationProps {
   session: string;
 }
 
-const DropdownApplication: React.FC<DropdownApplicationProps> = ({ onSelect }) => {
-
+const DropdownApplication: React.FC<DropdownApplicationProps> = ({
+  onSelect,
+}) => {
   return (
     <div
       id="dropdown"
@@ -44,7 +45,6 @@ const DropdownApplication: React.FC<DropdownApplicationProps> = ({ onSelect }) =
           {s.text}
         </li>
       ))}
-
     </div>
   );
 };
