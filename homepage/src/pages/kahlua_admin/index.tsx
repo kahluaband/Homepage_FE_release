@@ -36,7 +36,7 @@ export default function Admin() {
   const DropdownTicket = () => {
     // const handleDropdownItemClick = (e :any) => {
     //   e.stopPropagation();
-    // }
+    //}
 
     return (
       <div
@@ -60,7 +60,7 @@ export default function Admin() {
             setViewGeneralTicketl(true);
             setViewAllTicket(false);
             setViewFreshmanTicketl(false);
-            setTicketType("general")
+            setTicketType("general");
           }}
         >
           일반 예매
@@ -93,7 +93,10 @@ export default function Admin() {
           >
             지원자 정보 {viewApplication ? "<" : ">"}
             {viewApplication && (
-              <DropdownApplication session={selectedSession} onSelect={onSelect} />
+              <DropdownApplication
+                session={selectedSession}
+                onSelect={onSelect}
+              />
             )}
           </ul>
           <ul
