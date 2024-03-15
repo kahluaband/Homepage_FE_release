@@ -115,7 +115,7 @@ export default function Home() {
           href="/application"
           className="flex blur-none filter-none fixed text-center bottom-[0px] items-center justify-center content-center font-[600] sm:font-[700] text-[#FFF] text-[22px] sm:text-[24px] whitespace-nowrap h-[80px] sm:h-[90px] w-[100vw] z-30"
         >
-          KAHLUA 23기 지원하러 가기
+          KAHLUA 23기 지원 마감
         </Link>
       </Background>
     </div>

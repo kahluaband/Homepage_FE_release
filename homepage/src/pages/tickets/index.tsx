@@ -192,8 +192,8 @@ export default function Tickets() {
         <div className="font-[500] md:font-[600] leading-[19px] w-[80px] h-[19px] text-left whitespace-nowrap">
           현장 예매
         </div>
-        <div className="text-right font-[500] w-[70px] whitespace-nowrap text-[#281CFF] ">예매가능</div>
-      </div>
+        { isWithinSeason ? (<div className="text-right font-[500] w-[70px] whitespace-nowrap text-[#281CFF] ">예매가능</div>)
+        :(<div className="text-right font-[500] w-[70px] whitespace-nowrap text-[red] ">예매불가</div>)}      </div>
     </div>
   );
 
@@ -215,7 +215,7 @@ export default function Tickets() {
                 {isWithinSeason ? (<div className="w-[70px] h-[18px] md:w-[100px] md:text-[11px] lg:h-[24px] flex flex-shrink-0 justify-center rounded-[40px] bg-[#281CFF] text-[9px] lg:text-[12px] font-[500] md:font-[600] tracking-[0.2px] leading-[20px] text-[#FFF] text-center whitespace-nowrap items-center">
                   예매 가능
                 </div>):(<div className="w-[70px] h-[18px] md:w-[100px] md:text-[11px] lg:h-[24px] flex flex-shrink-0 justify-center rounded-[40px] bg-[#B9B9B9] text-[9px] lg:text-[12px] font-[500] md:font-[600] tracking-[0.2px] leading-[20px] text-[#FFF] text-center whitespace-nowrap items-center">
-                  사전예매 마감
+                  예매 마감
                 </div>)}
                 <div className="flex mt-[3px]">
                   <Link
