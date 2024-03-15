@@ -3,6 +3,10 @@ import band from "/public/assets/images/recruit/band.svg";
 import band1 from "/public/assets/images/recruit/band1.png";
 import Link from "next/link";
 
+function Invalid(){
+    alert('현재 23기 지원 기간이 아닙니다.')
+}
+
 export default function RepNotice() {
     return (
         <>
@@ -20,7 +24,7 @@ export default function RepNotice() {
                     <br/>
                     면접날짜 : 2024.03.18(월)
                 </p>
-                <button className="flex justify-center items-center h-[64px] w-[260px] x:w-1/2 rounded-[300px] bg-[#B9B9B9] mt-14 text-xl x:text-2xl font-semibold text-[#FFFFFF] cursor-not-allowed">
+                <button className="flex justify-center items-center h-[64px] w-[260px] x:w-1/2 rounded-[300px] bg-[#B9B9B9] mt-14 text-xl x:text-2xl font-semibold text-[#FFFFFF] cursor-not-allowed" onClick={()=>Invalid()}>
                     KAHLUA 23기 지원 마감
                 </button>
 
