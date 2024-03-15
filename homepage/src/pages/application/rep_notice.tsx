@@ -20,9 +20,9 @@ export default function RepNotice() {
                     <br/>
                     면접날짜 : 2024.03.18(월)
                 </p>
-                <Link className="flex justify-center items-center h-[64px] w-[260px] x:w-1/2 rounded-[300px] bg-ocean mt-14 text-xl x:text-2xl font-semibold text-[#FFFFFF]" href="/application/apply">
-                    KAHLUA 23기 지원하기
-                </Link>
+                <button className="flex justify-center items-center h-[64px] w-[260px] x:w-1/2 rounded-[300px] bg-[#B9B9B9] mt-14 text-xl x:text-2xl font-semibold text-[#FFFFFF] cursor-not-allowed">
+                    KAHLUA 23기 지원 마감
+                </button>
 
             </div>
         </div>

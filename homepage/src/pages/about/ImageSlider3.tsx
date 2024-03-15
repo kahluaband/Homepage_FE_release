@@ -16,7 +16,6 @@ const images = [
   "/assets/images/about/play4.jpg",
   "/assets/images/about/play5.jpg",
   "/assets/images/about/play6.jpg",
-  "/assets/images/about/play7.jpg",
   "/assets/images/about/play8.jpg",
   "/assets/images/about/play9.jpg",
   "/assets/images/about/play10.jpg",
@@ -226,21 +225,6 @@ export default function ImageSlider3() {
         <SwiperSlide>
           <Image
             src={images[12]}
-            alt="image"
-            width={0}
-            height={0}
-            sizes="100vw"
-            style={{
-              width: "100%",
-              height: "auto",
-              marginTop: "0.5rem",
-              borderRadius: "30px",
-            }}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={images[13]}
             alt="image"
             width={0}
             height={0}
